@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2016-12-14T06:53:42.000Z</updated>
+  <updated>2016-12-15T01:29:00.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Unix文件的时间</title>
+    <link href="http://blog.lxmoses.com/2016/12/15/Unix%E6%96%87%E4%BB%B6%E7%9A%84%E6%97%B6%E9%97%B4/"/>
+    <id>http://blog.lxmoses.com/2016/12/15/Unix文件的时间/</id>
+    <published>2016-12-15T00:58:26.000Z</published>
+    <updated>2016-12-15T01:29:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Unix对于每个文件维护了3个时间字段，它们的意义如下图所示：<br><img src="/images/与Unix文件相关的3个时间值.jpg" alt=""><br>很多影响到i节点的操作，如更改文件的访问权限、更改用户id、更改链接数等，但它们并没有更改文件的实际内容。因为i节点中的所有信息都是与文件的实际内容分开存放的。</p>
+<p>POSIX(Portable Operating System Interface)修改文件的访问时间和修改时间<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">futimens</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">struct</span> timespec times[<span class="number">2</span>])</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">utimensat</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">char</span> * path, <span class="keyword">const</span> <span class="keyword">struct</span> timespec times[<span class="number">2</span>], <span class="keyword">int</span> flag)</span></span>;</div></pre></td></tr></table></figure><br>Single UNIX Specification的XSI扩展<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">utimes</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * pathname, <span class="keyword">const</span> <span class="keyword">struct</span> timeval times[<span class="number">2</span>])</span></span>;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Unix对于每个文件维护了3个时间字段，它们的意义如下图所示：&lt;br&gt;&lt;img src=&quot;/images/与Unix文件相关的3个时间值.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;很多影响到i节点的操作，如更改文件的访问权限、更改用户id、更改链接数等，但它们并没有更改文件的实际内容
+    
+    </summary>
+    
+      <category term="重温apue" scheme="http://blog.lxmoses.com/categories/%E9%87%8D%E6%B8%A9apue/"/>
+    
+    
+      <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
+    
+      <category term="文件" scheme="http://blog.lxmoses.com/tags/%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>完美删除临时文件</title>
     <link href="http://blog.lxmoses.com/2016/12/14/%E5%AE%8C%E7%BE%8E%E5%88%A0%E9%99%A4%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/"/>
     <id>http://blog.lxmoses.com/2016/12/14/完美删除临时文件/</id>
     <published>2016-12-14T06:38:41.000Z</published>
-    <updated>2016-12-14T06:53:42.000Z</updated>
+    <updated>2016-12-15T01:00:12.000Z</updated>
     
     <content type="html"><![CDATA[<p>笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。<br>Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条件也会阻止删除文件的内容——只要有进程打开了该文件，其内容也不会删除。<br>关闭一个文件时，内核首先检查打开该文件的进程个数；如果这个计数达到0，内核再去检查其链接计数；如果计数也是0，那么就删除该文件的内容。<br>这意味着我们可以在创建一个临时文件的时候就调用unlink函数，程序结束之后(无论是正常还是异常结束)临时文件都会被删除。</p>
 ]]></content>
@@ -37,6 +63,8 @@
       <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
     
       <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
+    
+      <category term="文件" scheme="http://blog.lxmoses.com/tags/%E6%96%87%E4%BB%B6/"/>
     
   </entry>
   

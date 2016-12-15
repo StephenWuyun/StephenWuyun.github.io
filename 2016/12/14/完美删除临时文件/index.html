@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Unix,OS," />
+  <meta name="keywords" content="Unix,OS,文件," />
 
 
 
@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://blog.lxmoses.com/2016/12/14/完美删除临时文件/index.html">
 <meta property="og:site_name" content="悟云">
 <meta property="og:description" content="笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条">
-<meta property="og:updated_time" content="2016-12-14T06:53:42.000Z">
+<meta property="og:updated_time" content="2016-12-15T01:00:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="完美删除临时文件">
 <meta name="twitter:description" content="笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条">
@@ -369,6 +369,8 @@
           
             <a href="/tags/OS/" rel="tag"># OS</a>
           
+            <a href="/tags/文件/" rel="tag"># 文件</a>
+          
         </div>
       
 
@@ -385,6 +387,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/15/Unix文件的时间/" rel="prev" title="Unix文件的时间">
+                Unix文件的时间 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -443,7 +449,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -460,7 +466,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
