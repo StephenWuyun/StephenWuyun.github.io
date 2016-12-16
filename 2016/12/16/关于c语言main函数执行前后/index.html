@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="c语言," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="之前在vps上面搭了一个博客，后面服务器到期了也没管。最近比较闲，重新搭建博客，这次懒得折腾了，直接挂在github上面算了，尽管有时候会被墙。说来也巧，上次的博客最后一片博文是辞职的时候写的，这次亦然。回顾第一次出来实习，那时跟打了鸡血似的，想到第二天就要开始上班彻夜难眠。如今几经波折，面试了十来家公司，待了四个公司。现实总是跟理想有出入，不过除了工作以外也遇到了一些有趣的·人，经历了一些有趣的">
+<meta name="description" content="之前几次的面试经历中好几次面试官都问过程序运行时在main函数之前发生了些什么。 笔者大概知道是做一些初始化相关的事情，今日详细mark一下。main函数执行之前，主要就是初始化系统相关资源：1.设置栈指针2.初始化static静态和global全局变量，即data段的内容3.将未初始化部分的赋初值：数值型short，int，long等为0，bool为FALSE，指针为NULL，等等，即.bss段">
 <meta property="og:type" content="article">
-<meta property="og:title" content="是结局也是开始">
-<meta property="og:url" content="http://blog.lxmoses.com/2016/12/07/辞职/index.html">
+<meta property="og:title" content="关于C语言main函数执行前后">
+<meta property="og:url" content="http://blog.lxmoses.com/2016/12/16/关于c语言main函数执行前后/index.html">
 <meta property="og:site_name" content="悟云">
-<meta property="og:description" content="之前在vps上面搭了一个博客，后面服务器到期了也没管。最近比较闲，重新搭建博客，这次懒得折腾了，直接挂在github上面算了，尽管有时候会被墙。说来也巧，上次的博客最后一片博文是辞职的时候写的，这次亦然。回顾第一次出来实习，那时跟打了鸡血似的，想到第二天就要开始上班彻夜难眠。如今几经波折，面试了十来家公司，待了四个公司。现实总是跟理想有出入，不过除了工作以外也遇到了一些有趣的·人，经历了一些有趣的">
-<meta property="og:updated_time" content="2016-12-13T23:58:38.000Z">
+<meta property="og:description" content="之前几次的面试经历中好几次面试官都问过程序运行时在main函数之前发生了些什么。 笔者大概知道是做一些初始化相关的事情，今日详细mark一下。main函数执行之前，主要就是初始化系统相关资源：1.设置栈指针2.初始化static静态和global全局变量，即data段的内容3.将未初始化部分的赋初值：数值型short，int，long等为0，bool为FALSE，指针为NULL，等等，即.bss段">
+<meta property="og:updated_time" content="2016-12-16T06:24:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="是结局也是开始">
-<meta name="twitter:description" content="之前在vps上面搭了一个博客，后面服务器到期了也没管。最近比较闲，重新搭建博客，这次懒得折腾了，直接挂在github上面算了，尽管有时候会被墙。说来也巧，上次的博客最后一片博文是辞职的时候写的，这次亦然。回顾第一次出来实习，那时跟打了鸡血似的，想到第二天就要开始上班彻夜难眠。如今几经波折，面试了十来家公司，待了四个公司。现实总是跟理想有出入，不过除了工作以外也遇到了一些有趣的·人，经历了一些有趣的">
+<meta name="twitter:title" content="关于C语言main函数执行前后">
+<meta name="twitter:description" content="之前几次的面试经历中好几次面试官都问过程序运行时在main函数之前发生了些什么。 笔者大概知道是做一些初始化相关的事情，今日详细mark一下。main函数执行之前，主要就是初始化系统相关资源：1.设置栈指针2.初始化static静态和global全局变量，即data段的内容3.将未初始化部分的赋初值：数值型short，int，long等为0，bool为FALSE，指针为NULL，等等，即.bss段">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.lxmoses.com/2016/12/07/辞职/"/>
+  <link rel="canonical" href="http://blog.lxmoses.com/2016/12/16/关于c语言main函数执行前后/"/>
 
 
 
 
 
-  <title> 是结局也是开始 | 悟云 </title>
+  <title> 关于C语言main函数执行前后 | 悟云 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/07/辞职/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/16/关于c语言main函数执行前后/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -274,7 +274,7 @@
             
             
               
-                是结局也是开始
+                关于C语言main函数执行前后
               
             
           </h1>
@@ -287,8 +287,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-07T19:37:16+08:00">
-                2016-12-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-16T14:07:52+08:00">
+                2016-12-16
               </time>
             
 
@@ -306,8 +306,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/重温apue/" itemprop="url" rel="index">
+                    <span itemprop="name">重温apue</span>
                   </a>
                 </span>
 
@@ -341,7 +341,7 @@
       
 
       
-        <p>之前在vps上面搭了一个博客，后面服务器到期了也没管。最近比较闲，重新搭建博客，这次懒得折腾了，直接挂在github上面算了，尽管有时候会被墙。<br>说来也巧，上次的博客最后一片博文是辞职的时候写的，这次亦然。<br>回顾第一次出来实习，那时跟打了鸡血似的，想到第二天就要开始上班彻夜难眠。如今几经波折，面试了十来家公司，待了四个公司。现实总是跟理想有出入，不过除了工作以外也遇到了一些有趣的·人，经历了一些有趣的事。<br>岂能尽如人意？ 继续走，继续看，是结局也是开始。</p>
+        <p>之前几次的面试经历中好几次面试官都问过程序运行时在main函数之前发生了些什么。 笔者大概知道是做一些初始化相关的事情，今日详细mark一下。<br>main函数执行之前，主要就是初始化系统相关资源：<br>1.设置栈指针<br>2.初始化static静态和global全局变量，即data段的内容<br>3.将未初始化部分的赋初值：数值型short，int，long等为0，bool为FALSE，指针为NULL，等等，即.bss段的内容<br>4.运行全局构造器，估计是C++中构造函数之类的吧<br>5.将main函数的参数，argc，argv等传递给main函数，然后才真正运行main函数<br>同样地，main函数结束之后就是一些资源释放的事情,以及调用之前注册的终止处理程序等等。<br>附上一段apue上注册终止程序的demo:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"apue.h"</span></span></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">my_exit1</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">my_exit2</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(atexit(my_exit2) != <span class="number">0</span>)&#123;</div><div class="line">		err_sys(<span class="string">"can't register my_exit2"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(atexit(my_exit1) != <span class="number">0</span>)&#123;</div><div class="line">		err_sys(<span class="string">"can't register my_exit1"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(atexit(my_exit1) != <span class="number">0</span>)&#123;</div><div class="line">		err_sys(<span class="string">"can't register my_exit1"</span>);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"main is done\n"</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">my_exit1</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"first exit handler\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">my_exit2</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"second exit handler\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -365,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            <a href="/tags/c语言/" rel="tag"># c语言</a>
           
         </div>
       
@@ -374,15 +374,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/15/给博客添加ssl/" rel="next" title="给博客添加Ssl">
+                <i class="fa fa-chevron-left"></i> 给博客添加Ssl
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/08/失眠录（1）/" rel="prev" title="失眠录（1）">
-                失眠录（1） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
