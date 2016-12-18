@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2016-12-16T06:24:09.000Z</updated>
+  <updated>2016-12-16T15:44:43.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>闹够了</title>
+    <link href="http://blog.lxmoses.com/2016/12/16/%E9%97%B9%E5%A4%9F%E4%BA%86/"/>
+    <id>http://blog.lxmoses.com/2016/12/16/闹够了/</id>
+    <published>2016-12-16T15:41:24.000Z</published>
+    <updated>2016-12-16T15:44:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>你的城市没有一扇窗，为我打开啊。<br>我要卖掉我的房子，浪迹天涯。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你的城市没有一扇窗，为我打开啊。&lt;br&gt;我要卖掉我的房子，浪迹天涯。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://blog.lxmoses.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="生活" scheme="http://blog.lxmoses.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>关于C语言main函数执行前后</title>
