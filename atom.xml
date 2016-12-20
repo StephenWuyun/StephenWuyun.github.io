@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2016-12-20T01:33:53.000Z</updated>
+  <updated>2016-12-20T01:51:47.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Epoll深入了解</title>
+    <link href="http://blog.lxmoses.com/2016/12/20/epoll%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3/"/>
+    <id>http://blog.lxmoses.com/2016/12/20/epoll深入了解/</id>
+    <published>2016-12-20T01:48:09.000Z</published>
+    <updated>2016-12-20T01:51:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="epoll相对select的优势"><a href="#epoll相对select的优势" class="headerlink" title="epoll相对select的优势"></a>epoll相对select的优势</h2><p>1.select的句柄数目受限，在linux/posix_types.h头文件有这样的声明：#define __FD_SETSIZE    1024  表示select最多同时监听1024个fd。而epoll没有，它的限制是最大的打开文件句柄数目。<br>2.epoll的最大好处是不会随着FD的数目增长而降低效率，在selec中采用轮询处理，其中的数据结构类似一个数组的数据结构，而epoll是维护一个队列，直接看队列是不是空就可以了。epoll只会对”活跃”的socket进行操作—这是因为在内核实现中epoll是根据每个fd上面的callback函数实现的。那么，只有”活跃”的socket才会主动的去调用 callback函数（把这个句柄加入队列），其他idle状态句柄则不会，在这点上，epoll实现了一个”伪”AIO。但是如果绝大部分的I/O都是“活跃的”，每个I/O端口使用率很高的话，epoll效率不一定比select高（可能是要维护队列复杂）。<br>3.使用mmap加速内核与用户空间的消息传递。无论是select,poll还是epoll都需要内核把FD消息通知给用户空间，如何避免不必要的内存拷贝就很重要，在这点上，epoll是通过内核于用户空间mmap同一块内存实现的</p>
+<h2 id="epool中et和lt的区别与实现原理"><a href="#epool中et和lt的区别与实现原理" class="headerlink" title="epool中et和lt的区别与实现原理"></a>epool中et和lt的区别与实现原理</h2><p>LT(level triggered)是缺省的工作方式，并且同时支持block和no-block socket.在这种做法中，内核告诉你一个文件描述符是否就绪了，然后你可以对这个就绪的fd进行IO操作。如果你不作任何操作，内核还是会继续通知你 的，所以，这种模式编程出错误可能性要小一点。传统的select/poll都是这种模型的代表．<br>ET (edge-triggered)是高速工作方式，只支持no-block socket。在这种模式下，当描述符从未就绪变为就绪时，内核通过epoll告诉你。然后它会假设你知道文件描述符已经就绪，并且不会再为那个文件描述 符发送更多的就绪通知，直到你做了某些操作导致那个文件描述符不再为就绪状态了(比如，你在发送，接收或者接收请求，或者发送接收的数据少于一定量时导致 了一个EWOULDBLOCK 错误）。但是请注意，如果一直不对这个fd作IO操作(从而导致它再次变成未就绪)，内核不会发送更多的通知(only once),不过在TCP协议中，ET模式的加速效用仍需要更多的benchmark确认。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;epoll相对select的优势&quot;&gt;&lt;a href=&quot;#epoll相对select的优势&quot; class=&quot;headerlink&quot; title=&quot;epoll相对select的优势&quot;&gt;&lt;/a&gt;epoll相对select的优势&lt;/h2&gt;&lt;p&gt;1.select的句柄数目受
+    
+    </summary>
+    
+      <category term="网络编程" scheme="http://blog.lxmoses.com/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="epoll" scheme="http://blog.lxmoses.com/tags/epoll/"/>
+    
+  </entry>
   
   <entry>
     <title>TCP的流量控制和拥塞控制</title>
@@ -163,9 +187,9 @@
     
       <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
     
-      <category term="文件" scheme="http://blog.lxmoses.com/tags/%E6%96%87%E4%BB%B6/"/>
-    
       <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
+    
+      <category term="文件" scheme="http://blog.lxmoses.com/tags/%E6%96%87%E4%BB%B6/"/>
     
   </entry>
   
