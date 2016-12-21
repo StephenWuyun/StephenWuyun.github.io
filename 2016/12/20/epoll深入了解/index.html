@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://blog.lxmoses.com/2016/12/20/epoll深入了解/index.html">
 <meta property="og:site_name" content="悟云">
 <meta property="og:description" content="epoll相对select的优势1.select的句柄数目受限，在linux/posix_types.h头文件有这样的声明：#define __FD_SETSIZE    1024  表示select最多同时监听1024个fd。而epoll没有，它的限制是最大的打开文件句柄数目。2.epoll的最大好处是不会随着FD的数目增长而降低效率，在selec中采用轮询处理，其中的数据结构类似一个数组的数据">
-<meta property="og:updated_time" content="2016-12-20T01:51:47.000Z">
+<meta property="og:updated_time" content="2016-12-20T01:54:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Epoll深入了解">
 <meta name="twitter:description" content="epoll相对select的优势1.select的句柄数目受限，在linux/posix_types.h头文件有这样的声明：#define __FD_SETSIZE    1024  表示select最多同时监听1024个fd。而epoll没有，它的限制是最大的打开文件句柄数目。2.epoll的最大好处是不会随着FD的数目增长而降低效率，在selec中采用轮询处理，其中的数据结构类似一个数组的数据">
@@ -385,6 +385,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/12/21/from-now-on/" rel="prev" title="From Now On">
+                From Now On <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -451,7 +455,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
