@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2016-12-28T03:28:50.000Z</updated>
+  <updated>2016-12-28T23:02:47.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++的四种类型转换方式</title>
+    <link href="http://blog.lxmoses.com/2016/12/29/c++%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F/"/>
+    <id>http://blog.lxmoses.com/2016/12/29/c++的四种类型转换方式/</id>
+    <published>2016-12-28T22:40:23.000Z</published>
+    <updated>2016-12-28T23:02:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>c++的四种强制类型转换，所以c++不是类型安全的。分别为：static_cast , dynamic_cast , const_cast , reinterpret_cast<br>使用C风格的强制转换可以把想要的任何东西转换成合乎心意的类型，那为什么还需要一个新的C++类型的强制转换呢？<br>新类型的强制转换可以提供更好的控制强制转换过程，允许控制各种不同种类的强制转换。C++中风格是static_cast<type>(content)。C++风格的强制转换其他的好处是，它们能更清晰的表明它们要干什么。程序员只要扫一眼这样的代码，就能立即知道一个强制转换的目的。</type></p>
+<h2 id="四种类型转换的区别"><a href="#四种类型转换的区别" class="headerlink" title="四种类型转换的区别"></a>四种类型转换的区别</h2><h3 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h3><p>实现C++中内置基本数据类型之间的相互转换<br><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> c=<span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">7.987</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h3><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> SA &#123;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">const</span> SA ra;</div><div class="line"><span class="comment">//ra.i = 10; //直接修改const类型，编译错误</span></div><div class="line">SA &amp;rb = <span class="keyword">const_cast</span>&lt;SA&amp;&gt;(ra);</div><div class="line">rb.i =<span class="number">10</span>;</div></pre></td></tr></table></figure>
+<h3 id="dynamic-cast"><a href="#dynamic-cast" class="headerlink" title="dynamic_cast"></a>dynamic_cast</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">（1）其他三种都是编译时完成的，dynamic_cast是运行时处理的，运行时要进行类型检查。</div><div class="line">（2）不能用于内置的基本数据类型的强制转换。</div><div class="line">（3）dynamic_cast转换如果成功的话返回的是指向类的指针或引用，转换失败的话则会返回NULL。</div><div class="line">（4）使用dynamic_cast进行转换的，基类中一定要有虚函数，否则编译不通过。</div><div class="line">（5）在类的转换时，在类层次间进行上行转换时，dynamic_cast和static_cast的效果是一样的。在进行下行转换时，dynamic_cast具有类型检查的功能，比static_cast更安全。向上转换即为指向子类对象的转化为指向父类对象。向下转换，即将父类指针转化子类指针。向下转换的成功与否还与将要转换的类型有关，即要转换的指针指向的对象的实际类型与转换以后的对象类型一定要相同，否则转换失败。</div></pre></td></tr></table></figure>
+<h3 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有着和C风格的强制转换同样的能力。它可以转化任何内置的数据类型为其他任何的数据类型，也可以转化任何指针类型为其他的类型。它甚至可以转化内置的数据类型为指针，无须考虑类型安全或者常量的情形。不到万不得已绝对不用。</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;c++的四种强制类型转换，所以c++不是类型安全的。分别为：static_cast , dynamic_cast , const_cast 
+    
+    </summary>
+    
+      <category term="c++" scheme="http://blog.lxmoses.com/categories/c/"/>
+    
+    
+      <category term="类型转换" scheme="http://blog.lxmoses.com/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++临时对象</title>
+    <link href="http://blog.lxmoses.com/2016/12/29/c++%E4%B8%B4%E6%97%B6%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://blog.lxmoses.com/2016/12/29/c++临时对象/</id>
+    <published>2016-12-28T22:20:51.000Z</published>
+    <updated>2016-12-28T22:31:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>考虑以下代码:<br><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="built_in">string</span> <span class="title">foo</span><span class="params">()</span></span>&#123; <span class="keyword">return</span> <span class="built_in">string</span>(<span class="string">"temp"</span>);&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bar</span><span class="params">(<span class="built_in">string</span> &amp;s)</span></span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">/*bar(foo());*/</span></div><div class="line">	bar(<span class="string">"temp"</span>);</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"success"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上面的代码会引发错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conference.cpp:15:2: error: no matching function for call to &apos;bar&apos; bar(&quot;temp&quot;);</div></pre></td></tr></table></figure><br>原因在于foo()和“temp”都会产生一个临时对象，而在c++中，这些临时对象都是const类型的。因此上面的程序就是试图将一个const类型的对象转换为非const类型，这是非法的。<br>因此，在确定函数内部不会改变参数时，尽量将引用定义为常引用。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;考虑以下代码:&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;figcaption&gt;&lt;span&gt;++&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/di
+    
+    </summary>
+    
+      <category term="c++" scheme="http://blog.lxmoses.com/categories/c/"/>
+    
+    
+      <category term="临时对象" scheme="http://blog.lxmoses.com/tags/%E4%B8%B4%E6%97%B6%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言字节对齐</title>
@@ -239,9 +289,9 @@
     
       <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
     
-      <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
-    
       <category term="文件" scheme="http://blog.lxmoses.com/tags/%E6%96%87%E4%BB%B6/"/>
+    
+      <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
     
   </entry>
   
