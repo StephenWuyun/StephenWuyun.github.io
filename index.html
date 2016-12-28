@@ -251,6 +251,146 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/28/c语言字节对齐/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="moses">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/me.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="悟云">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悟云" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/28/c语言字节对齐/" itemprop="url">
+                  C语言字节对齐
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-28T10:37:57+08:00">
+                2016-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是字节对齐"><a href="#什么是字节对齐" class="headerlink" title="什么是字节对齐"></a>什么是字节对齐</h2><p>现代计算机中，内存空间按照字节划分，理论上可以从任何起始地址访问任意类型的变量。但实际中在访问特定类型变量时经常在特定的内存地址访问，这就需要各种类型数据按照一定的规则在空间上排列，而不是顺序一个接一个地存放，这就是对齐。<br>字节对齐的问题主要就是针对结构体。</p>
+<h2 id="对其准则"><a href="#对其准则" class="headerlink" title="对其准则"></a>对其准则</h2><h3 id="四个重要的基本概念："><a href="#四个重要的基本概念：" class="headerlink" title="四个重要的基本概念："></a>四个重要的基本概念：</h3><p>1) 数据类型自身的对齐值：char型数据自身对齐值为1字节，short型数据为2字节，int/float型为4字节，double型为8字节。<br>2) 结构体或类的自身对齐值：其成员中自身对齐值最大的那个值。<br>3) 指定对齐值：#pragma pack (value)时的指定对齐值value。<br>4) 数据成员、结构体和类的有效对齐值：自身对齐值和指定对齐值中较小者，即有效对齐值=min{自身对齐值，当前指定的pack值}。<br>基于上面这些值，就可以方便地讨论具体数据结构的成员和其自身的对齐方式。<br>其中，有效对齐值N是最终用来决定数据存放地址方式的值。有效对齐N表示“对齐在N上”，即该数据的“存放起始地址%N=0”。而数据结构中的数据变量都是按定义的先后顺序存放。第一个数据变量的起始地址就是数据结构的起始地址。结构体的成员变量要对齐存放，结构体本身也要根据自身的有效对齐值圆整(即结构体成员变量占用总长度为结构体有效对齐值的整数倍)。</p>
+<h3 id="三个准则："><a href="#三个准则：" class="headerlink" title="三个准则："></a>三个准则：</h3><p>1) 结构体变量的首地址能够被其最宽基本类型成员的大小所整除；<br>2) 结构体每个成员相对结构体首地址的偏移量(offset)都是成员大小的整数倍，如有需要编译器会在成员之间加上填充字节(internal adding)；<br>3) 结构体的总大小为结构体最宽基本类型成员大小的整数倍，如有需要编译器会在最末一个成员之后加上填充字节{trailing padding}。<br>对于以上规则的说明如下：<br>第一条：编译器在给结构体开辟空间时，首先找到结构体中最宽的基本数据类型，然后寻找内存地址能被该基本数据类型所整除的位置，作为结构体的首地址(我们自己计算结构体变量大小时，假想首地址为0即可)。将这个最宽的基本数据类型的大小作为上面介绍的对齐模数。<br>第二条：为结构体的一个成员开辟空间之前，编译器首先检查预开辟空间的首地址相对于结构体首地址的偏移是否是本成员大小的整数倍，若是，则存放本成员，反之，则在本成员和上一个成员之间填充一定的字节，以达到整数倍的要求，也就是将预开辟空间的首地址后移几个字节。<br>第三条：结构体总大小是包括填充字节，最后一个成员满足上面两条以外，还必须满足第三条，否则就必须在最后填充几个字节以达到本条要求。</p>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* OFFSET宏定义可取得指定结构体某成员在结构体内部的偏移 */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> OFFSET(st, field)     (size_t)&amp;(((st*)0)-&gt;field)</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</div><div class="line">	<span class="keyword">char</span>  a;</div><div class="line">	<span class="keyword">short</span> b;</div><div class="line">	<span class="keyword">char</span>  c;</div><div class="line">	<span class="keyword">int</span>   d;</div><div class="line">	<span class="keyword">char</span>  e[<span class="number">3</span>];</div><div class="line">&#125;T_Test;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;  </div><div class="line">	<span class="built_in">printf</span>(<span class="string">"Size = %d\n  a-%d, b-%d, c-%d, d-%d\n  e[0]-%d, e[1]-%d, e[2]-%d\n"</span>,</div><div class="line">		<span class="keyword">sizeof</span>(T_Test), OFFSET(T_Test, a), OFFSET(T_Test, b),</div><div class="line">		OFFSET(T_Test, c), OFFSET(T_Test, d), OFFSET(T_Test, e[<span class="number">0</span>]),</div><div class="line">		OFFSET(T_Test, e[<span class="number">1</span>]),OFFSET(T_Test, e[<span class="number">2</span>]));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>执行后输出如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Size = 16</div><div class="line">a-0, b-2, c-4, d-8</div><div class="line">e[0]-12, e[1]-13, e[2]-14</div></pre></td></tr></table></figure><br>下面来具体分析：<br>首先char a占用1个字节，没问题。<br>short b本身占用2个字节，根据上面准则2，需要在b和a之间填充1个字节。<br>char c占用1个字节，没问题。<br>int d本身占用4个字节，根据准则2，需要在d和c之间填充3个字节。<br>char e[3]；本身占用3个字节，根据原则3，需要在其后补充1个字节。<br>因此，sizeof(T_Test) = 1 + 1 + 2 + 1 + 3 + 4 + 3 + 1 = 16字节。</p>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>1)将自对齐字节大的变量放在前面，可以使结构体变量占用空间尽可能小.<br>2)使用伪指令#pragma pack(n)：C编译器将按照n个字节对齐；使用伪指令#pragma pack()： 取消自定义字节对齐方式。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/21/from-now-on/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1466,144 +1606,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/Unix内核中的文件数据结构/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="moses">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/me.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="悟云">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="悟云" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/14/Unix内核中的文件数据结构/" itemprop="url">
-                  Unix内核中的文件数据结构
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T11:06:54+08:00">
-                2016-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/重温apue/" itemprop="url" rel="index">
-                    <span itemprop="name">重温apue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>打开文件的内核数据结构<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>两个独立进程各自打开同一个文件<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>内核使用3种数据结构表示打开文件，它们的关系决定了在文件共享方面一个进程对另一个进程的可能产生的影响。</p>
-<h2 id="进程表项"><a href="#进程表项" class="headerlink" title="进程表项"></a>进程表项</h2><p>每个进程在进程表中都有一个记录项，记录项中包含一张打开的文件描述表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符关联的是：<br>a.文件描述符标志<br>b.指向一个文件表项的指针</p>
-<h2 id="文件表项"><a href="#文件表项" class="headerlink" title="文件表项"></a>文件表项</h2><p>内核为所有打开文件维持一张文件表。每个文件表项包含：<br>a.文件状态标志(读、写、添写、同步和非阻塞等)<br>b.当前文件偏移量<br>c.指向该文件v节点表项的指针</p>
-<h2 id="v节点项"><a href="#v节点项" class="headerlink" title="v节点项"></a>v节点项</h2><p>每个打开文件都有一个v节点结构。v节点包含了文件类型和对此文件进行各种操作函数的指针。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1649,7 +1651,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1657,7 +1659,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1666,7 +1668,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1730,6 +1732,7 @@
           </div>
         
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.daoapp.io/iframe?song=32192436&qssl=1&qlrc=0&qnarrow=0&autoplay=1"></iframe>
+
 
         
 
