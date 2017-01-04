@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Unix,OS,文件," />
+  <meta name="keywords" content="网络编程," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条">
+<meta name="description" content="在发送数据时，为了计算数IP据报的校验和。应该按如下步骤：（1）把IP数据报的首部都置为0，包括校验和字段。（2）把首部看成以16位为单位的数字组成，依次进行二进制反码求和。（3）把得到的结果存入校验和字段中。在接收数据时，计算数据报的校验和相对简单，按如下步骤：（1）把首部看成以16位为单位的数字组成，依次进行二进制反码求和，包括校验和字段。（2）检查计算出的校验和的结果是否等于零。（3）如果等">
 <meta property="og:type" content="article">
-<meta property="og:title" content="完美删除临时文件">
-<meta property="og:url" content="http://blog.lxmoses.com/2016/12/14/完美删除临时文件/index.html">
+<meta property="og:title" content="Ip首部检验和">
+<meta property="og:url" content="http://blog.lxmoses.com/2017/01/04/ip首部检验和/index.html">
 <meta property="og:site_name" content="悟云">
-<meta property="og:description" content="笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条">
-<meta property="og:updated_time" content="2016-12-15T01:00:12.000Z">
+<meta property="og:description" content="在发送数据时，为了计算数IP据报的校验和。应该按如下步骤：（1）把IP数据报的首部都置为0，包括校验和字段。（2）把首部看成以16位为单位的数字组成，依次进行二进制反码求和。（3）把得到的结果存入校验和字段中。在接收数据时，计算数据报的校验和相对简单，按如下步骤：（1）把首部看成以16位为单位的数字组成，依次进行二进制反码求和，包括校验和字段。（2）检查计算出的校验和的结果是否等于零。（3）如果等">
+<meta property="og:updated_time" content="2017-01-04T14:15:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="完美删除临时文件">
-<meta name="twitter:description" content="笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条">
+<meta name="twitter:title" content="Ip首部检验和">
+<meta name="twitter:description" content="在发送数据时，为了计算数IP据报的校验和。应该按如下步骤：（1）把IP数据报的首部都置为0，包括校验和字段。（2）把首部看成以16位为单位的数字组成，依次进行二进制反码求和。（3）把得到的结果存入校验和字段中。在接收数据时，计算数据报的校验和相对简单，按如下步骤：（1）把首部看成以16位为单位的数字组成，依次进行二进制反码求和，包括校验和字段。（2）检查计算出的校验和的结果是否等于零。（3）如果等">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.lxmoses.com/2016/12/14/完美删除临时文件/"/>
+  <link rel="canonical" href="http://blog.lxmoses.com/2017/01/04/ip首部检验和/"/>
 
 
 
 
 
-  <title> 完美删除临时文件 | 悟云 </title>
+  <title> Ip首部检验和 | 悟云 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/完美删除临时文件/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/04/ip首部检验和/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -274,7 +274,7 @@
             
             
               
-                完美删除临时文件
+                Ip首部检验和
               
             
           </h1>
@@ -287,8 +287,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T14:38:41+08:00">
-                2016-12-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-04T21:40:48+08:00">
+                2017-01-04
               </time>
             
 
@@ -306,8 +306,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/重温apue/" itemprop="url" rel="index">
-                    <span itemprop="name">重温apue</span>
+                  <a href="/categories/TCP-IP协议详解/" itemprop="url" rel="index">
+                    <span itemprop="name">TCP/IP协议详解</span>
                   </a>
                 </span>
 
@@ -341,7 +341,7 @@
       
 
       
-        <p>笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。<br>Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条件也会阻止删除文件的内容——只要有进程打开了该文件，其内容也不会删除。<br>关闭一个文件时，内核首先检查打开该文件的进程个数；如果这个计数达到0，内核再去检查其链接计数；如果计数也是0，那么就删除该文件的内容。<br>这意味着我们可以在创建一个临时文件的时候就调用unlink函数，程序结束之后(无论是正常还是异常结束)临时文件都会被删除。</p>
+        <p>在发送数据时，为了计算数IP据报的校验和。应该按如下步骤：<br>（1）把IP数据报的首部都置为0，包括校验和字段。<br>（2）把首部看成以16位为单位的数字组成，依次进行二进制反码求和。<br>（3）把得到的结果存入校验和字段中。<br>在接收数据时，计算数据报的校验和相对简单，按如下步骤：<br>（1）把首部看成以16位为单位的数字组成，依次进行二进制反码求和，包括校验和字段。<br>（2）检查计算出的校验和的结果是否等于零。<br>（3）如果等于零，说明被整除，校验是和正确。否则，校验和就是错误的，协议栈要抛弃这个数据包。<br>下面是校验代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="title">checksum</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">short</span> *buf,<span class="keyword">int</span> nword)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> sum;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(sum=<span class="number">0</span>;nword&gt;<span class="number">0</span>;nword--)&#123;</div><div class="line">		sum += *buf++;</div><div class="line">		sum = (sum&gt;&gt;<span class="number">16</span>) + (sum&amp;<span class="number">0xffff</span>);<span class="comment">//相加后最高位如果有进位，加到低位。</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> ~sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> iph[]=&#123;<span class="number">0x4500</span>,<span class="number">0x00ad</span>,<span class="number">0x7755</span>,<span class="number">0x4000</span>,<span class="number">0x8006</span>,</div><div class="line">		<span class="number">0x0000</span>,<span class="number">0x0a97</span>,<span class="number">0x7819</span>,<span class="number">0x0a97</span>,<span class="number">0x781d</span>&#125;;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> cksum;</div><div class="line"></div><div class="line">	cksum=checksum(iph,<span class="number">20</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%X\n"</span>,cksum);</div><div class="line">	iph[<span class="number">5</span>]=cksum;</div><div class="line">	cksum=checksum(iph,<span class="number">20</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%X\n"</span>,cksum);</div><div class="line">	<span class="keyword">if</span>(cksum)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Checksum is incorrect!\n"</span>);</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Checksum is correct!\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上面的算法应该包含一些数理规律，对此笔者懒得追究了。。。</p>
 
       
     </div>
@@ -365,11 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Unix/" rel="tag"># Unix</a>
-          
-            <a href="/tags/OS/" rel="tag"># OS</a>
-          
-            <a href="/tags/文件/" rel="tag"># 文件</a>
+            <a href="/tags/网络编程/" rel="tag"># 网络编程</a>
           
         </div>
       
@@ -378,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/14/深入了解原子操作/" rel="next" title="深入了解原子操作">
-                <i class="fa fa-chevron-left"></i> 深入了解原子操作
+              <a href="/2017/01/04/计算机中数的存储/" rel="next" title="计算机数的表示和存储">
+                <i class="fa fa-chevron-left"></i> 计算机数的表示和存储
               </a>
             
           </div>
@@ -387,10 +383,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/15/Unix文件的时间/" rel="prev" title="Unix文件的时间">
-                Unix文件的时间 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
