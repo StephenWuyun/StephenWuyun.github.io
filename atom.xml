@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-01-04T14:15:50.000Z</updated>
+  <updated>2017-01-04T14:49:42.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ip首部检验和</title>
+    <title>IP:网际协议</title>
+    <link href="http://blog.lxmoses.com/2017/01/04/IP-%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://blog.lxmoses.com/2017/01/04/IP-网际协议/</id>
+    <published>2017-01-04T14:26:36.000Z</published>
+    <updated>2017-01-04T14:49:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP、及IGMP数据都以IP数据报格式传输。<br>IP提供不可靠、无连接的数据报传送服务。<br>不可靠的意思是它不能保证IP数据报能成功到达目的地。任何要求的可靠性必须由上层来提供（如TCP）。<br>无连接这个术语的意思是IP并不维护任何关于后续数据报的状态信息。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A之前先到达。</p>
+<h2 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h2><p><img src="/images/IP数据报格式及首部中的各字段.jpg" alt=""><br>IP数据包的格式如上图所示, 普通的IP首部长为20个字节，除非含有选项字段。<br>分析上图的首部，最高位在左边，记为0bit，最低位在右边，记为31bit。这种传输次序称作big endian字节序，由于TCP、IP首部中的所有二进制整数在网络中传输时都要求以这种次序，因此又称为网络字节序。以其他形式存储二进制整数的机器，例如little endian格式，则必须在传输数据之前把首部转换成网络字节序。<br>目前最常用的协议版本号是4，因此IP有时也称作IPV4.<br>首部长度指的是首部占32bit字的数目，包括任何选项。<br>服务类型（TOS)字段包括一个3bit的优先权字段（现在已被忽略），4bit的TOS字段和1bit未用但必须置为0.4bit的TOS分别代表：最小时延、最大吞吐量、最高可靠性和最小费用。<br>to be continued..</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP、及IGMP数据都以IP数据报格式传输。&lt;br&gt;IP提供不可靠、无连
+    
+    </summary>
+    
+      <category term="TCP/IP协议详解" scheme="http://blog.lxmoses.com/categories/TCP-IP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/"/>
+    
+    
+      <category term="网络编程" scheme="http://blog.lxmoses.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IP首部检验和</title>
     <link href="http://blog.lxmoses.com/2017/01/04/ip%E9%A6%96%E9%83%A8%E6%A3%80%E9%AA%8C%E5%92%8C/"/>
     <id>http://blog.lxmoses.com/2017/01/04/ip首部检验和/</id>
     <published>2017-01-04T13:40:48.000Z</published>
-    <updated>2017-01-04T14:15:50.000Z</updated>
+    <updated>2017-01-04T14:28:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>在发送数据时，为了计算数IP据报的校验和。应该按如下步骤：<br>（1）把IP数据报的首部都置为0，包括校验和字段。<br>（2）把首部看成以16位为单位的数字组成，依次进行二进制反码求和。<br>（3）把得到的结果存入校验和字段中。<br>在接收数据时，计算数据报的校验和相对简单，按如下步骤：<br>（1）把首部看成以16位为单位的数字组成，依次进行二进制反码求和，包括校验和字段。<br>（2）检查计算出的校验和的结果是否等于零。<br>（3）如果等于零，说明被整除，校验是和正确。否则，校验和就是错误的，协议栈要抛弃这个数据包。<br>下面是校验代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="title">checksum</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">short</span> *buf,<span class="keyword">int</span> nword)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> sum;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(sum=<span class="number">0</span>;nword&gt;<span class="number">0</span>;nword--)&#123;</div><div class="line">		sum += *buf++;</div><div class="line">		sum = (sum&gt;&gt;<span class="number">16</span>) + (sum&amp;<span class="number">0xffff</span>);<span class="comment">//相加后最高位如果有进位，加到低位。</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> ~sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> iph[]=&#123;<span class="number">0x4500</span>,<span class="number">0x00ad</span>,<span class="number">0x7755</span>,<span class="number">0x4000</span>,<span class="number">0x8006</span>,</div><div class="line">		<span class="number">0x0000</span>,<span class="number">0x0a97</span>,<span class="number">0x7819</span>,<span class="number">0x0a97</span>,<span class="number">0x781d</span>&#125;;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> cksum;</div><div class="line"></div><div class="line">	cksum=checksum(iph,<span class="number">20</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%X\n"</span>,cksum);</div><div class="line">	iph[<span class="number">5</span>]=cksum;</div><div class="line">	cksum=checksum(iph,<span class="number">20</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%X\n"</span>,cksum);</div><div class="line">	<span class="keyword">if</span>(cksum)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Checksum is incorrect!\n"</span>);</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Checksum is correct!\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上面的算法应该包含一些数理规律，对此笔者懒得追究了。。。</p>
 ]]></content>
@@ -487,31 +511,6 @@
       <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
     
       <category term="IO" scheme="http://blog.lxmoses.com/tags/IO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unix体系结构</title>
-    <link href="http://blog.lxmoses.com/2016/12/14/Unix%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
-    <id>http://blog.lxmoses.com/2016/12/14/Unix体系结构/</id>
-    <published>2016-12-13T23:55:24.000Z</published>
-    <updated>2016-12-14T01:00:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/Unix体系结构.jpg" alt=""><br>从严格意义上来说，可将操作系统定义为一种软件，它控制计算机硬件资源，提供程序运行环境。我们通常将这种软件称为内核(kernel),因为它相对较小，而且位于环境的核心。<br>内核的接口被称为系统调用(system call)。公用函数库构建在系统调用接口之上，应用程序既可使用公用函数库，也可使用系统调用。shell是一个特殊的应用程序，为运行其他程序提供了一个接口。<br>从广义上来说，操作系统包括了内核和一些其他软件，这些软件使得计算机能够发挥作用，并使计算机具有自己的特性。这里所说的其他软件包括实用程序、应用程序、shell以及公用函数库等。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/Unix体系结构.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;从严格意义上来说，可将操作系统定义为一种软件，它控制计算机硬件资源，提供程序运行环境。我们通常将这种软件称为内核(kernel),因为它相对较小，而且位于环境的核心。&lt;br&gt;内核的接口被称
-    
-    </summary>
-    
-      <category term="重温apue" scheme="http://blog.lxmoses.com/categories/%E9%87%8D%E6%B8%A9apue/"/>
-    
-    
-      <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
-    
-      <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
     
   </entry>
   
