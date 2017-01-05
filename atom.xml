@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-01-04T14:49:42.000Z</updated>
+  <updated>2017-01-05T04:37:52.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -16,14 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>在终端里查看外网Ip的方法</title>
+    <link href="http://blog.lxmoses.com/2017/01/05/%E5%9C%A8%E7%BB%88%E7%AB%AF%E9%87%8C%E6%9F%A5%E7%9C%8B%E5%A4%96%E7%BD%91ip%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://blog.lxmoses.com/2017/01/05/在终端里查看外网ip的方法/</id>
+    <published>2017-01-05T04:36:29.000Z</published>
+    <updated>2017-01-05T04:37:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>转自<a href="https://segmentfault.com/a/1190000000302955" target="_blank" rel="external">这里</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转自&lt;a href=&quot;https://segmentfault.com/a/1190000000302955&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="http://blog.lxmoses.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="IP" scheme="http://blog.lxmoses.com/tags/IP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>IP:网际协议</title>
     <link href="http://blog.lxmoses.com/2017/01/04/IP-%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE/"/>
     <id>http://blog.lxmoses.com/2017/01/04/IP-网际协议/</id>
     <published>2017-01-04T14:26:36.000Z</published>
-    <updated>2017-01-04T14:49:42.000Z</updated>
+    <updated>2017-01-05T05:42:22.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP、及IGMP数据都以IP数据报格式传输。<br>IP提供不可靠、无连接的数据报传送服务。<br>不可靠的意思是它不能保证IP数据报能成功到达目的地。任何要求的可靠性必须由上层来提供（如TCP）。<br>无连接这个术语的意思是IP并不维护任何关于后续数据报的状态信息。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A之前先到达。</p>
-<h2 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h2><p><img src="/images/IP数据报格式及首部中的各字段.jpg" alt=""><br>IP数据包的格式如上图所示, 普通的IP首部长为20个字节，除非含有选项字段。<br>分析上图的首部，最高位在左边，记为0bit，最低位在右边，记为31bit。这种传输次序称作big endian字节序，由于TCP、IP首部中的所有二进制整数在网络中传输时都要求以这种次序，因此又称为网络字节序。以其他形式存储二进制整数的机器，例如little endian格式，则必须在传输数据之前把首部转换成网络字节序。<br>目前最常用的协议版本号是4，因此IP有时也称作IPV4.<br>首部长度指的是首部占32bit字的数目，包括任何选项。<br>服务类型（TOS)字段包括一个3bit的优先权字段（现在已被忽略），4bit的TOS字段和1bit未用但必须置为0.4bit的TOS分别代表：最小时延、最大吞吐量、最高可靠性和最小费用。<br>to be continued..</p>
+<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>互联网上的每个接口必须有一个唯一的Internet地址（IP地址）。IP地址具有一定的结构，五类不同的IP地址格式如下图所示。<br><img src="/images/五种不同格式的互联网地址.png" alt=""><br>有三类IP地址：单播地址（目的端为单个主机）、广播地址（目的端为给定网络上的所有主机）以及多播地址（目的端为同一组内的所有主机）</p>
+<h2 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h2><p><img src="/images/IP数据报格式及首部中的各字段.jpg" alt=""><br>IP数据包的格式如上图所示, 普通的IP首部长为20个字节，除非含有选项字段。分析上图的首部，最高位在左边，记为0bit，最低位在右边，记为31bit。这种传输次序称作big endian字节序，由于TCP、IP首部中的所有二进制整数在网络中传输时都要求以这种次序，因此又称为网络字节序。以其他形式存储二进制整数的机器，例如little endian格式，则必须在传输数据之前把首部转换成网络字节序。<br>目前最常用的协议版本号是4，因此IP有时也称作IPV4.<br>首部长度指的是首部占32bit字的数目，包括任何选项。<br>服务类型（TOS)字段包括一个3bit的优先权字段（现在已被忽略），4bit的TOS字段和1bit未用但必须置为0.4bit的TOS分别代表：最小时延、最大吞吐量、最高可靠性和最小费用。<br>总长度字段是指整个IP数据报的长度，以字节为单位。由于该字段长16比特，所以IP数据报最长可达65535字节。<br>标识字段唯一地标识主机发送的每一份数据报。<br>TTL（time to live）生存时间字段设置了数据报可以经过的最多路由数器数。它指定了数据报的生存时间。TTL的初始值由源主机设置（通常为32或64），一旦经过一个处理它的路由器，它的值就减1。当该字段的值为0时，数据包就被丢弃，并发送ICMP报文通知源主机。<br>协议字段是一个长度为8bit的数值。1表示ICMP协议，2表示IGMP协议，6表示TCP协议，17表示UDP协议。<br>首部检验和字段是根据IP首部计算的校验码。具体可参见<a href="https://blog.lxmoses.com/2017/01/04/ip首部检验和/">这里</a><br>每一份IP数据报都包含源IP地址和目的IP地址。<br>最后一个是任选项，是数据报中的一个可变长的可选信息。</p>
+<h2 id="IP路由选择"><a href="#IP路由选择" class="headerlink" title="IP路由选择"></a>IP路由选择</h2><p>此部分比较复杂，在以后的博文中会进行详细研究。</p>
+<h2 id="子网寻址"><a href="#子网寻址" class="headerlink" title="子网寻址"></a>子网寻址</h2><p>现在所有的主机都要求支持子网编址。不是把IP地址看成单纯由单纯的一个网络号和一个主机号组成，而是把主机号再分成一个子网号和一个主机号。<br>这么做的原因是因为A类和B类地址为主机号分配了太多的空间，可分别容纳的主机数量为2的24次方-2和2的2的16次方-2（由于全0或全1的主机号是无效的，因此我们把总数-2）.事实上，在一个网络中人们并不安排这么多的主机。<br>从InterNIC获得某类IP网络号后，就由当地的系统管理员来进行分配，有他决定来决定是否建立子网，以及分配多少比特给子网号和主机号。<br>子网对外部路由器来说隐藏了内部网络阻止（一个校园或公司内部）的细节。<br>与30个C类地址，用一个包含30个子网的B类地址的好处是，它可以缩小Internet路由表的规模。</p>
+<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>子网掩码是一个32bit的值，其中值为1的比特留个网络号和子网号，为0的比特留给主机号。<br>尽管IP地址一般以点分十进制表示，但是子网掩码却经常用十六进制来表示。<br>给定子网掩码后，主机就可以确定IP数据报的目的是：<br>（1）本子网上的主机<br>（2）本网络中的其他主机<br>（3）其他网络上的主机</p>
 ]]></content>
     
     <summary type="html">
@@ -485,32 +513,6 @@
       <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
     
       <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文件I/O和标准I/O</title>
-    <link href="http://blog.lxmoses.com/2016/12/14/%E6%96%87%E4%BB%B6I-O%E5%92%8C%E6%A0%87%E5%87%86I-O/"/>
-    <id>http://blog.lxmoses.com/2016/12/14/文件I-O和标准I-O/</id>
-    <published>2016-12-14T00:48:42.000Z</published>
-    <updated>2016-12-14T00:59:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>标准I/O是ANSI C建立的一个标准I/O模型，是一个标准函数包和stdio.h头文件中的定义，具有一定的可移植性。标准IO库处理很多细节。例如缓存分配，以优化长度执行IO等。标准的IO提供了三种类型的缓存。<br>（1）全缓存：当填满标准IO缓存后才进行实际的IO操作。<br>（2）行缓存：当输入或输出中遇到新行符时，标准IO库执行IO操作。<br>（3）不带缓存：stderr就是了。</p>
-<p>文件I/O：文件I/O称之为不带缓存的IO（unbuffered I/O)。不带缓存指的是每个read，write都调用内核中的一个系统调用。也就是一般所说的低级I/O——操作系统提供的基本IO服务，与os绑定，特定于linix或unix平台。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;标准I/O是ANSI C建立的一个标准I/O模型，是一个标准函数包和stdio.h头文件中的定义，具有一定的可移植性。标准IO库处理很多细节。例如缓存分配，以优化长度执行IO等。标准的IO提供了三种类型的缓存。&lt;br&gt;（1）全缓存：当填满标准IO缓存后才进行实际的IO操作。
-    
-    </summary>
-    
-      <category term="重温apue" scheme="http://blog.lxmoses.com/categories/%E9%87%8D%E6%B8%A9apue/"/>
-    
-    
-      <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
-    
-      <category term="IO" scheme="http://blog.lxmoses.com/tags/IO/"/>
     
   </entry>
   
