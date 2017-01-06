@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/Unix时间值/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/03/面试/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -276,8 +276,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/14/Unix时间值/" itemprop="url">
-                  Unix时间值
+                <a class="post-title-link" href="/2017/01/03/面试/" itemprop="url">
+                  最近的几次面试
                 </a>
               
             
@@ -291,414 +291,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T09:57:19+08:00">
-                2016-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/重温apue/" itemprop="url" rel="index">
-                    <span itemprop="name">重温apue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>历史上，Unix系统使用过不同的时间值。<br>(1)日历时间。该值是自协调世界时1970年1月1日00:00:00这个特定时间以来所经过的秒数累计值。系统基本数据类型time_t用于保存这种时间值。<br>(2)进程时间。Unix系统为一个进程维护了3个进程时间值。<br>时钟时间：又称为墙上时钟时间，它是进程运行的时间总量。<br>用户cpu时间：执行用户指令所用的时间量。<br>系统cpu时间：为该进程执行内核程序所经历的时间。<br>要取得任一进程的时钟时间、用户时间和系统时间可通过执行命令time（1），其参数是要度量其执行时间的命令。例如：time ls<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">time ls</div><div class="line">Desktop   Documents Downloads Library   Movies    Music     Pictures  Public    oh-my-zsh solarized workspace</div><div class="line">ls -G  0.00s user 0.00s system 82% cpu 0.008 total</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/文件I-O和标准I-O/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="moses">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/me.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="悟云">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="悟云" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/14/文件I-O和标准I-O/" itemprop="url">
-                  文件I/O和标准I/O
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T08:48:42+08:00">
-                2016-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/重温apue/" itemprop="url" rel="index">
-                    <span itemprop="name">重温apue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>标准I/O是ANSI C建立的一个标准I/O模型，是一个标准函数包和stdio.h头文件中的定义，具有一定的可移植性。标准IO库处理很多细节。例如缓存分配，以优化长度执行IO等。标准的IO提供了三种类型的缓存。<br>（1）全缓存：当填满标准IO缓存后才进行实际的IO操作。<br>（2）行缓存：当输入或输出中遇到新行符时，标准IO库执行IO操作。<br>（3）不带缓存：stderr就是了。</p>
-<p>文件I/O：文件I/O称之为不带缓存的IO（unbuffered I/O)。不带缓存指的是每个read，write都调用内核中的一个系统调用。也就是一般所说的低级I/O——操作系统提供的基本IO服务，与os绑定，特定于linix或unix平台。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/Unix体系结构/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="moses">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/me.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="悟云">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="悟云" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/14/Unix体系结构/" itemprop="url">
-                  Unix体系结构
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T07:55:24+08:00">
-                2016-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/重温apue/" itemprop="url" rel="index">
-                    <span itemprop="name">重温apue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/images/Unix体系结构.jpg" alt=""><br>从严格意义上来说，可将操作系统定义为一种软件，它控制计算机硬件资源，提供程序运行环境。我们通常将这种软件称为内核(kernel),因为它相对较小，而且位于环境的核心。<br>内核的接口被称为系统调用(system call)。公用函数库构建在系统调用接口之上，应用程序既可使用公用函数库，也可使用系统调用。shell是一个特殊的应用程序，为运行其他程序提供了一个接口。<br>从广义上来说，操作系统包括了内核和一些其他软件，这些软件使得计算机能够发挥作用，并使计算机具有自己的特性。这里所说的其他软件包括实用程序、应用程序、shell以及公用函数库等。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/13/再回学校/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="moses">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/me.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="悟云">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="悟云" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/13/再回学校/" itemprop="url">
-                  再回学校
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T22:29:07+08:00">
-                2016-12-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-03T22:13:02+08:00">
+                2017-01-03
               </time>
             
 
@@ -753,7 +347,7 @@
       
         
           
-            <p>这学期开学刚刚换了新工作之后，汤老师群里发来职位邀请。去了，不合适，走了。<br>今天办理完最后的离职手续，回想这份工作经历，除了工作内容不符合我的职业规划之外其他什么都好。在公司呆这么久，都是干一些打杂的内容，诸如写写脚本、购买服务器之类的。<br>辞职之后回到母校，刚开始觉得挺轻松的，终于不用早九晚九的上班了。然而，自从今年三月份出来实习之后，再也回不到那种无忧无虑打游戏的日子了。<br>仔细想想，还是好好提升下自己的技术。从明天开始，还是去图书馆打磨下自己的技术吧。<br>这条路早已没有回头路。</p>
+            <p>自从从老汤那里辞职回学校以后，放松了一段时间，然后又开始投简历。经历了几次面试。<br>由于快毕业了， 所以找工作的区域不再局限于成都，全国海投！<br>第一次笔试是北京一家叫做光合起源的公司hr通过qq给笔者发了一份面试题，挺简单的，都是一些基础知识。hr反馈说看笔者测试题做得不错，问我什么时候有空去北京去面试，笔者暂时走不开，就此搁置。<br>接下来是2016年12月一天之内的三次面试。<br>上午电话面试。上海一家游戏公司， 面试官主要问了一些算法的东西，无奈笔者对算法没有深入的探究，面试官简单地问了几句也觉得无趣，然后草草结束面试。<br>下午环球中心，启明星辰一面，首先让笔者做了一套面试题，内容大概是一些简单的编程知识以及linux常用命令。除了网络方面的东西都还应对的可以，第二天一面顺利通过。<br>然后匆匆赶去蜀都中心， 萤火虫游戏， 去这家公司的路途中感觉很熟悉，到了地方发现巧了， 大概半年前面过隔壁的游戏公司，当时拿到了offer但是hr说第一个月没工资，迫于生计，拒绝了。<br>言归正传， 到了公司以后还是做了一套面试题。 感觉这家公司面试题逼格比较高，笔者留下了一张照片。<br><img src="/images/萤火虫面试题.jpg" alt=""><br>智力题除了第四题，其他简单地想了下还是答上来了。 编程题比较偏算法，关于最短路径以及求点到直线的距离的算法不是很熟悉，没能写出来，只是简单地表述了下我的思路。<br>关于面试题第四题，笔者简单搜索了下，发现是自己高估了这道题的难度，主要是前面的都是类似脑筋急转弯之内的东西，突然来了个正常不习惯！！！下面是答案:<br>一个罐子：1个红球。另一个罐子：49个红球，50个篮球<br>笔试完了之后由于面试官开会，等了半个小时， 果然不出所料， 面试官问我acm， 无奈笔者acm只是水水地参与了一下，实在难登大雅之堂。面试官转问我tcp的细节，笔者比较偏向实用主义，对于网络编程，也是停留在读完unp卷一的水准， 面试官鄙视地说：“我很好奇你这两年干的啥啊”。 笔者无言以对。只是下定决心回来好好学习下常用的算法并且立马买了tcp/ip详解。<br>今天早上清晨吸着霾挤着地铁公交去启明星辰二面。 由于面试官开会， 等了一个小时。 面试官是成都分部技术方面的老大，这次面试对我触动挺大的。<br>笔者也经历了七八次面试吧，之前的面试官主要问的都是一些基础知识，但这次面试官主要问我项目经历。 笔者面试时精神属于高度集中的那种，而且潜意识里认为面试内容应该不会详细到业务这种程度，一时没领会到他要我详细描述项目这个意思，导致面试官有些不耐烦， 交流不是很顺畅。（最怕空气突然安静） 由于我没有及时细谈项目，面试官一度怀疑我根本是在编造项目经验！！！ 后来我重新详细地描述了下之前的项目经历， 然后面试官叫我重新发份简历到他的邮箱然后结合一面的面试官再决定是否给我三面的机会。<br>其实这些面试对我来说倒是不那么在意结果，毕竟类似这样的公司遍地都是。然而在这个过程中暴露了很多笔者自身的问题。<br>第一，笔者面试时心态不够平和，精神过度集中，导致表现出的思维不够灵活，表达能力偏弱。 以后的每一次面试都要以一副云淡风轻的态度淡然面对，虽然我是打工的，但人格层面并不比谁第一等，也没必要表现地那么卑微。<br>第二，现在的面试官经常会问一些常用的算法，这是笔者的短板，其实说来这些算法也不是多难，简单地准备一周应该能应对大部分面试官。 虽然在下认为其实工作中这些并没有什么卵用，但是这个社会就是这样，求职的人多了，面试官就会通过这些光环来刷人，笔者无力改变，只能接受。<br>第三，笔者为人处世的态度比较随意，与面试时高度紧张的态度相反，面试之前通常是毫无准备，简历也是比较随意， 以后需要多加注意。应该以一个成年人的态度来面对社会了。<br>谈不上优秀,也算不上渣。 人潮中，我是那么的普通。</p>
 
           
         
@@ -792,7 +386,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/08/无奈/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/29/c++的四种类型转换方式/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -817,8 +411,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/08/无奈/" itemprop="url">
-                  再多的理智也抹不去这淡淡的愁
+                <a class="post-title-link" href="/2016/12/29/c++的四种类型转换方式/" itemprop="url">
+                  C++的四种类型转换方式
                 </a>
               
             
@@ -832,8 +426,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-08T13:15:26+08:00">
-                2016-12-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-29T06:40:23+08:00">
+                2016-12-29
               </time>
             
 
@@ -851,8 +445,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
                   </a>
                 </span>
 
@@ -888,7 +482,11 @@
       
         
           
-            <p>。。。。。。。。。。。。。</p>
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>c++的四种强制类型转换，所以c++不是类型安全的。分别为：static_cast , dynamic_cast , const_cast , reinterpret_cast<br>使用C风格的强制转换可以把想要的任何东西转换成合乎心意的类型，那为什么还需要一个新的C++类型的强制转换呢？<br>新类型的强制转换可以提供更好的控制强制转换过程，允许控制各种不同种类的强制转换。C++中风格是static_cast<type>(content)。C++风格的强制转换其他的好处是，它们能更清晰的表明它们要干什么。程序员只要扫一眼这样的代码，就能立即知道一个强制转换的目的。</type></p>
+<h2 id="四种类型转换的区别"><a href="#四种类型转换的区别" class="headerlink" title="四种类型转换的区别"></a>四种类型转换的区别</h2><h3 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h3><p>实现C++中内置基本数据类型之间的相互转换<br><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> c=<span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">7.987</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h3><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> SA &#123;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">const</span> SA ra;</div><div class="line"><span class="comment">//ra.i = 10; //直接修改const类型，编译错误</span></div><div class="line">SA &amp;rb = <span class="keyword">const_cast</span>&lt;SA&amp;&gt;(ra);</div><div class="line">rb.i =<span class="number">10</span>;</div></pre></td></tr></table></figure>
+<h3 id="dynamic-cast"><a href="#dynamic-cast" class="headerlink" title="dynamic_cast"></a>dynamic_cast</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">（1）其他三种都是编译时完成的，dynamic_cast是运行时处理的，运行时要进行类型检查。</div><div class="line">（2）不能用于内置的基本数据类型的强制转换。</div><div class="line">（3）dynamic_cast转换如果成功的话返回的是指向类的指针或引用，转换失败的话则会返回NULL。</div><div class="line">（4）使用dynamic_cast进行转换的，基类中一定要有虚函数，否则编译不通过。</div><div class="line">（5）在类的转换时，在类层次间进行上行转换时，dynamic_cast和static_cast的效果是一样的。在进行下行转换时，dynamic_cast具有类型检查的功能，比static_cast更安全。向上转换即为指向子类对象的转化为指向父类对象。向下转换，即将父类指针转化子类指针。向下转换的成功与否还与将要转换的类型有关，即要转换的指针指向的对象的实际类型与转换以后的对象类型一定要相同，否则转换失败。</div></pre></td></tr></table></figure>
+<h3 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有着和C风格的强制转换同样的能力。它可以转化任何内置的数据类型为其他任何的数据类型，也可以转化任何指针类型为其他的类型。它甚至可以转化内置的数据类型为指针，无须考虑类型安全或者常量的情形。不到万不得已绝对不用。</div></pre></td></tr></table></figure>
 
           
         
@@ -927,7 +525,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/08/失眠录（1）/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/29/c++临时对象/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -952,8 +550,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/08/失眠录（1）/" itemprop="url">
-                  失眠录（1）
+                <a class="post-title-link" href="/2016/12/29/c++临时对象/" itemprop="url">
+                  C++临时对象
                 </a>
               
             
@@ -967,8 +565,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-08T01:34:32+08:00">
-                2016-12-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-29T06:20:51+08:00">
+                2016-12-29
               </time>
             
 
@@ -986,8 +584,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/失眠录/" itemprop="url" rel="index">
-                    <span itemprop="name">失眠录</span>
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
                   </a>
                 </span>
 
@@ -1023,142 +621,7 @@
       
         
           
-            <p>今天和一些朋友聊了一个有趣的话题–关于如何追女生，一位朋友提出很多攻略，另一位朋友则感叹老实人注定孤独。<br>从笔者的角度来说，更倾向于简单直接的方式，崇尚大道至简。<br>之所以会这样想笔者自我剖析有两个原因：笔者是个屌丝，不会那些套路，不想否定自己的价值；不屑或者不愿意用华丽的外表或者说套路装饰笔者认为最重要的东西。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/07/辞职/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="moses">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/me.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="悟云">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="悟云" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/07/辞职/" itemprop="url">
-                  是结局也是开始
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-07T19:37:16+08:00">
-                2016-12-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前在vps上面搭了一个博客，后面服务器到期了也没管。最近比较闲，重新搭建博客，这次懒得折腾了，直接挂在github上面算了，尽管有时候会被墙。<br>说来也巧，上次的博客最后一片博文是辞职的时候写的，这次亦然。<br>回顾第一次出来实习，那时跟打了鸡血似的，想到第二天就要开始上班彻夜难眠。如今几经波折，面试了十来家公司，待了四个公司。现实总是跟理想有出入，不过除了工作以外也遇到了一些有趣的·人，经历了一些有趣的事。<br>岂能尽如人意？ 继续走，继续看，是结局也是开始。</p>
+            <p>考虑以下代码:<br><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="built_in">string</span> <span class="title">foo</span><span class="params">()</span></span>&#123; <span class="keyword">return</span> <span class="built_in">string</span>(<span class="string">"temp"</span>);&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bar</span><span class="params">(<span class="built_in">string</span> &amp;s)</span></span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">/*bar(foo());*/</span></div><div class="line">	bar(<span class="string">"temp"</span>);</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"success"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上面的代码会引发错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conference.cpp:15:2: error: no matching function for call to &apos;bar&apos; bar(&quot;temp&quot;);</div></pre></td></tr></table></figure><br>原因在于foo()和“temp”都会产生一个临时对象，而在c++中，这些临时对象都是const类型的。因此上面的程序就是试图将一个const类型的对象转换为非const类型，这是非法的。<br>因此，在确定函数内部不会改变参数时，尽量将引用定义为常引用。</p>
 
           
         
@@ -1192,7 +655,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
