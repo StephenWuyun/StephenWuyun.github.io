@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-01-06T07:11:18.000Z</updated>
+  <updated>2017-01-07T11:14:30.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DNS（域名系统）</title>
+    <link href="http://blog.lxmoses.com/2017/01/07/DNS%EF%BC%88%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F%EF%BC%89/"/>
+    <id>http://blog.lxmoses.com/2017/01/07/DNS（域名系统）/</id>
+    <published>2017-01-07T02:40:04.000Z</published>
+    <updated>2017-01-07T11:14:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>DNS（域名系统）是一种用于TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。<br>从应用的角度上看，对DNS的访问是通过一个地址解析器（resolver）来完成的。在Unix主机中，该解析器主要是通过两个库函数gethostbyname（3）和gethostbyaddress（3）来访问的。</p>
+<h2 id="DNS基础"><a href="#DNS基础" class="headerlink" title="DNS基础"></a>DNS基础</h2><p>DNS的名字空间和Unix的文件系统相似，也具有层次结构。下图显示了这种层次结构。<br><img src="/images/DNS的层次组织.jpg" alt=""><br>每个节点（上图中的圆圈）有一个至多63个字符长的标识。这棵树的树根是没有任何标识的特殊节点。命名标识中一律不区分大小写。命名树上任何一个节点的域名就是将从该节点到最高节点的域名串连起来，中间使用一个点“.”分割这些域名。域名树中的每个节点必须有一个唯一的域名，但域名树中的不同节点可使用相同的标识。<br>顶级域名被分为三个部分：<br>（1）arpa是一个用作地址到名字转换的特殊域<br>（2）7个3字符长的普通域，有些书也将这些域称为组织域。<br>（3）所有2字符长的域均是基于ISO3166中定义的国家代码，这些域被称为国家域，或地理域。 常见的me域名是前南斯拉夫地区西南部的国家黑山共和国（Montenegro，旧译“门的内哥罗”）的国家域名。现在也推出了一些新的域名，比如cloud顶级域名，属于国际通用新顶级域名，与.com、.net一样。然而.cloud域名行业特性更强，适合云计算设备、跳伞、天气预报等类型的企业或个人均可注册使用。<br>DNS的一个重要特征是DNS中域名中的授权，没有哪个机构来管理域名树中的每个标识，相反只有一个机构，即网络信息中心NIC负责分配顶级域和委派其他指定区域的授权机构。<br>一个独立管理的DNS子树称为一个区域。一个常见的区域是一个二级域，如noao.edu.许多二级域将它们的区域划分为更小的区域。例如大学可能根据不同的系来划分区域，公司可能根据不同的部门来划分区域。<br>一旦一个区域的授权机构被委派后，有它负责向该区域提供多个名字服务器。当一个新系统假如到一个区域中时，该区域的DNS管理者为该新系统申请一个域名和一个IP地址，并将它们加到名字服务器的数据库中。一个名字服务器负责一个或多个区域。一个区域的管理者必须为该区域提供一个主名字服务器和至少一个辅助名字服务器。主、辅名字服务器必须是独立和冗余的，以便当某个名字服务器发生故障不会影响该区域的名字服务。当一个新主机加入一个区域时，区域管理者将适当的信息（最少包括名字和IP地址）加入到运行在主名字服务器上的一个磁盘文件中，然后通知主名字服务器重新调入它的配置文件。辅名字服务器（通常是每隔3个小时）向主名字服务器询问是否有新数据。如果有新数据，则通过区域传送方式获得新数据。<br>当一个名字服务器没有请求的信息时，它必须与其它的名字服务器联系，这正是DNS的分布特性。然而，并不是每个名字服务器都知道如何同其他名字服务器联系。相反，每个名字服务器必须知道如何同根的名字服务器联系。所有的主名字服务器必须知道如何同根的名字服务器联系。跟服务器则知道所有二级域中的每个授权名字服务器的名字和位置（即IP地址）。这意味着这样一个反复的过程：正在处理请求的名字服务器与跟服务器联系，跟服务器告诉它与另一个名字服务器联系。<br>为了减少Internet上DNS的通信量，所有的名字服务器均使用高速缓存。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;p&gt;DNS（域名系统）是一种用于TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。&lt;br&gt;从应用的
+    
+    </summary>
+    
+      <category term="TCP/IP详解" scheme="http://blog.lxmoses.com/categories/TCP-IP%E8%AF%A6%E8%A7%A3/"/>
+    
+    
+      <category term="DNS" scheme="http://blog.lxmoses.com/tags/DNS/"/>
+    
+  </entry>
   
   <entry>
     <title>UDP（用户数据报协议）</title>
@@ -76,7 +100,7 @@
     <link href="http://blog.lxmoses.com/2017/01/04/IP-%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE/"/>
     <id>http://blog.lxmoses.com/2017/01/04/IP-网际协议/</id>
     <published>2017-01-04T14:26:36.000Z</published>
-    <updated>2017-01-05T05:42:22.000Z</updated>
+    <updated>2017-01-06T11:45:12.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP、及IGMP数据都以IP数据报格式传输。<br>IP提供不可靠、无连接的数据报传送服务。<br>不可靠的意思是它不能保证IP数据报能成功到达目的地。任何要求的可靠性必须由上层来提供（如TCP）。<br>无连接这个术语的意思是IP并不维护任何关于后续数据报的状态信息。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A之前先到达。</p>
 <h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>互联网上的每个接口必须有一个唯一的Internet地址（IP地址）。IP地址具有一定的结构，五类不同的IP地址格式如下图所示。<br><img src="/images/五种不同格式的互联网地址.png" alt=""><br>有三类IP地址：单播地址（目的端为单个主机）、广播地址（目的端为给定网络上的所有主机）以及多播地址（目的端为同一组内的所有主机）</p>
@@ -494,32 +518,6 @@
       <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
     
       <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unix内核中的文件数据结构</title>
-    <link href="http://blog.lxmoses.com/2016/12/14/Unix%E5%86%85%E6%A0%B8%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>http://blog.lxmoses.com/2016/12/14/Unix内核中的文件数据结构/</id>
-    <published>2016-12-14T03:06:54.000Z</published>
-    <updated>2016-12-14T03:25:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>打开文件的内核数据结构<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>两个独立进程各自打开同一个文件<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>内核使用3种数据结构表示打开文件，它们的关系决定了在文件共享方面一个进程对另一个进程的可能产生的影响。</p>
-<h2 id="进程表项"><a href="#进程表项" class="headerlink" title="进程表项"></a>进程表项</h2><p>每个进程在进程表中都有一个记录项，记录项中包含一张打开的文件描述表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符关联的是：<br>a.文件描述符标志<br>b.指向一个文件表项的指针</p>
-<h2 id="文件表项"><a href="#文件表项" class="headerlink" title="文件表项"></a>文件表项</h2><p>内核为所有打开文件维持一张文件表。每个文件表项包含：<br>a.文件状态标志(读、写、添写、同步和非阻塞等)<br>b.当前文件偏移量<br>c.指向该文件v节点表项的指针</p>
-<h2 id="v节点项"><a href="#v节点项" class="headerlink" title="v节点项"></a>v节点项</h2><p>每个打开文件都有一个v节点结构。v节点包含了文件类型和对此文件进行各种操作函数的指针。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;打开文件的内核数据结构&lt;br&gt;&lt;img src=&quot;/images/打开文件的内核数据结构.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;两个独立进程各自打开同一个文件&lt;br&gt;&lt;img src=&quot;/images/打开文件的内核数据结构.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;内核使用3种数据结
-    
-    </summary>
-    
-      <category term="重温apue" scheme="http://blog.lxmoses.com/categories/%E9%87%8D%E6%B8%A9apue/"/>
-    
-    
-      <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
     
   </entry>
   
