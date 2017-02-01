@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-01-07T11:14:30.000Z</updated>
+  <updated>2017-02-01T01:57:26.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回家</title>
+    <link href="http://blog.lxmoses.com/2017/02/01/%E5%9B%9E%E5%AE%B6/"/>
+    <id>http://blog.lxmoses.com/2017/02/01/回家/</id>
+    <published>2017-02-01T01:40:03.000Z</published>
+    <updated>2017-02-01T01:57:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>距离上次回家已经一年了，放假之后意兴阑珊，买了车票就踏上了回家的路。<br>第一件事就是前往驾校继续学习科目三，每天早上六点半去驾校，冷！师傅是个好人，了解到我时间很紧的情况之后，将已经安排的三个名额让出一个给我，非常感谢！学车的时候师傅天天吼我，但是无所谓~ 我把所有能犯的错都犯了两遍最后完美通过考试。<br>考试之余就是玩游戏以及打麻将了，哈哈，带回来的书一次也没看！老家的小伙伴一直在催我回去打牌，科目三过了之后迫不及待回到老家。早上打，下午打，晚上打。今年玩的血战，技术不行，运气不行，带回家的两千五输完了，哈哈。<br>今年结婚的亲戚特别多，连着三四天都有亲戚结婚，忽然发现周围的小伙伴都结婚了，伯伯还说我这个是钱也输了，媳妇也没有，哈哈。<br>剩下来的日子，首先把科目四过了，拿了驾照就去学校吧。<br>2016,很精彩。2017，我会有怎样的经历？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;距离上次回家已经一年了，放假之后意兴阑珊，买了车票就踏上了回家的路。&lt;br&gt;第一件事就是前往驾校继续学习科目三，每天早上六点半去驾校，冷！师傅是个好人，了解到我时间很紧的情况之后，将已经安排的三个名额让出一个给我，非常感谢！学车的时候师傅天天吼我，但是无所谓~ 我把所有能犯
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://blog.lxmoses.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://blog.lxmoses.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>DNS（域名系统）</title>
@@ -493,31 +516,6 @@
       <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
     
       <category term="文件" scheme="http://blog.lxmoses.com/tags/%E6%96%87%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深入了解原子操作</title>
-    <link href="http://blog.lxmoses.com/2016/12/14/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/"/>
-    <id>http://blog.lxmoses.com/2016/12/14/深入了解原子操作/</id>
-    <published>2016-12-14T04:41:46.000Z</published>
-    <updated>2016-12-14T04:47:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>原子操作指的是由多步组成的一个操作。如果该操作原子地执行，则要么执行完所有步骤，要么一步也不执行，不可能只执行所有步骤的一个子集。<br>关于原子操作的概念和定义很早以前都知道了，但是对于其底层实现细节却知之不详。<br>今天看到一篇不错的文章，参见<a href="http://www.cnblogs.com/fanzhidongyzby/p/3654855.html" target="_blank" rel="external">这里</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;原子操作指的是由多步组成的一个操作。如果该操作原子地执行，则要么执行完所有步骤，要么一步也不执行，不可能只执行所有步骤的一个子集。&lt;br&gt;关于原子操作的概念和定义很早以前都知道了，但是对于其底层实现细节却知之不详。&lt;br&gt;今天看到一篇不错的文章，参见&lt;a href=&quot;htt
-    
-    </summary>
-    
-      <category term="重温apue" scheme="http://blog.lxmoses.com/categories/%E9%87%8D%E6%B8%A9apue/"/>
-    
-    
-      <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
-    
-      <category term="OS" scheme="http://blog.lxmoses.com/tags/OS/"/>
     
   </entry>
   
