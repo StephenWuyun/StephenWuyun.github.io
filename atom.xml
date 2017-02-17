@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-02-17T09:51:33.000Z</updated>
+  <updated>2017-02-17T09:53:10.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://blog.lxmoses.com/2017/02/17/github%E5%9F%9F%E5%90%8D%E6%B1%A1%E6%9F%93/"/>
     <id>http://blog.lxmoses.com/2017/02/17/github域名污染/</id>
     <published>2017-02-17T09:44:52.000Z</published>
-    <updated>2017-02-17T09:51:33.000Z</updated>
+    <updated>2017-02-17T09:53:10.000Z</updated>
     
-    <content type="html"><![CDATA[<p>今天写完博客后部署至github时，老是报错。如下图所示：<br><img src="/images/部署报错.png" alt=""><br>ping github.com如下图所示：<br><img src="/images/github域名解析异常" alt=""><br>更改host文件之后，可正常部署。</p>
+    <content type="html"><![CDATA[<p>今天写完博客后部署至github时，老是报错。如下图所示：<br><img src="/images/部署报错.png" alt=""><br>ping github.com如下图所示：<br><img src="/images/github域名解析异常.png" alt=""><br>更改host文件之后，可正常部署。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;今天写完博客后部署至github时，老是报错。如下图所示：&lt;br&gt;&lt;img src=&quot;/images/部署报错.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;ping github.com如下图所示：&lt;br&gt;&lt;img src=&quot;/images/github域名解析异常&quot; alt=&quot;&quot;&gt;&lt;
+      &lt;p&gt;今天写完博客后部署至github时，老是报错。如下图所示：&lt;br&gt;&lt;img src=&quot;/images/部署报错.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;ping github.com如下图所示：&lt;br&gt;&lt;img src=&quot;/images/github域名解析异常.png&quot; alt=
     
     </summary>
     
