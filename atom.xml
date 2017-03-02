@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-02-17T09:56:40.000Z</updated>
+  <updated>2017-03-02T05:31:36.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>由Cocos2d-X工程入口窥见代理模式</title>
+    <link href="http://blog.lxmoses.com/2017/03/02/%E7%94%B1Cocos2d-x%E5%B7%A5%E7%A8%8B%E5%85%A5%E5%8F%A3%E7%AA%A5%E8%A7%81%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.lxmoses.com/2017/03/02/由Cocos2d-x工程入口窥见代理模式/</id>
+    <published>2017-03-02T05:29:02.000Z</published>
+    <updated>2017-03-02T05:31:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>转自<a href="http://www.cnblogs.com/huashu/p/4446997.html" target="_blank" rel="external">这里</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转自&lt;a href=&quot;http://www.cnblogs.com/huashu/p/4446997.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="cocos2dx" scheme="http://blog.lxmoses.com/categories/cocos2dx/"/>
+    
+    
+      <category term="cocos2dx" scheme="http://blog.lxmoses.com/tags/cocos2dx/"/>
+    
+      <category term="设计模式" scheme="http://blog.lxmoses.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>记一次Github域名解析异常</title>
     <link href="http://blog.lxmoses.com/2017/02/17/github%E5%9F%9F%E5%90%8D%E6%B1%A1%E6%9F%93/"/>
     <id>http://blog.lxmoses.com/2017/02/17/github域名污染/</id>
     <published>2017-02-17T09:44:52.000Z</published>
-    <updated>2017-02-17T09:56:40.000Z</updated>
+    <updated>2017-02-17T10:01:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天写完博客后部署至github时，老是报错。如下图所示：<br><img src="/images/部署报错.png" alt=""><br>ping github.com如下图所示：<br><img src="/images/github域名解析异常.png" alt=""><br>更改host文件之后，可正常部署。<br><img src="/images/修改hosts文件.png" alt=""></p>
 ]]></content>
@@ -482,32 +508,6 @@
     
     
       <category term="ssl" scheme="http://blog.lxmoses.com/tags/ssl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unix文件的时间</title>
-    <link href="http://blog.lxmoses.com/2016/12/15/Unix%E6%96%87%E4%BB%B6%E7%9A%84%E6%97%B6%E9%97%B4/"/>
-    <id>http://blog.lxmoses.com/2016/12/15/Unix文件的时间/</id>
-    <published>2016-12-15T00:58:26.000Z</published>
-    <updated>2016-12-15T01:29:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Unix对于每个文件维护了3个时间字段，它们的意义如下图所示：<br><img src="/images/与Unix文件相关的3个时间值.jpg" alt=""><br>很多影响到i节点的操作，如更改文件的访问权限、更改用户id、更改链接数等，但它们并没有更改文件的实际内容。因为i节点中的所有信息都是与文件的实际内容分开存放的。</p>
-<p>POSIX(Portable Operating System Interface)修改文件的访问时间和修改时间<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">futimens</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">struct</span> timespec times[<span class="number">2</span>])</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">utimensat</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">char</span> * path, <span class="keyword">const</span> <span class="keyword">struct</span> timespec times[<span class="number">2</span>], <span class="keyword">int</span> flag)</span></span>;</div></pre></td></tr></table></figure><br>Single UNIX Specification的XSI扩展<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">utimes</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * pathname, <span class="keyword">const</span> <span class="keyword">struct</span> timeval times[<span class="number">2</span>])</span></span>;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Unix对于每个文件维护了3个时间字段，它们的意义如下图所示：&lt;br&gt;&lt;img src=&quot;/images/与Unix文件相关的3个时间值.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;很多影响到i节点的操作，如更改文件的访问权限、更改用户id、更改链接数等，但它们并没有更改文件的实际内容
-    
-    </summary>
-    
-      <category term="重温apue" scheme="http://blog.lxmoses.com/categories/%E9%87%8D%E6%B8%A9apue/"/>
-    
-    
-      <category term="Unix" scheme="http://blog.lxmoses.com/tags/Unix/"/>
-    
-      <category term="文件" scheme="http://blog.lxmoses.com/tags/%E6%96%87%E4%BB%B6/"/>
     
   </entry>
   
