@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-03-13T03:48:58.000Z</updated>
+  <updated>2017-03-14T08:24:23.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于随机数</title>
+    <link href="http://blog.lxmoses.com/2017/03/14/%E5%85%B3%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
+    <id>http://blog.lxmoses.com/2017/03/14/关于随机数/</id>
+    <published>2017-03-14T08:14:40.000Z</published>
+    <updated>2017-03-14T08:24:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在设计一个随机数时遇到了一些问题：<br>{ codeblock lang:cpp }<br>vector<int> array(10);<br>int index = floor(CCRANDOM_0_1() * array.size)<br>{ endcodeblock }<br>就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。<br>嗯，于是发现了c++ 11关于随机数的新特性，上述代码改为如下：<br>{ codeblock lang:cpp}<br>srand(time(NULL));</int></p>
+<pre><code>#include &lt;random&gt;
+std::default_random_engine e;
+std::uniform_int_distribution&lt;unsigned&gt; u(0, array.size());
+auto index = u(e);
+</code></pre><p>{ endcodeblock}<br>路漫漫其修远兮。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在设计一个随机数时遇到了一些问题：&lt;br&gt;{ codeblock lang:cpp }&lt;br&gt;vector&lt;int&gt; array(10);&lt;br&gt;int index = floor(CCRANDOM_0_1() * array.size)&lt;br&gt;{ endcodeblo
+    
+    </summary>
+    
+      <category term="c++" scheme="http://blog.lxmoses.com/categories/c/"/>
+    
+    
+      <category term="随机数" scheme="http://blog.lxmoses.com/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
+    
+      <category term="c++" scheme="http://blog.lxmoses.com/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>Javascript继承详解</title>
@@ -487,30 +517,6 @@
     
     
       <category term="字节对齐" scheme="http://blog.lxmoses.com/tags/%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>From Now On</title>
-    <link href="http://blog.lxmoses.com/2016/12/21/from-now-on/"/>
-    <id>http://blog.lxmoses.com/2016/12/21/from-now-on/</id>
-    <published>2016-12-21T10:50:36.000Z</published>
-    <updated>2016-12-21T10:55:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>2014年的冬天， 经常吃泡面，作息混乱，心情抑郁，开始长痘。<br>笔者是个不修边幅的屌丝， 虽然照镜子挺别扭的， 但是一直也没采取什么措施，仍旧是经常熬夜，吃辣的。<br>从现在开始，再不吃辣的，不熬夜。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2014年的冬天， 经常吃泡面，作息混乱，心情抑郁，开始长痘。&lt;br&gt;笔者是个不修边幅的屌丝， 虽然照镜子挺别扭的， 但是一直也没采取什么措施，仍旧是经常熬夜，吃辣的。&lt;br&gt;从现在开始，再不吃辣的，不熬夜。&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://blog.lxmoses.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="http://blog.lxmoses.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
