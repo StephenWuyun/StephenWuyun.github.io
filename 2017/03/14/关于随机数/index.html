@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="今天在设计一个随机数时遇到了一些问题：{ codeblock lang:cpp }vector array(10);int index = floor(CCRANDOM_0_1() * array.size){ endcodeblock }就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久">
+<meta name="description" content="今天在设计一个随机数时遇到了一些问题：12vector&amp;lt;int&amp;gt; array(10);int index = floor(CCRANDOM_0_1() * array.size)就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。嗯，于是发现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于随机数">
 <meta property="og:url" content="http://blog.lxmoses.com/2017/03/14/关于随机数/index.html">
 <meta property="og:site_name" content="悟云">
-<meta property="og:description" content="今天在设计一个随机数时遇到了一些问题：{ codeblock lang:cpp }vector array(10);int index = floor(CCRANDOM_0_1() * array.size){ endcodeblock }就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久">
-<meta property="og:updated_time" content="2017-03-14T08:24:23.000Z">
+<meta property="og:description" content="今天在设计一个随机数时遇到了一些问题：12vector&amp;lt;int&amp;gt; array(10);int index = floor(CCRANDOM_0_1() * array.size)就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。嗯，于是发现">
+<meta property="og:updated_time" content="2017-03-14T08:26:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于随机数">
-<meta name="twitter:description" content="今天在设计一个随机数时遇到了一些问题：{ codeblock lang:cpp }vector array(10);int index = floor(CCRANDOM_0_1() * array.size){ endcodeblock }就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久">
+<meta name="twitter:description" content="今天在设计一个随机数时遇到了一些问题：12vector&amp;lt;int&amp;gt; array(10);int index = floor(CCRANDOM_0_1() * array.size)就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。嗯，于是发现">
 
 
 
@@ -341,12 +341,7 @@
       
 
       
-        <p>今天在设计一个随机数时遇到了一些问题：<br>{ codeblock lang:cpp }<br>vector<int> array(10);<br>int index = floor(CCRANDOM_0_1() * array.size)<br>{ endcodeblock }<br>就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。<br>嗯，于是发现了c++ 11关于随机数的新特性，上述代码改为如下：<br>{ codeblock lang:cpp}<br>srand(time(NULL));</int></p>
-<pre><code>#include &lt;random&gt;
-std::default_random_engine e;
-std::uniform_int_distribution&lt;unsigned&gt; u(0, array.size());
-auto index = u(e);
-</code></pre><p>{ endcodeblock}<br>路漫漫其修远兮。</p>
+        <p>今天在设计一个随机数时遇到了一些问题：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">array</span>(<span class="number">10</span>);</div><div class="line"><span class="keyword">int</span> index = <span class="built_in">floor</span>(CCRANDOM_0_1() * <span class="built_in">array</span>.size)</div></pre></td></tr></table></figure><br>就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。<br>嗯，于是发现了c++ 11关于随机数的新特性，上述代码改为如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">srand(time(<span class="literal">NULL</span>));</div><div class="line">	<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></div><div class="line">    <span class="built_in">std</span>::default_random_engine e;</div><div class="line">	<span class="built_in">std</span>::uniform_int_distribution&lt;<span class="keyword">unsigned</span>&gt; u(<span class="number">0</span>, <span class="built_in">array</span>.size());</div><div class="line">	<span class="keyword">auto</span> index = u(e);</div></pre></td></tr></table></figure><br>路漫漫其修远兮。</p>
 
       
     </div>
