@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-03-14T08:29:42.000Z</updated>
+  <updated>2017-03-15T03:31:59.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Do-While妙用</title>
+    <link href="http://blog.lxmoses.com/2017/03/15/do-while%E5%A6%99%E7%94%A8/"/>
+    <id>http://blog.lxmoses.com/2017/03/15/do-while妙用/</id>
+    <published>2017-03-15T03:07:05.000Z</published>
+    <updated>2017-03-15T03:31:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于do-while，笔者之前一直停留在学习c++基础语法时的理解，然而后面读框架代码时经常看到do…while(0)这样的用法，当时不理解这样用的用意。<br>纸上得来终觉浅，绝知此事要躬行。 当我们看技术书籍或者看一些优秀的项目源码时，对于很多小地方可能也就是一目置之，自己亲身经历一次才会深刻的明白，这里也提醒自己以后多多注意细节。<br>最近在实现一个类的初始化函数如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">bool</span> MapFactory::init()</div><div class="line">&#123;</div><div class="line">	<span class="keyword">bool</span> ret = <span class="literal">false</span>;</div><div class="line">	ret = initSimple();</div><div class="line">	<span class="keyword">if</span>(!ret)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	ret = initMiddle();</div><div class="line">	<span class="keyword">if</span>(!ret)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	ret = initHard();</div><div class="line">	<span class="keyword">if</span>(!ret)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	ret = initSpecial();</div><div class="line">	<span class="keyword">if</span>(!ret)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>当时笔者在写上面这段代码时就感觉好麻烦，好多的return语句。<br>然而，我们可以巧妙地借用下循环里break的思路，优化如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">bool</span> MapFactory::init()</div><div class="line">&#123;</div><div class="line">	<span class="keyword">bool</span> ret = <span class="literal">false</span>;</div><div class="line">	<span class="keyword">do</span>&#123;</div><div class="line">		ret = initSimple();</div><div class="line">		<span class="keyword">if</span>(!ret)&#123;</div><div class="line">			<span class="comment">//return false;</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		ret = initMiddle();</div><div class="line">		<span class="keyword">if</span>(!ret)&#123;</div><div class="line">			<span class="comment">//return false;</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		ret = initHard();</div><div class="line">		<span class="keyword">if</span>(!ret)&#123;</div><div class="line">			<span class="comment">//return false;</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		ret = initSpecial();</div><div class="line">		<span class="keyword">if</span>(!ret)&#123;</div><div class="line">			<span class="comment">//return false;</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;<span class="keyword">while</span>(<span class="number">0</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>当然上面的例子并没有恰当地表现出这个技巧的实用之处，因为上面的代码在每一次调用之时无外乎失败就直接返回，但是假如子初始化函数失败还需要释放资源，比如指针之类的。嗯，自行体会。</p>
+<p>之前在阅读的代码中看到的do…while(0)代码更为常见的是红定义中，参加下面代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SAFE_DELETE(p) do&#123; delete p; p = NULL;&#125; while(0)</span></div></pre></td></tr></table></figure><br>假设这里去掉do…while(0),<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SAFE_DELETE(p) delete p; p = NULL;</span></div></pre></td></tr></table></figure><br>注意下面宏调用：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">NULL</span> != p) SAFE_DELETE(p)</div><div class="line"><span class="keyword">else</span> <span class="keyword">do</span> something</div></pre></td></tr></table></figure><br>这里如果是下面的定义方式，程序编译会报错，这里的do-while相当于提供了一种健壮的宏定义方式，至于个中细节，自行体会。<br>最后我想说的是，程序就像是一件艺术品，没有最好的代码实现， 只有更好，更优雅的代码。只有在一次又一次的实战中不断总结，才能不断提升自己。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于do-while，笔者之前一直停留在学习c++基础语法时的理解，然而后面读框架代码时经常看到do…while(0)这样的用法，当时不理解这样用的用意。&lt;br&gt;纸上得来终觉浅，绝知此事要躬行。 当我们看技术书籍或者看一些优秀的项目源码时，对于很多小地方可能也就是一目置之，
+    
+    </summary>
+    
+      <category term="编程技巧" scheme="http://blog.lxmoses.com/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="编程技巧" scheme="http://blog.lxmoses.com/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>关于随机数</title>
@@ -484,34 +508,6 @@
     
     
       <category term="临时对象" scheme="http://blog.lxmoses.com/tags/%E4%B8%B4%E6%97%B6%E5%AF%B9%E8%B1%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言字节对齐</title>
-    <link href="http://blog.lxmoses.com/2016/12/28/c%E8%AF%AD%E8%A8%80%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/"/>
-    <id>http://blog.lxmoses.com/2016/12/28/c语言字节对齐/</id>
-    <published>2016-12-28T02:37:57.000Z</published>
-    <updated>2016-12-28T03:28:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是字节对齐"><a href="#什么是字节对齐" class="headerlink" title="什么是字节对齐"></a>什么是字节对齐</h2><p>现代计算机中，内存空间按照字节划分，理论上可以从任何起始地址访问任意类型的变量。但实际中在访问特定类型变量时经常在特定的内存地址访问，这就需要各种类型数据按照一定的规则在空间上排列，而不是顺序一个接一个地存放，这就是对齐。<br>字节对齐的问题主要就是针对结构体。</p>
-<h2 id="对其准则"><a href="#对其准则" class="headerlink" title="对其准则"></a>对其准则</h2><h3 id="四个重要的基本概念："><a href="#四个重要的基本概念：" class="headerlink" title="四个重要的基本概念："></a>四个重要的基本概念：</h3><p>1) 数据类型自身的对齐值：char型数据自身对齐值为1字节，short型数据为2字节，int/float型为4字节，double型为8字节。<br>2) 结构体或类的自身对齐值：其成员中自身对齐值最大的那个值。<br>3) 指定对齐值：#pragma pack (value)时的指定对齐值value。<br>4) 数据成员、结构体和类的有效对齐值：自身对齐值和指定对齐值中较小者，即有效对齐值=min{自身对齐值，当前指定的pack值}。<br>基于上面这些值，就可以方便地讨论具体数据结构的成员和其自身的对齐方式。<br>其中，有效对齐值N是最终用来决定数据存放地址方式的值。有效对齐N表示“对齐在N上”，即该数据的“存放起始地址%N=0”。而数据结构中的数据变量都是按定义的先后顺序存放。第一个数据变量的起始地址就是数据结构的起始地址。结构体的成员变量要对齐存放，结构体本身也要根据自身的有效对齐值圆整(即结构体成员变量占用总长度为结构体有效对齐值的整数倍)。</p>
-<h3 id="三个准则："><a href="#三个准则：" class="headerlink" title="三个准则："></a>三个准则：</h3><p>1) 结构体变量的首地址能够被其最宽基本类型成员的大小所整除；<br>2) 结构体每个成员相对结构体首地址的偏移量(offset)都是成员大小的整数倍，如有需要编译器会在成员之间加上填充字节(internal adding)；<br>3) 结构体的总大小为结构体最宽基本类型成员大小的整数倍，如有需要编译器会在最末一个成员之后加上填充字节{trailing padding}。<br>对于以上规则的说明如下：<br>第一条：编译器在给结构体开辟空间时，首先找到结构体中最宽的基本数据类型，然后寻找内存地址能被该基本数据类型所整除的位置，作为结构体的首地址(我们自己计算结构体变量大小时，假想首地址为0即可)。将这个最宽的基本数据类型的大小作为上面介绍的对齐模数。<br>第二条：为结构体的一个成员开辟空间之前，编译器首先检查预开辟空间的首地址相对于结构体首地址的偏移是否是本成员大小的整数倍，若是，则存放本成员，反之，则在本成员和上一个成员之间填充一定的字节，以达到整数倍的要求，也就是将预开辟空间的首地址后移几个字节。<br>第三条：结构体总大小是包括填充字节，最后一个成员满足上面两条以外，还必须满足第三条，否则就必须在最后填充几个字节以达到本条要求。</p>
-<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* OFFSET宏定义可取得指定结构体某成员在结构体内部的偏移 */</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> OFFSET(st, field)     (size_t)&amp;(((st*)0)-&gt;field)</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</div><div class="line">	<span class="keyword">char</span>  a;</div><div class="line">	<span class="keyword">short</span> b;</div><div class="line">	<span class="keyword">char</span>  c;</div><div class="line">	<span class="keyword">int</span>   d;</div><div class="line">	<span class="keyword">char</span>  e[<span class="number">3</span>];</div><div class="line">&#125;T_Test;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;  </div><div class="line">	<span class="built_in">printf</span>(<span class="string">"Size = %d\n  a-%d, b-%d, c-%d, d-%d\n  e[0]-%d, e[1]-%d, e[2]-%d\n"</span>,</div><div class="line">		<span class="keyword">sizeof</span>(T_Test), OFFSET(T_Test, a), OFFSET(T_Test, b),</div><div class="line">		OFFSET(T_Test, c), OFFSET(T_Test, d), OFFSET(T_Test, e[<span class="number">0</span>]),</div><div class="line">		OFFSET(T_Test, e[<span class="number">1</span>]),OFFSET(T_Test, e[<span class="number">2</span>]));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>执行后输出如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Size = 16</div><div class="line">a-0, b-2, c-4, d-8</div><div class="line">e[0]-12, e[1]-13, e[2]-14</div></pre></td></tr></table></figure><br>下面来具体分析：<br>首先char a占用1个字节，没问题。<br>short b本身占用2个字节，根据上面准则2，需要在b和a之间填充1个字节。<br>char c占用1个字节，没问题。<br>int d本身占用4个字节，根据准则2，需要在d和c之间填充3个字节。<br>char e[3]；本身占用3个字节，根据原则3，需要在其后补充1个字节。<br>因此，sizeof(T_Test) = 1 + 1 + 2 + 1 + 3 + 4 + 3 + 1 = 16字节。</p>
-<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>1)将自对齐字节大的变量放在前面，可以使结构体变量占用空间尽可能小.<br>2)使用伪指令#pragma pack(n)：C编译器将按照n个字节对齐；使用伪指令#pragma pack()： 取消自定义字节对齐方式。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;什么是字节对齐&quot;&gt;&lt;a href=&quot;#什么是字节对齐&quot; class=&quot;headerlink&quot; title=&quot;什么是字节对齐&quot;&gt;&lt;/a&gt;什么是字节对齐&lt;/h2&gt;&lt;p&gt;现代计算机中，内存空间按照字节划分，理论上可以从任何起始地址访问任意类型的变量。但实际中在访问特定类
-    
-    </summary>
-    
-      <category term="C" scheme="http://blog.lxmoses.com/categories/C/"/>
-    
-    
-      <category term="字节对齐" scheme="http://blog.lxmoses.com/tags/%E5%AD%97%E8%8A%82%E5%AF%B9%E9%BD%90/"/>
     
   </entry>
   
