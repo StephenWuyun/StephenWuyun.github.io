@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Unix," />
+  <meta name="keywords" content="c++,闭包," />
 
 
 
@@ -86,25 +86,16 @@
 
 
 
-<meta name="description" content="打开文件的内核数据结构两个独立进程各自打开同一个文件内核使用3种数据结构表示打开文件，它们的关系决定了在文件共享方面一个进程对另一个进程的可能产生的影响。
-进程表项每个进程在进程表中都有一个记录项，记录项中包含一张打开的文件描述表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符关联的是：a.文件描述符标志b.指向一个文件表项的指针
-文件表项内核为所有打开文件维持一张文件表。每个文件表项包">
+<meta name="description" content="c++旧标准“闭包”12345678910111213141516171819202122232425262728293031#include&amp;lt;iostream&amp;gt;using namespace std;/* * 利用c++类嵌套内部类实现闭包 */class ITest&amp;#123;	public:		void operator() ()		&amp;#123;			process();		&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unix内核中的文件数据结构">
-<meta property="og:url" content="http://blog.lxmoses.com/2016/12/14/Unix内核中的文件数据结构/index.html">
+<meta property="og:title" content="C++闭包探索">
+<meta property="og:url" content="http://blog.lxmoses.com/2017/03/31/c-闭包探索/index.html">
 <meta property="og:site_name" content="悟云">
-<meta property="og:description" content="打开文件的内核数据结构两个独立进程各自打开同一个文件内核使用3种数据结构表示打开文件，它们的关系决定了在文件共享方面一个进程对另一个进程的可能产生的影响。
-进程表项每个进程在进程表中都有一个记录项，记录项中包含一张打开的文件描述表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符关联的是：a.文件描述符标志b.指向一个文件表项的指针
-文件表项内核为所有打开文件维持一张文件表。每个文件表项包">
-<meta property="og:image" content="http://blog.lxmoses.com/images/打开文件的内核数据结构.jpeg">
-<meta property="og:image" content="http://blog.lxmoses.com/images/打开文件的内核数据结构.jpeg">
-<meta property="og:updated_time" content="2016-12-14T03:25:59.000Z">
+<meta property="og:description" content="c++旧标准“闭包”12345678910111213141516171819202122232425262728293031#include&amp;lt;iostream&amp;gt;using namespace std;/* * 利用c++类嵌套内部类实现闭包 */class ITest&amp;#123;	public:		void operator() ()		&amp;#123;			process();		&amp;#">
+<meta property="og:updated_time" content="2017-03-31T08:17:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unix内核中的文件数据结构">
-<meta name="twitter:description" content="打开文件的内核数据结构两个独立进程各自打开同一个文件内核使用3种数据结构表示打开文件，它们的关系决定了在文件共享方面一个进程对另一个进程的可能产生的影响。
-进程表项每个进程在进程表中都有一个记录项，记录项中包含一张打开的文件描述表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符关联的是：a.文件描述符标志b.指向一个文件表项的指针
-文件表项内核为所有打开文件维持一张文件表。每个文件表项包">
-<meta name="twitter:image" content="http://blog.lxmoses.com/images/打开文件的内核数据结构.jpeg">
+<meta name="twitter:title" content="C++闭包探索">
+<meta name="twitter:description" content="c++旧标准“闭包”12345678910111213141516171819202122232425262728293031#include&amp;lt;iostream&amp;gt;using namespace std;/* * 利用c++类嵌套内部类实现闭包 */class ITest&amp;#123;	public:		void operator() ()		&amp;#123;			process();		&amp;#">
 
 
 
@@ -132,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.lxmoses.com/2016/12/14/Unix内核中的文件数据结构/"/>
+  <link rel="canonical" href="http://blog.lxmoses.com/2017/03/31/c-闭包探索/"/>
 
 
 
 
 
-  <title> Unix内核中的文件数据结构 | 悟云 </title>
+  <title> C++闭包探索 | 悟云 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/Unix内核中的文件数据结构/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/31/c-闭包探索/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -283,7 +274,7 @@
             
             
               
-                Unix内核中的文件数据结构
+                C++闭包探索
               
             
           </h1>
@@ -296,8 +287,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T11:06:54+08:00">
-                2016-12-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-31T16:09:18+08:00">
+                2017-03-31
               </time>
             
 
@@ -315,8 +306,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/重温apue/" itemprop="url" rel="index">
-                    <span itemprop="name">重温apue</span>
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
                   </a>
                 </span>
 
@@ -350,10 +341,7 @@
       
 
       
-        <p>打开文件的内核数据结构<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>两个独立进程各自打开同一个文件<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>内核使用3种数据结构表示打开文件，它们的关系决定了在文件共享方面一个进程对另一个进程的可能产生的影响。</p>
-<h2 id="进程表项"><a href="#进程表项" class="headerlink" title="进程表项"></a>进程表项</h2><p>每个进程在进程表中都有一个记录项，记录项中包含一张打开的文件描述表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符关联的是：<br>a.文件描述符标志<br>b.指向一个文件表项的指针</p>
-<h2 id="文件表项"><a href="#文件表项" class="headerlink" title="文件表项"></a>文件表项</h2><p>内核为所有打开文件维持一张文件表。每个文件表项包含：<br>a.文件状态标志(读、写、添写、同步和非阻塞等)<br>b.当前文件偏移量<br>c.指向该文件v节点表项的指针</p>
-<h2 id="v节点项"><a href="#v节点项" class="headerlink" title="v节点项"></a>v节点项</h2><p>每个打开文件都有一个v节点结构。v节点包含了文件类型和对此文件进行各种操作函数的指针。</p>
+        <p>c++旧标准“闭包”<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * 利用c++类嵌套内部类实现闭包</div><div class="line"> */</div><div class="line"><span class="keyword">class</span> ITest</div><div class="line">&#123;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span> <span class="params">()</span></span></div><div class="line">		&#123;</div><div class="line">			process();</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">virtual</span> ~ITest()&#123;&#125;</div><div class="line">	<span class="keyword">protected</span>:</div><div class="line">		<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div><div class="line"><span class="function">ITest * <span class="title">test</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	<span class="keyword">class</span> Test: <span class="keyword">public</span> ITest</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">public</span>:</div><div class="line">			<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">()</span></span></div><div class="line">			&#123;</div><div class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"嵌套内部类:"</span> &lt;&lt; <span class="string">" Count is "</span> &lt;&lt; count++ &lt;&lt;<span class="built_in">endl</span>;</div><div class="line">			&#125;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> Test();</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> *  利用函数内部类实现闭包</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*Func)</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *)</span></span>;</div><div class="line"></div><div class="line"><span class="function">Func <span class="title">testFunc</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">100</span>;</div><div class="line"></div><div class="line">	<span class="keyword">class</span> Test</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">public</span>:</div><div class="line">			<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * pName = <span class="literal">NULL</span>)</span></span></div><div class="line">			&#123;</div><div class="line">				<span class="keyword">if</span>(pName == <span class="literal">NULL</span>)&#123;</div><div class="line">					pName = <span class="string">"moses"</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"函数内部类:"</span>&lt;&lt; pName &lt;&lt; <span class="string">" Count is "</span>&lt;&lt; count-- &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">			&#125;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> Test::process;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * c++新特性lambda表达式实现闭包</div><div class="line"> */</div><div class="line"><span class="built_in">std</span>::function&lt;<span class="keyword">void</span>(<span class="keyword">const</span> <span class="keyword">char</span> *)&gt; lambdaTest()</div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> count = <span class="number">100</span>;</div><div class="line"></div><div class="line">	<span class="keyword">auto</span> func = [count] (<span class="keyword">const</span> <span class="keyword">char</span> * pName = <span class="literal">NULL</span>) <span class="keyword">mutable</span> &#123;</div><div class="line">		<span class="keyword">if</span>(pName == <span class="literal">NULL</span>)&#123;</div><div class="line">			pName = <span class="string">"moses"</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"lambda : "</span> &lt;&lt; pName &lt;&lt; <span class="string">" Count is "</span> &lt;&lt; count-- &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> func;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -377,7 +365,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Unix/" rel="tag"># Unix</a>
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+            <a href="/tags/闭包/" rel="tag"># 闭包</a>
           
         </div>
       
@@ -386,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/14/Unix时间值/" rel="next" title="Unix时间值">
-                <i class="fa fa-chevron-left"></i> Unix时间值
+              <a href="/2017/03/31/reflection-go/" rel="next" title="Reflection-Go">
+                <i class="fa fa-chevron-left"></i> Reflection-Go
               </a>
             
           </div>
@@ -395,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/14/深入了解原子操作/" rel="prev" title="深入了解原子操作">
-                深入了解原子操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,17 +431,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpeg"
@@ -554,22 +531,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程表项"><span class="nav-number">1.</span> <span class="nav-text">进程表项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件表项"><span class="nav-number">2.</span> <span class="nav-text">文件表项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v节点项"><span class="nav-number">3.</span> <span class="nav-text">v节点项</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
