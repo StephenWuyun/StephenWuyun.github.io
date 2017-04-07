@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/05/在终端里查看外网ip的方法/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/15/给博客添加ssl/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -276,8 +276,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/05/在终端里查看外网ip的方法/" itemprop="url">
-                  在终端里查看外网Ip的方法
+                <a class="post-title-link" href="/2016/12/15/给博客添加ssl/" itemprop="url">
+                  给博客添加Ssl
                 </a>
               
             
@@ -291,8 +291,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-05T12:36:29+08:00">
-                2017-01-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-15T21:46:38+08:00">
+                2016-12-15
               </time>
             
 
@@ -310,8 +310,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机基础/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础</span>
+                  <a href="/categories/ssl/" itemprop="url" rel="index">
+                    <span itemprop="name">ssl</span>
                   </a>
                 </span>
 
@@ -347,7 +347,7 @@
       
         
           
-            <p>转自<a href="https://segmentfault.com/a/1190000000302955" target="_blank" rel="external">这里</a></p>
+            <p>超文本传输安全协议（英语：Hypertext Transfer Protocol Secure，缩写：HTTPS，也被称为HTTP over TLS，HTTP over SSL或HTTP Secure）是一种网络安全传输协议。在计算机网络上，HTTPS经由超文本传输协议进行通信，但利用SSL/TLS来对数据包进行加密。HTTPS开发的主要目的，是提供对网络服务器的身份认证，保护交换数据的隐私与完整性。<br>之前就听说过ssl，但是觉得比较鸡肋，所以开始也没准备折腾。后来看到谷歌宣布从2017年一月开始正式将http页面标记为不安全,看来这是大势所趋。<br>参照<a href="http://www.jianshu.com/p/92b6d4a6ecd5" target="_blank" rel="external">这篇博文</a>折腾了一番。</p>
 
           
         
@@ -386,7 +386,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/04/IP-网际协议/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/15/Unix文件的时间/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -411,8 +411,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/04/IP-网际协议/" itemprop="url">
-                  IP:网际协议
+                <a class="post-title-link" href="/2016/12/15/Unix文件的时间/" itemprop="url">
+                  Unix文件的时间
                 </a>
               
             
@@ -426,8 +426,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-04T22:26:36+08:00">
-                2017-01-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-15T08:58:26+08:00">
+                2016-12-15
               </time>
             
 
@@ -445,8 +445,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TCP-IP协议详解/" itemprop="url" rel="index">
-                    <span itemprop="name">TCP/IP协议详解</span>
+                  <a href="/categories/重温apue/" itemprop="url" rel="index">
+                    <span itemprop="name">重温apue</span>
                   </a>
                 </span>
 
@@ -482,12 +482,8 @@
       
         
           
-            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP、及IGMP数据都以IP数据报格式传输。<br>IP提供不可靠、无连接的数据报传送服务。<br>不可靠的意思是它不能保证IP数据报能成功到达目的地。任何要求的可靠性必须由上层来提供（如TCP）。<br>无连接这个术语的意思是IP并不维护任何关于后续数据报的状态信息。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A之前先到达。</p>
-<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>互联网上的每个接口必须有一个唯一的Internet地址（IP地址）。IP地址具有一定的结构，五类不同的IP地址格式如下图所示。<br><img src="/images/五种不同格式的互联网地址.png" alt=""><br>有三类IP地址：单播地址（目的端为单个主机）、广播地址（目的端为给定网络上的所有主机）以及多播地址（目的端为同一组内的所有主机）</p>
-<h2 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h2><p><img src="/images/IP数据报格式及首部中的各字段.jpg" alt=""><br>IP数据包的格式如上图所示, 普通的IP首部长为20个字节，除非含有选项字段。分析上图的首部，最高位在左边，记为0bit，最低位在右边，记为31bit。这种传输次序称作big endian字节序，由于TCP、IP首部中的所有二进制整数在网络中传输时都要求以这种次序，因此又称为网络字节序。以其他形式存储二进制整数的机器，例如little endian格式，则必须在传输数据之前把首部转换成网络字节序。<br>目前最常用的协议版本号是4，因此IP有时也称作IPV4.<br>首部长度指的是首部占32bit字的数目，包括任何选项。<br>服务类型（TOS)字段包括一个3bit的优先权字段（现在已被忽略），4bit的TOS字段和1bit未用但必须置为0.4bit的TOS分别代表：最小时延、最大吞吐量、最高可靠性和最小费用。<br>总长度字段是指整个IP数据报的长度，以字节为单位。由于该字段长16比特，所以IP数据报最长可达65535字节。<br>标识字段唯一地标识主机发送的每一份数据报。<br>TTL（time to live）生存时间字段设置了数据报可以经过的最多路由数器数。它指定了数据报的生存时间。TTL的初始值由源主机设置（通常为32或64），一旦经过一个处理它的路由器，它的值就减1。当该字段的值为0时，数据包就被丢弃，并发送ICMP报文通知源主机。<br>协议字段是一个长度为8bit的数值。1表示ICMP协议，2表示IGMP协议，6表示TCP协议，17表示UDP协议。<br>首部检验和字段是根据IP首部计算的校验码。具体可参见<a href="https://blog.lxmoses.com/2017/01/04/ip首部检验和/">这里</a><br>每一份IP数据报都包含源IP地址和目的IP地址。<br>最后一个是任选项，是数据报中的一个可变长的可选信息。</p>
-<h2 id="IP路由选择"><a href="#IP路由选择" class="headerlink" title="IP路由选择"></a>IP路由选择</h2><p>此部分比较复杂，在以后的博文中会进行详细研究。</p>
-<h2 id="子网寻址"><a href="#子网寻址" class="headerlink" title="子网寻址"></a>子网寻址</h2><p>现在所有的主机都要求支持子网编址。不是把IP地址看成单纯由单纯的一个网络号和一个主机号组成，而是把主机号再分成一个子网号和一个主机号。<br>这么做的原因是因为A类和B类地址为主机号分配了太多的空间，可分别容纳的主机数量为2的24次方-2和2的2的16次方-2（由于全0或全1的主机号是无效的，因此我们把总数-2）.事实上，在一个网络中人们并不安排这么多的主机。<br>从InterNIC获得某类IP网络号后，就由当地的系统管理员来进行分配，有他决定来决定是否建立子网，以及分配多少比特给子网号和主机号。<br>子网对外部路由器来说隐藏了内部网络阻止（一个校园或公司内部）的细节。<br>与30个C类地址，用一个包含30个子网的B类地址的好处是，它可以缩小Internet路由表的规模。</p>
-<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>子网掩码是一个32bit的值，其中值为1的比特留个网络号和子网号，为0的比特留给主机号。<br>尽管IP地址一般以点分十进制表示，但是子网掩码却经常用十六进制来表示。<br>给定子网掩码后，主机就可以确定IP数据报的目的是：<br>（1）本子网上的主机<br>（2）本网络中的其他主机<br>（3）其他网络上的主机</p>
+            <p>Unix对于每个文件维护了3个时间字段，它们的意义如下图所示：<br><img src="/images/与Unix文件相关的3个时间值.jpg" alt=""><br>很多影响到i节点的操作，如更改文件的访问权限、更改用户id、更改链接数等，但它们并没有更改文件的实际内容。因为i节点中的所有信息都是与文件的实际内容分开存放的。</p>
+<p>POSIX(Portable Operating System Interface)修改文件的访问时间和修改时间<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">futimens</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">struct</span> timespec times[<span class="number">2</span>])</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">utimensat</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">char</span> * path, <span class="keyword">const</span> <span class="keyword">struct</span> timespec times[<span class="number">2</span>], <span class="keyword">int</span> flag)</span></span>;</div></pre></td></tr></table></figure><br>Single UNIX Specification的XSI扩展<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">utimes</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * pathname, <span class="keyword">const</span> <span class="keyword">struct</span> timeval times[<span class="number">2</span>])</span></span>;</div></pre></td></tr></table></figure></p>
 
           
         
@@ -526,7 +522,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/04/ip首部检验和/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/完美删除临时文件/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -551,8 +547,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/04/ip首部检验和/" itemprop="url">
-                  IP首部检验和
+                <a class="post-title-link" href="/2016/12/14/完美删除临时文件/" itemprop="url">
+                  完美删除临时文件
                 </a>
               
             
@@ -566,8 +562,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-04T21:40:48+08:00">
-                2017-01-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T14:38:41+08:00">
+                2016-12-14
               </time>
             
 
@@ -585,8 +581,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/TCP-IP协议详解/" itemprop="url" rel="index">
-                    <span itemprop="name">TCP/IP协议详解</span>
+                  <a href="/categories/重温apue/" itemprop="url" rel="index">
+                    <span itemprop="name">重温apue</span>
                   </a>
                 </span>
 
@@ -622,7 +618,415 @@
       
         
           
-            <p>在发送数据时，为了计算数IP据报的校验和。应该按如下步骤：<br>（1）把IP数据报的校验和都置为0。<br>（2）把首部看成以16位为单位的数字组成，依次进行二进制反码求和。<br>（3）把得到的结果存入校验和字段中。<br>在接收数据时，计算数据报的校验和相对简单，按如下步骤：<br>（1）把首部看成以16位为单位的数字组成，依次进行二进制反码求和，包括校验和字段。<br>（2）检查计算出的校验和的结果是否等于零。<br>（3）如果等于零，说明被整除，校验是和正确。否则，校验和就是错误的，协议栈要抛弃这个数据包。<br>下面是校验代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="title">checksum</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">short</span> *buf,<span class="keyword">int</span> nword)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> sum;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(sum=<span class="number">0</span>;nword&gt;<span class="number">0</span>;nword--)&#123;</div><div class="line">		sum += *buf++;</div><div class="line">		sum = (sum&gt;&gt;<span class="number">16</span>) + (sum&amp;<span class="number">0xffff</span>);<span class="comment">//相加后最高位如果有进位，加到低位。</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> ~sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> iph[]=&#123;<span class="number">0x4500</span>,<span class="number">0x00ad</span>,<span class="number">0x7755</span>,<span class="number">0x4000</span>,<span class="number">0x8006</span>,</div><div class="line">		<span class="number">0x0000</span>,<span class="number">0x0a97</span>,<span class="number">0x7819</span>,<span class="number">0x0a97</span>,<span class="number">0x781d</span>&#125;;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> cksum;</div><div class="line"></div><div class="line">	cksum=checksum(iph,<span class="number">20</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%X\n"</span>,cksum);</div><div class="line">	iph[<span class="number">5</span>]=cksum;</div><div class="line">	cksum=checksum(iph,<span class="number">20</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%X\n"</span>,cksum);</div><div class="line">	<span class="keyword">if</span>(cksum)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Checksum is incorrect!\n"</span>);</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"Checksum is correct!\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上面的算法应该包含一些数理规律，对此笔者懒得追究了。。。</p>
+            <p>笔者曾经写过一个爬虫，里面涉及到一些临时文件的操作。在解析页面时总会有各种各样的异常导致临时文件删除失败。如今对Unix文件系统有了一些更为深入的理解，这个问题也迎刃而解。<br>Unix文件系统中有个非常重要的概念，i节点。文件系统中的每个目录项都会指向一个i节点，每个i节点中都有一个链接计数，其值是指向该i节点的目录项数。只有当链接计数减少至0时，才可删除文件(也就是释放该文件占用的数据块).另一个条件也会阻止删除文件的内容——只要有进程打开了该文件，其内容也不会删除。<br>关闭一个文件时，内核首先检查打开该文件的进程个数；如果这个计数达到0，内核再去检查其链接计数；如果计数也是0，那么就删除该文件的内容。<br>这意味着我们可以在创建一个临时文件的时候就调用unlink函数，程序结束之后(无论是正常还是异常结束)临时文件都会被删除。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/深入了解原子操作/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="moses">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/me.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="悟云">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悟云" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/14/深入了解原子操作/" itemprop="url">
+                  深入了解原子操作
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T12:41:46+08:00">
+                2016-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/重温apue/" itemprop="url" rel="index">
+                    <span itemprop="name">重温apue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原子操作指的是由多步组成的一个操作。如果该操作原子地执行，则要么执行完所有步骤，要么一步也不执行，不可能只执行所有步骤的一个子集。<br>关于原子操作的概念和定义很早以前都知道了，但是对于其底层实现细节却知之不详。<br>今天看到一篇不错的文章，参见<a href="http://www.cnblogs.com/fanzhidongyzby/p/3654855.html" target="_blank" rel="external">这里</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/Unix内核中的文件数据结构/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="moses">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/me.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="悟云">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悟云" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/14/Unix内核中的文件数据结构/" itemprop="url">
+                  Unix内核中的文件数据结构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T11:06:54+08:00">
+                2016-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/重温apue/" itemprop="url" rel="index">
+                    <span itemprop="name">重温apue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>打开文件的内核数据结构<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>两个独立进程各自打开同一个文件<br><img src="/images/打开文件的内核数据结构.jpeg" alt=""><br>内核使用3种数据结构表示打开文件，它们的关系决定了在文件共享方面一个进程对另一个进程的可能产生的影响。</p>
+<h2 id="进程表项"><a href="#进程表项" class="headerlink" title="进程表项"></a>进程表项</h2><p>每个进程在进程表中都有一个记录项，记录项中包含一张打开的文件描述表，可将其视为一个矢量，每个描述符占用一项。与每个文件描述符关联的是：<br>a.文件描述符标志<br>b.指向一个文件表项的指针</p>
+<h2 id="文件表项"><a href="#文件表项" class="headerlink" title="文件表项"></a>文件表项</h2><p>内核为所有打开文件维持一张文件表。每个文件表项包含：<br>a.文件状态标志(读、写、添写、同步和非阻塞等)<br>b.当前文件偏移量<br>c.指向该文件v节点表项的指针</p>
+<h2 id="v节点项"><a href="#v节点项" class="headerlink" title="v节点项"></a>v节点项</h2><p>每个打开文件都有一个v节点结构。v节点包含了文件类型和对此文件进行各种操作函数的指针。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/14/Unix时间值/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="moses">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/me.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="悟云">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悟云" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/14/Unix时间值/" itemprop="url">
+                  Unix时间值
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-14T09:57:19+08:00">
+                2016-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/重温apue/" itemprop="url" rel="index">
+                    <span itemprop="name">重温apue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>历史上，Unix系统使用过不同的时间值。<br>(1)日历时间。该值是自协调世界时1970年1月1日00:00:00这个特定时间以来所经过的秒数累计值。系统基本数据类型time_t用于保存这种时间值。<br>(2)进程时间。Unix系统为一个进程维护了3个进程时间值。<br>时钟时间：又称为墙上时钟时间，它是进程运行的时间总量。<br>用户cpu时间：执行用户指令所用的时间量。<br>系统cpu时间：为该进程执行内核程序所经历的时间。<br>要取得任一进程的时钟时间、用户时间和系统时间可通过执行命令time（1），其参数是要度量其执行时间的命令。例如：time ls<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">time ls</div><div class="line">Desktop   Documents Downloads Library   Movies    Music     Pictures  Public    oh-my-zsh solarized workspace</div><div class="line">ls -G  0.00s user 0.00s system 82% cpu 0.008 total</div></pre></td></tr></table></figure></p>
 
           
         
@@ -656,7 +1060,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -697,7 +1101,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-count">42</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -714,7 +1118,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
