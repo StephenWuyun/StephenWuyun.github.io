@@ -251,6 +251,149 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/11/go-Timer/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="moses">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/me.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="悟云">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="悟云" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/11/go-Timer/" itemprop="url">
+                  Go-Timer
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T11:00:05+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/go/" itemprop="url" rel="index">
+                    <span itemprop="name">go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Time"><a href="#Time" class="headerlink" title="Time"></a>Time</h2><p>首先有必要了解下go中Time的定义:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Time <span class="keyword">struct</span> &#123;</div><div class="line">	<span class="comment">// sec gives the number of seconds elapsed since</span></div><div class="line">	<span class="comment">// January 1, year 1 00:00:00 UTC.</span></div><div class="line">	sec <span class="keyword">int64</span></div><div class="line">	<span class="comment">// nsec specifies a non-negative nanosecond</span></div><div class="line">	<span class="comment">// offset within the second named by Seconds.</span></div><div class="line">	<span class="comment">// It must be in the range [0, 999999999].</span></div><div class="line">	nsec <span class="keyword">int32</span></div><div class="line">	<span class="comment">// loc specifies the Location that should be used to</span></div><div class="line">	<span class="comment">// determine the minute, hour, month, day, and year</span></div><div class="line">	<span class="comment">// that correspond to this Time.</span></div><div class="line">	<span class="comment">// The nil location means UTC.</span></div><div class="line">	<span class="comment">// All UTC times are represented with loc==nil, never loc==&amp;utcLoc.</span></div><div class="line">	loc *Location</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可以看到go语言中对于时间的定义：基于元年一月一日零点零分开始计算，精确到纳秒级别，至于底层是否能真正精确到这个级别就不得而知了。<br>还有一个重要的概念是Location,我在本地测试时区是CST，即大中华标准时间.<br>同时，go还提供了很多方便的辅助函数。<br>比较函数:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// After reports whether the time instant t is after u.</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">After</span><span class="params">(u Time)</span> <span class="title">bool</span></span> &#123;</div><div class="line">	<span class="keyword">return</span> t.sec &gt; u.sec || t.sec == u.sec &amp;&amp; t.nsec &gt; u.nsec</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Before reports whether the time instant t is before u.</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Before</span><span class="params">(u Time)</span> <span class="title">bool</span></span> &#123;</div><div class="line">	<span class="keyword">return</span> t.sec &lt; u.sec || t.sec == u.sec &amp;&amp; t.nsec &lt; u.nsec</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Equal reports whether t and u represent the same time instant.</span></div><div class="line"><span class="comment">// Two times can be equal even if they are in different locations.</span></div><div class="line"><span class="comment">// For example, 6:00 +0200 CEST and 4:00 UTC are Equal.</span></div><div class="line"><span class="comment">// Do not use == with Time values.</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Equal</span><span class="params">(u Time)</span> <span class="title">bool</span></span> &#123;</div><div class="line">	<span class="keyword">return</span> t.sec == u.sec &amp;&amp; t.nsec == u.nsec</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>加减运算：<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Add</span><span class="params">(d Duration)</span> <span class="title">Time</span></span> &#123;</div><div class="line">	t.sec += <span class="keyword">int64</span>(d / <span class="number">1e9</span>)</div><div class="line">	nsec := t.nsec + <span class="keyword">int32</span>(d%<span class="number">1e9</span>)</div><div class="line">	<span class="keyword">if</span> nsec &gt;= <span class="number">1e9</span> &#123;</div><div class="line">		t.sec++</div><div class="line">		nsec -= <span class="number">1e9</span></div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> nsec &lt; <span class="number">0</span> &#123;</div><div class="line">		t.sec--</div><div class="line">		nsec += <span class="number">1e9</span></div><div class="line">	&#125;</div><div class="line">	t.nsec = nsec</div><div class="line">	<span class="keyword">return</span> t</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Sub</span><span class="params">(u Time)</span> <span class="title">Duration</span></span> &#123;</div><div class="line">	d := Duration(t.sec-u.sec)*Second + Duration(t.nsec-u.nsec)</div><div class="line">	<span class="comment">// Check for overflow or underflow.</span></div><div class="line">	<span class="keyword">switch</span> &#123;</div><div class="line">	<span class="keyword">case</span> u.Add(d).Equal(t):</div><div class="line">		<span class="keyword">return</span> d <span class="comment">// d is correct</span></div><div class="line">	<span class="keyword">case</span> t.Before(u):</div><div class="line">		<span class="keyword">return</span> minDuration <span class="comment">// t - u is negative out of range</span></div><div class="line">	<span class="keyword">default</span>:</div><div class="line">		<span class="keyword">return</span> maxDuration <span class="comment">// t - u is positive out of range</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">AddDate</span><span class="params">(years <span class="keyword">int</span>, months <span class="keyword">int</span>, days <span class="keyword">int</span>)</span> <span class="title">Time</span></span> &#123;</div><div class="line">	year, month, day := t.Date()</div><div class="line">	hour, min, sec := t.Clock()</div><div class="line">	<span class="keyword">return</span> Date(year+years, month+Month(months), day+days, hour, min, sec, <span class="keyword">int</span>(t.nsec), t.Location())</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h2><p>看下定时器的定义:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The Timer type represents a single event.</span></div><div class="line"><span class="comment">// When the Timer expires, the current time will be sent on C,</span></div><div class="line"><span class="comment">// unless the Timer was created by AfterFunc.</span></div><div class="line"><span class="comment">// A Timer must be created with NewTimer or AfterFunc.</span></div><div class="line"><span class="keyword">type</span> Timer <span class="keyword">struct</span> &#123;</div><div class="line">	C &lt;-<span class="keyword">chan</span> Time</div><div class="line">	r runtimeTimer</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>根据文档内容，定时器是一个单独的事件，除非调用AfterFunc，当超时时，C会接收到当前时间。定时器只能通过NewTimer或者AfterFunc创建。<br>启动定时器，和停止定时器:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">startTimer</span><span class="params">( * runtimeTimer)</span></span></div><div class="line"><span class="title">func</span> <span class="title">stopTimer</span><span class="params">( * runtimeTimer)</span> <span class="title">bool</span></div></pre></td></tr></table></figure>
+<p>NewTimer 和 AfterFunc<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// NewTimer creates a new Timer that will send</span></div><div class="line"><span class="comment">// the current time on its channel after at least duration d.</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewTimer</span><span class="params">(d Duration)</span> * <span class="title">Timer</span></span> &#123;</div><div class="line">	c := <span class="built_in">make</span>(<span class="keyword">chan</span> Time, <span class="number">1</span>)</div><div class="line">	t := &amp;Timer&#123;</div><div class="line">		C: c,</div><div class="line">		r: runtimeTimer&#123;</div><div class="line">			when: when(d),</div><div class="line">			f:  sendTime,</div><div class="line">			arg:  c,</div><div class="line">		&#125;,</div><div class="line">	&#125;</div><div class="line">	startTimer(&amp;t.r)</div><div class="line">	<span class="keyword">return</span> t</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">AfterFunc</span><span class="params">(d Duration, f <span class="keyword">func</span>()</span>) * <span class="title">Timer</span></span> &#123;</div><div class="line">	t := &amp;Timer&#123;</div><div class="line">		r: runtimeTimer&#123;</div><div class="line">			when: when(d),</div><div class="line">			f:    goFunc,</div><div class="line">			arg:  f,</div><div class="line">		&#125;,</div><div class="line">	&#125;</div><div class="line">	startTimer(&amp;t.r)</div><div class="line">	<span class="keyword">return</span> t</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>NewTimer初始化一个定时器,当超时之后会调用sendTime函数发送当前时间;AfterFunc接受一个func作为参数,当时间到了之后,执行func。</p>
+<p>重设定时器<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t * Timer)</span> <span class="title">Reset</span><span class="params">(d Duration)</span> <span class="title">bool</span></span> &#123;</div><div class="line">	<span class="keyword">if</span> t.r.f == <span class="literal">nil</span> &#123;</div><div class="line">		<span class="built_in">panic</span>(<span class="string">"time: Reset called on uninitialized Timer"</span>)</div><div class="line">	&#125;</div><div class="line">	w := when(d)</div><div class="line">	active := stopTimer(&amp;t.r)</div><div class="line">	t.r.when = w</div><div class="line">	startTimer(&amp;t.r)</div><div class="line">	<span class="keyword">return</span> active</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>After函数<br><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// After waits for the duration to elapse and then sends the current time</span></div><div class="line"><span class="comment">// on the returned channel.</span></div><div class="line"><span class="comment">// It is equivalent to NewTimer(d).C.</span></div><div class="line"><span class="comment">// The underlying Timer is not recovered by the garbage collector</span></div><div class="line"><span class="comment">// until the timer fires. If efficiency is a concern, use NewTimer</span></div><div class="line"><span class="comment">// instead and call Timer.Stop if the timer is no longer needed.</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">After</span><span class="params">(d Duration)</span> &lt;-<span class="title">chan</span> <span class="title">Time</span></span> &#123;</div><div class="line">	<span class="keyword">return</span> NewTimer(d).C</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/07/支付反馈可重入/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -926,146 +1069,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/14/关于随机数/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="moses">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/me.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="悟云">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="悟云" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/14/关于随机数/" itemprop="url">
-                  关于随机数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-14T16:14:40+08:00">
-                2017-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index">
-                    <span itemprop="name">c++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天在设计一个随机数时遇到了一些问题：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">array</span>(<span class="number">10</span>);</div><div class="line"><span class="keyword">int</span> index = <span class="built_in">floor</span>(CCRANDOM_0_1() * <span class="built_in">array</span>.size)</div></pre></td></tr></table></figure><br>就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。<br>嗯，于是发现了c++ 11关于随机数的新特性，上述代码改为如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></div><div class="line"></div><div class="line">srand(time(<span class="literal">NULL</span>));</div><div class="line"><span class="built_in">std</span>::default_random_engine e;</div><div class="line"><span class="built_in">std</span>::uniform_int_distribution&lt;<span class="keyword">unsigned</span>&gt; u(<span class="number">0</span>, <span class="built_in">array</span>.size());</div><div class="line"><span class="keyword">auto</span> index = u(e);</div></pre></td></tr></table></figure><br>路漫漫其修远兮。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1106,7 +1114,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1123,7 +1131,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
