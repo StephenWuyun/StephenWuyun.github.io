@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2017-04-11T09:15:07.000Z</updated>
+  <updated>2017-04-13T06:14:04.000Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux原子操作与锁</title>
+    <link href="http://blog.lxmoses.com/2017/04/13/Linux%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E4%B8%8E%E9%94%81/"/>
+    <id>http://blog.lxmoses.com/2017/04/13/Linux原子操作与锁/</id>
+    <published>2017-04-13T04:11:59.000Z</published>
+    <updated>2017-04-13T06:14:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h2><p>Linux 中最简单的同步方法就是原子操作。原子 意味着临界段被包含在 API 函数中。不需要额外的锁定，因为 API 函数已经包含了锁定。由于 C 不能实现原子操作，因此 Linux 依靠底层架构来提供这项功能。各种底层架构存在很大差异，因此原子函数的实现方法也各不相同。一些方法完全通过汇编语言来实现，而另一些方法依靠 c 语言并且使用 local_irq_save 和 local_irq_restore 禁用中断。<br>当需要保护的数据非常简单时，例如一个计数器，原子运算符是种理想的方法。尽管原理简单，原子 API 提供了许多针对不同情形的运算符。</p>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>信号量的本质也是一个计数器，用来记录对某个资源（如共享内存）的存取状况。用来协调不同进程间的数据对象，最主要的应用是共享内存方式的进程间通信。<br>Linux2.6.26下定义的信号量结构体：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> semaphore &#123;</div><div class="line">	<span class="keyword">spinlock_t</span>                lock;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span>             count;</div><div class="line">	<span class="keyword">struct</span> list_head        wait_list;</div><div class="line">&#125;;</div></pre></td></tr></table></figure><br>从以上信号量的定义中，可以看到信号量底层使用到了spinlock的锁定机制，这个spinlock主要用来确保对count成员的原子性的操作(count–)和测试(count &gt; 0)。</p>
+<h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>两种形式的制约关系</p>
+<h4 id="间接相互制约关系（互斥）"><a href="#间接相互制约关系（互斥）" class="headerlink" title="间接相互制约关系（互斥）"></a>间接相互制约关系（互斥）</h4><p>若某一进程要求使用某种资源，而该资源正好被另一进程使用，并且该资源不允许两个进程同时使用，那么该进程只好等待已占有的资源的进程释放资源后再使用。这种制约关系可以用“进程-资源-进程”的形式表示。例如，打印机资源，进程互斥经典问题中生产者-生产者问题。</p>
+<h4 id="直接相互制约关系（同步）"><a href="#直接相互制约关系（同步）" class="headerlink" title="直接相互制约关系（同步）"></a>直接相互制约关系（同步）</h4><p>某一进程若收不到另一进程提供的必要信息就不能继续运行下去，表明了两个进程之间在某些点上要交换信息，相互交流运行情况。这种制约关系的进本形式是“进程-进程”。例如生产者与消费者问题，生产者生产产品并放入缓冲池，消费者从缓冲池取走产品进行消费。这两者就是同步关系。</p>
+<p>区分互斥和同步只需记住，同类进程即为互斥关系，不同类进程即为同步关系。<br>临界资源：同时只允许一个进程使用的资源。<br>临界区：进程中用于访问临界资源的代码段，又称临界段。<br>每个进程的临界区代码可以不同，临界区代码由于要访问临界资源，因此要在进入临界区之前进行检查，至于每个进程对临界资源进行怎样的操作，这和临界资源及互斥同步管理是无关的。<br>Linux 2.6.26中mutex的定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> mutex &#123;</div><div class="line">	<span class="comment">/* 1: unlocked, 0: locked, negative: locked, possible waiters */</span></div><div class="line">	<span class="keyword">atomic_t</span>                  count;<span class="comment">//原子操作类型变量</span></div><div class="line">	<span class="keyword">spinlock_t</span>                wait_lock;<span class="comment">//自旋锁类型变量</span></div><div class="line">	<span class="keyword">struct</span> list_head          wait_list;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> CONFIG_DEBUG_MUTEXES</span></div><div class="line">	<span class="keyword">struct</span> thread_info        *owner;</div><div class="line">	<span class="keyword">const</span> <span class="keyword">char</span>                *name;</div><div class="line">	<span class="keyword">void</span>                      *magic;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> CONFIG_DEBUG_LOCK_ALLOC</span></div><div class="line">	<span class="keyword">struct</span> lockdep_map         dep_map;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">&#125;;</div></pre></td></tr></table></figure><br>对比前面的struct semaphore，struct mutex除了增加了几个作为debug用途的成员变量外，和semaphore几乎长得一样。但是mutex的引入主要是为了提供互斥机制，以避免多个进程同时在一个临界区中运行。<br>可以把互斥锁看成二值信号量。</p>
+<h3 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h3><p>自旋锁也是实现保护共享资源的一种锁机制，与互斥锁比较类似，都是为了解决对某资源的互斥使用。无论是互斥锁还是自旋锁，在任何时刻最多只有一个保持者。也就是说，任何时刻最多只有一个执行单元获得锁。两者的不同之处是，对于互斥锁而言，如果资源已经被占用，其它的资源申请进程只能进入sleep状态。但是自旋锁不会引起调用者sleep，如果自旋锁已经被别的执行单元保持，调用者就一直循环在等待该自旋锁的保持者是否释放该锁。</p>
+<h4 id="自旋锁一般原理"><a href="#自旋锁一般原理" class="headerlink" title="自旋锁一般原理"></a>自旋锁一般原理</h4><p>跟互斥锁一样，一个执行单元要想访问被自旋锁保护的共享资源，必须先得到锁，在访问完共享资源后，必须释放锁。如果在获取自旋锁时，没有任何执行单元保持该锁，那么将立即得到锁；如果在获取自旋锁时锁已经有保持者，那么获取锁操作将自旋在那里，直到该自旋锁的保持者释放了锁。由此我们可以看出，自旋锁是一种比较低级的保护数据结构或代码片段的原始方式，这种锁可能存在两个问题：死锁和过多占用cpu资源。</p>
+<h4 id="自旋锁适用情况"><a href="#自旋锁适用情况" class="headerlink" title="自旋锁适用情况"></a>自旋锁适用情况</h4><p>自旋锁比较适用于锁使用者保持锁时间比较短的情况，正是由于自旋锁使用者一般保持较短的锁时间，因此选择自选而不是睡眠是非常必要的，因为自旋锁的效率远高于互斥锁。信号量和读写信号量适用于保持时间较长的情况，它们会导致调用者sleep，因此只能在进程上下文使用。而自旋锁适合于保持时间非常短的情况，它可以再任何上下文使用。如果被保护的共享资源只在进程上下文访问，使用信号量保护该共享资源非常合适，如果对共享资源的访问时间非常短，自旋锁也可以。但是如果被保护的共享资源需要在中断上下文访问（包括底半部即中断处理句柄和顶半部即软中断），就必须使用自旋锁。自旋锁保持期间是抢占失效的，而信号量和读写信号量保持期间是可以被抢占的。自旋锁只有在内核可抢占或SMP（多处理器）的情况下才真正需要，在单CPU且不可抢占的内核下，自旋锁的所有操作都是空操作。另外格外注意一点：自旋锁不能递归使用。</p>
+<h3 id="互斥锁和信号量与自旋锁的区别"><a href="#互斥锁和信号量与自旋锁的区别" class="headerlink" title="互斥锁和信号量与自旋锁的区别"></a>互斥锁和信号量与自旋锁的区别</h3><p>信号量。互斥锁允许进程sleep属于睡眠锁，自旋锁不允许调用者sleep，而是让其循环等待</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在硬件层面，CPU提供了原子操作、关中断、锁内存总线的机制；OS基于这几个CPU硬件机制，就能够实现锁；再基于锁，就能够实现各种各样的同步机制（信号量等等）。<br>原子锁不仅提供了一种锁定机制，同时也提供了算术或 bitwise 操作。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;原子操作&quot;&gt;&lt;a href=&quot;#原子操作&quot; class=&quot;headerlink&quot; title=&quot;原子操作&quot;&gt;&lt;/a&gt;原子操作&lt;/h2&gt;&lt;p&gt;Linux 中最简单的同步方法就是原子操作。原子 意味着临界段被包含在 API 函数中。不需要额外的锁定，因为 API 函数
+    
+    </summary>
+    
+      <category term="同步" scheme="http://blog.lxmoses.com/categories/%E5%90%8C%E6%AD%A5/"/>
+    
+    
+      <category term="linux" scheme="http://blog.lxmoses.com/tags/linux/"/>
+    
+      <category term="原子操作" scheme="http://blog.lxmoses.com/tags/%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/"/>
+    
+      <category term="锁" scheme="http://blog.lxmoses.com/tags/%E9%94%81/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux延时实现</title>
@@ -358,9 +395,9 @@ c.Test()
       <category term="cocos2dx" scheme="http://blog.lxmoses.com/categories/cocos2dx/"/>
     
     
-      <category term="cocos2dx" scheme="http://blog.lxmoses.com/tags/cocos2dx/"/>
-    
       <category term="内存管理" scheme="http://blog.lxmoses.com/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="cocos2dx" scheme="http://blog.lxmoses.com/tags/cocos2dx/"/>
     
   </entry>
   
@@ -509,30 +546,6 @@ c.Test()
       <category term="网络编程" scheme="http://blog.lxmoses.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
       <category term="UDP" scheme="http://blog.lxmoses.com/tags/UDP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在终端里查看外网Ip的方法</title>
-    <link href="http://blog.lxmoses.com/2017/01/05/%E5%9C%A8%E7%BB%88%E7%AB%AF%E9%87%8C%E6%9F%A5%E7%9C%8B%E5%A4%96%E7%BD%91ip%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://blog.lxmoses.com/2017/01/05/在终端里查看外网ip的方法/</id>
-    <published>2017-01-05T04:36:29.000Z</published>
-    <updated>2017-01-05T04:37:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>转自<a href="https://segmentfault.com/a/1190000000302955" target="_blank" rel="external">这里</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;转自&lt;a href=&quot;https://segmentfault.com/a/1190000000302955&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="http://blog.lxmoses.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="IP" scheme="http://blog.lxmoses.com/tags/IP/"/>
     
   </entry>
   
