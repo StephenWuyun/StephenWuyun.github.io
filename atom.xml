@@ -395,9 +395,9 @@ c.Test()
       <category term="cocos2dx" scheme="http://blog.lxmoses.com/categories/cocos2dx/"/>
     
     
-      <category term="内存管理" scheme="http://blog.lxmoses.com/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
-    
       <category term="cocos2dx" scheme="http://blog.lxmoses.com/tags/cocos2dx/"/>
+    
+      <category term="内存管理" scheme="http://blog.lxmoses.com/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
