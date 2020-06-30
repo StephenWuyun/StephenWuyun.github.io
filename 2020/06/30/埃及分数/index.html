@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++,随机数," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,16 +86,39 @@
 
 
 
-<meta name="description" content="今天在设计一个随机数时遇到了一些问题：12vector&amp;lt;int&amp;gt; array(10);int index = floor(CCRANDOM_0_1() * array.size)就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。嗯，于是发现">
+<meta name="description" content="题目描述分子为1的分数称为埃及分数。现输入一个真分数(分子比分母小的分数，叫做真分数)，请将该分数分解为埃及分数。如：8/11 = 1/2+1/5+1/55+1/110。
+输入描述输入一个真分数，String型
+输出描述输出分解后的string
+示例输入8/11
+输出1/2+1/5+1/55+1/110
+思路
+##```gopackage mainimport “fmt”
+func main()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于随机数">
-<meta property="og:url" content="http://blog.lxmoses.com/2017/03/14/关于随机数/index.html">
+<meta property="og:title" content="埃及分数">
+<meta property="og:url" content="http://blog.lxmoses.com/2020/06/30/埃及分数/index.html">
 <meta property="og:site_name" content="悟云">
-<meta property="og:description" content="今天在设计一个随机数时遇到了一些问题：12vector&amp;lt;int&amp;gt; array(10);int index = floor(CCRANDOM_0_1() * array.size)就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。嗯，于是发现">
-<meta property="og:updated_time" content="2017-03-14T08:29:42.000Z">
+<meta property="og:description" content="题目描述分子为1的分数称为埃及分数。现输入一个真分数(分子比分母小的分数，叫做真分数)，请将该分数分解为埃及分数。如：8/11 = 1/2+1/5+1/55+1/110。
+输入描述输入一个真分数，String型
+输出描述输出分解后的string
+示例输入8/11
+输出1/2+1/5+1/55+1/110
+思路
+##```gopackage mainimport “fmt”
+func main()">
+<meta property="og:image" content="http://blog.lxmoses.com/images/equation.svg">
+<meta property="og:updated_time" content="2020-06-30T04:02:22.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于随机数">
-<meta name="twitter:description" content="今天在设计一个随机数时遇到了一些问题：12vector&amp;lt;int&amp;gt; array(10);int index = floor(CCRANDOM_0_1() * array.size)就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。嗯，于是发现">
+<meta name="twitter:title" content="埃及分数">
+<meta name="twitter:description" content="题目描述分子为1的分数称为埃及分数。现输入一个真分数(分子比分母小的分数，叫做真分数)，请将该分数分解为埃及分数。如：8/11 = 1/2+1/5+1/55+1/110。
+输入描述输入一个真分数，String型
+输出描述输出分解后的string
+示例输入8/11
+输出1/2+1/5+1/55+1/110
+思路
+##```gopackage mainimport “fmt”
+func main()">
+<meta name="twitter:image" content="http://blog.lxmoses.com/images/equation.svg">
 
 
 
@@ -123,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.lxmoses.com/2017/03/14/关于随机数/"/>
+  <link rel="canonical" href="http://blog.lxmoses.com/2020/06/30/埃及分数/"/>
 
 
 
 
 
-  <title> 关于随机数 | 悟云 </title>
+  <title> 埃及分数 | 悟云 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +273,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/14/关于随机数/">
+  <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2020/06/30/埃及分数/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="moses">
@@ -274,7 +297,7 @@
             
             
               
-                关于随机数
+                埃及分数
               
             
           </h1>
@@ -287,8 +310,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-14T16:14:40+08:00">
-                2017-03-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-30T11:56:28+08:00">
+                2020-06-30
               </time>
             
 
@@ -297,24 +320,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index">
-                    <span itemprop="name">c++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -341,7 +346,66 @@
       
 
       
-        <p>今天在设计一个随机数时遇到了一些问题：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="built_in">array</span>(<span class="number">10</span>);</div><div class="line"><span class="keyword">int</span> index = <span class="built_in">floor</span>(CCRANDOM_0_1() * <span class="built_in">array</span>.size)</div></pre></td></tr></table></figure><br>就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。<br>嗯，于是发现了c++ 11关于随机数的新特性，上述代码改为如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></div><div class="line"></div><div class="line">srand(time(<span class="literal">NULL</span>));</div><div class="line"><span class="built_in">std</span>::default_random_engine e;</div><div class="line"><span class="built_in">std</span>::uniform_int_distribution&lt;<span class="keyword">unsigned</span>&gt; u(<span class="number">0</span>, <span class="built_in">array</span>.size());</div><div class="line"><span class="keyword">auto</span> index = u(e);</div></pre></td></tr></table></figure><br>路漫漫其修远兮。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>分子为1的分数称为埃及分数。现输入一个真分数(分子比分母小的分数，叫做真分数)，请将该分数分解为埃及分数。如：8/11 = 1/2+1/5+1/55+1/110。</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><p>输入一个真分数，String型</p>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><p>输出分解后的string</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>8/11</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>1/2+1/5+1/55+1/110</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><img src="/images/equation.svg" alt=""></p>
+<p>##<br>```go<br>package main<br>import “fmt”</p>
+<p>func main() {<br>    for {<br>        var a, b int<br>        _, err := fmt.Scanf(“%d/%d”, &amp;a, &amp;b)<br>        if err != nil {<br>            return<br>        }</p>
+<pre><code>    var x = gcd(a, b)
+    a /= x
+    b /= x
+
+    var try bool
+    var result []int
+    for {
+        if b % a == 0 &amp;&amp; try {
+            result = append(result, b / a)
+            break
+        }
+
+        var p =  b/a + 1
+        result = append(result, p)
+        a = a * p - b
+        b *= p
+        try = true
+    }
+
+
+    for i, v := range result {
+        fmt.Printf(&quot;1/%d&quot;, v)
+        if i &lt; len(result) - 1 {
+            fmt.Print(&quot;+&quot;)
+        } else {
+            fmt.Print(&quot;\n&quot;)
+        }
+    }
+
+}
+</code></pre><p>}</p>
+<p>func gcd(a, b int) int {<br>    if a == 1 || b == 1 {<br>        return 1<br>    }</p>
+<pre><code>var min int
+if a &gt;= b {
+    min = b
+} else {
+    min = a
+}
+
+var result = 1
+for i := 2; i &lt;= min; i++ {
+    if a % i == 0 &amp;&amp; b % i == 0 {
+        a /= i
+        b /= i
+        min /= i
+        result *= i
+    }
+}
+
+return result
+</code></pre><p>}</p>
+<p>##</p>
 
       
     </div>
@@ -363,21 +427,13 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/c/" rel="tag"># c++</a>
-          
-            <a href="/tags/随机数/" rel="tag"># 随机数</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/13/javascript继承详解/" rel="next" title="Javascript继承详解">
-                <i class="fa fa-chevron-left"></i> Javascript继承详解
+              <a href="/2020/06/30/最长公共字符串/" rel="next" title="最长公共字符串">
+                <i class="fa fa-chevron-left"></i> 最长公共字符串
               </a>
             
           </div>
@@ -385,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/15/do-while妙用/" rel="prev" title="Do-While妙用">
-                Do-While妙用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -435,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpeg"
@@ -535,6 +596,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入描述"><span class="nav-number">2.</span> <span class="nav-text">输入描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出描述"><span class="nav-number">3.</span> <span class="nav-text">输出描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">4.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">4.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">4.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">5.</span> <span class="nav-text">思路</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
