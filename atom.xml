@@ -6,7 +6,7 @@
   <link href="http://blog.lxmoses.com/atom.xml" rel="self"/>
   
   <link href="http://blog.lxmoses.com/"/>
-  <updated>2020-09-19T11:56:48.000Z</updated>
+  <updated>2021-05-06T16:15:16.297Z</updated>
   <id>http://blog.lxmoses.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Machine Learning Is Fun</title>
+    <link href="http://blog.lxmoses.com/2021/05/07/machine-learning-is-fun/"/>
+    <id>http://blog.lxmoses.com/2021/05/07/machine-learning-is-fun/</id>
+    <published>2021-05-06T16:12:50.000Z</published>
+    <updated>2021-05-06T16:15:16.297Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.machinelearningisfun.com/">machine learning is fun</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.machinelearningisfun.com/&quot;&gt;machine learning is fun&lt;/a&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="机器学习" scheme="http://blog.lxmoses.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>排序总结</title>
@@ -469,30 +492,6 @@
     <category term="c++" scheme="http://blog.lxmoses.com/tags/c/"/>
     
     <category term="随机数" scheme="http://blog.lxmoses.com/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript继承详解</title>
-    <link href="http://blog.lxmoses.com/2017/03/13/javascript%E7%BB%A7%E6%89%BF%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://blog.lxmoses.com/2017/03/13/javascript%E7%BB%A7%E6%89%BF%E8%AF%A6%E8%A7%A3/</id>
-    <published>2017-03-13T03:42:40.000Z</published>
-    <updated>2017-03-13T03:48:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>由于最近要用cocos2d-js开发游戏，所以有必要学习下js，在此mark下js的继承。<br>参见三生石上的系列博客：<br><a href="http://www.cnblogs.com/sanshi/archive/2009/07/08/1519036.html">javascript继承详解(一)</a><br><a href="http://www.cnblogs.com/sanshi/archive/2009/07/08/1519251.html">javascript继承详解(二)</a><br><a href="http://www.cnblogs.com/sanshi/archive/2009/07/09/1519890.html">javascript继承详解(三)</a><br><a href="http://www.cnblogs.com/sanshi/archive/2009/07/13/1522647.html">javascript继承详解(四)</a><br><a href="http://www.cnblogs.com/sanshi/archive/2009/07/14/1523523.html">javascript继承详解(五)</a><br><a href="http://www.cnblogs.com/sanshi/archive/2009/07/15/1524263.html">javascript继承详解(六)</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;由于最近要用cocos2d-js开发游戏，所以有必要学习下js，在此mark下js的继承。&lt;br&gt;参见三生石上的系列博客：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/sanshi/archive/2009/07/08/1519036.html&quot;&gt;</summary>
-      
-    
-    
-    
-    <category term="js" scheme="http://blog.lxmoses.com/categories/js/"/>
-    
-    
-    <category term="js" scheme="http://blog.lxmoses.com/tags/js/"/>
     
   </entry>
   

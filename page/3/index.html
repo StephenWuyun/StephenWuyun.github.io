@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -130,7 +130,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -159,6 +159,91 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/11/go-%E5%8C%BF%E5%90%8D%E5%AD%97%E6%AE%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/04/11/go-%E5%8C%BF%E5%90%8D%E5%AD%97%E6%AE%B5/" class="post-title-link" itemprop="url">Go-匿名字段</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-04-11 14:12:20 / Modified: 14:17:12" itemprop="dateCreated datePublished" datetime="2017-04-11T14:12:20+08:00">2017-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>package main</p>
+<p>import “fmt”</p>
+<p>type Base struct {<br>    Name string<br>    Age  int<br>}</p>
+<p>func (b * Base) Test() {<br>    fmt.Println(“test successfully”)<br>}</p>
+<p>type Child struct {<br>    Base // 匿名字段， 默认把Base的所有字段都继承过来了。 这样看起来才像真正的继承<br>    Age  int<br>}</p>
+<p>func main() {<br>    c := new(Child)<br>    c.Name = “hello” // 可以直接使用Base中的字段<br>    c.Age = 20       // 如果有重复的， 则最外的优先</p>
+<pre><code>fmt.Println(c.Name)     // hello
+fmt.Println(c.Age)      // 20
+fmt.Println(c.Base.Age) // 要访问Base中的，可以这样写 0
+c.Test()
+</code></pre>
+<p>}<br>go语言中的”继承“并不是真正的意义上的继承，确切地说是组合。匿名字段让习惯了C++/java之类的程序员用go更加得心应手。<br>作为一门年轻的语言，不得不说go语言对程序员还是非常友好的.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -599,91 +684,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>最近在学习go语言，go语言一大特性就是并发。 参见<a target="_blank" rel="noopener" href="http://hustcat.github.io/channel/">这篇博客</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/15/do-while%E5%A6%99%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="moses">
-      <meta itemprop="description" content="你我都是彼此的过客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="悟云">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/03/15/do-while%E5%A6%99%E7%94%A8/" class="post-title-link" itemprop="url">Do-While妙用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2017-03-15 11:07:05 / Modified: 11:31:59" itemprop="dateCreated datePublished" datetime="2017-03-15T11:07:05+08:00">2017-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">编程技巧</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>关于do-while，笔者之前一直停留在学习c++基础语法时的理解，然而后面读框架代码时经常看到do…while(0)这样的用法，当时不理解这样用的用意。<br>纸上得来终觉浅，绝知此事要躬行。 当我们看技术书籍或者看一些优秀的项目源码时，对于很多小地方可能也就是一目置之，自己亲身经历一次才会深刻的明白，这里也提醒自己以后多多注意细节。<br>最近在实现一个类的初始化函数如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">MapFactory::init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> ret = <span class="literal">false</span>;</span><br><span class="line">	ret = <span class="built_in">initSimple</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ret = <span class="built_in">initMiddle</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ret = <span class="built_in">initHard</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ret = <span class="built_in">initSpecial</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当时笔者在写上面这段代码时就感觉好麻烦，好多的return语句。<br>然而，我们可以巧妙地借用下循环里break的思路，优化如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">MapFactory::init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> ret = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		ret = <span class="built_in">initSimple</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		ret = <span class="built_in">initMiddle</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		ret = <span class="built_in">initHard</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		ret = <span class="built_in">initSpecial</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">while</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然上面的例子并没有恰当地表现出这个技巧的实用之处，因为上面的代码在每一次调用之时无外乎失败就直接返回，但是假如子初始化函数失败还需要释放资源，比如指针之类的。嗯，自行体会。</p>
-<p>之前在阅读的代码中看到的do…while(0)代码更为常见的是红定义中，参加下面代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SAFE_DELETE(p) do&#123; delete p; p = NULL;&#125; while(0)</span></span><br></pre></td></tr></table></figure>
-<p>假设这里去掉do…while(0),</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SAFE_DELETE(p) delete p; p = NULL;</span></span><br></pre></td></tr></table></figure>
-<p>注意下面宏调用：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">NULL</span> != p) <span class="built_in">SAFE_DELETE</span>(p)</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">do</span> something</span><br></pre></td></tr></table></figure>
-<p>这里如果是下面的定义方式，程序编译会报错，这里的do-while相当于提供了一种健壮的宏定义方式，至于个中细节，自行体会。<br>最后我想说的是，程序就像是一件艺术品，没有最好的代码实现， 只有更好，更优雅的代码。只有在一次又一次的实战中不断总结，才能不断提升自己。</p>
 
       
     </div>

@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -130,7 +130,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -159,6 +159,80 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/02/lambda-c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/02/lambda-c/" class="post-title-link" itemprop="url">Lambda--C++</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-02 22:33:08 / Modified: 22:38:10" itemprop="dateCreated datePublished" datetime="2017-03-02T22:33:08+08:00">2017-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>参见<a target="_blank" rel="noopener" href="https://www.devbean.net/2012/05/cpp11-lambda/">这里</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -511,80 +585,6 @@
 <h3 id="限制本地IP地址"><a href="#限制本地IP地址" class="headerlink" title="限制本地IP地址"></a>限制本地IP地址</h3><p>大多数UDP服务器在创建UDP端点时都使其本地IP地址具有通配符（wildcard）的特点。这就表明进入的UDP数据报如果其目的地为服务器端口，那么在任何本地接口均可接受到它。<br>当服务器创建端点时，它可以把其中一个主机本地IP地址包括广播地址指定为端点的本地IP地址。只有当目的IP地址与指定的地址相匹配时，进入的UDP数据报才能被送达这个端点。<br>有可能在相同的端口上启动不同的服务器，每个服务器具有不同的本地IP地址。但是，一般必须告诉系统应用程序重用相同的端口是没问题的。使用socket API时，必须指定SO_REUSEADDR选项。</p>
 <h3 id="限制远端IP地址"><a href="#限制远端IP地址" class="headerlink" title="限制远端IP地址"></a>限制远端IP地址</h3><p>大多数系统允许UDP端点对远端地址进行限制。这说明端点将只能接收特定IP地址和端口号的UDP数据报。</p>
 <h3 id="每个端口有多个接收者"><a href="#每个端口有多个接收者" class="headerlink" title="每个端口有多个接收者"></a>每个端口有多个接收者</h3><p>大多数的系统在某一时刻只允许一个程序端点与某个本地IP地址及UDP端口号关联。<br>在一个支持多播的系统上，这种情况将发生变化。多个端点可以使用同一个IP地址和UDP端口号，尽管应用程序通常必须告诉API是可行的。使用socket API时，必须指定SO_REUSEADDR选项。当UDP数据报到达目的IP地址为多播地址或广播地址，而且目的IP地址和端口号处有多个端点时，就向每个端点传送一份数据报的复制。但是如果UDP数据报到达的是一个单播地址，那么只向其中一个端点传送一份数据报的复制。选择哪个端点传送数据取决于各个不同的系统实现。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/05/%E5%9C%A8%E7%BB%88%E7%AB%AF%E9%87%8C%E6%9F%A5%E7%9C%8B%E5%A4%96%E7%BD%91ip%E7%9A%84%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="moses">
-      <meta itemprop="description" content="你我都是彼此的过客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="悟云">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/01/05/%E5%9C%A8%E7%BB%88%E7%AB%AF%E9%87%8C%E6%9F%A5%E7%9C%8B%E5%A4%96%E7%BD%91ip%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">在终端里查看外网Ip的方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2017-01-05 12:36:29 / Modified: 12:37:52" itemprop="dateCreated datePublished" datetime="2017-01-05T12:36:29+08:00">2017-01-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>转自<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000000302955">这里</a></p>
 
       
     </div>
