@@ -1,23 +1,659 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block title %} {{ config.title }} {% endblock %}
 
-{% block page_class %}
-  {% if is_home() %} page-home {% endif %}
-{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/css/main.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;blog.lxmoses.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="你我都是彼此的过客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="悟云">
+<meta property="og:url" content="http://blog.lxmoses.com/index.html">
+<meta property="og:site_name" content="悟云">
+<meta property="og:description" content="你我都是彼此的过客">
+<meta property="og:locale">
+<meta property="article:author" content="moses">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://blog.lxmoses.com/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:true,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;zh-Hans&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>悟云</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="悟云" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">悟云</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">let it be</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">moses</p>
+  <div class="site-description" itemprop="description">你我都是彼此的过客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2020/09/19/%E6%8E%92%E5%BA%8F%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/09/19/%E6%8E%92%E5%BA%8F%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">排序总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-09-19 19:47:56 / Modified: 19:56:48" itemprop="dateCreated datePublished" datetime="2020-09-19T19:47:56+08:00">2020-09-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">bubbleSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> size = <span class="built_in">len</span>(arr)</span><br><span class="line">	<span class="comment">// 外层循环循环size-1次</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; size<span class="number">-1</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">var</span> swapped <span class="keyword">bool</span></span><br><span class="line">		<span class="comment">// 内层循环从切片头部开始循环比较相邻元素大小</span></span><br><span class="line">		<span class="comment">// 如果arr[j] &gt; arr[j+1]交换之 确保每次循环后最大的元素会排到最后</span></span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; size<span class="number">-1</span>-i; j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> arr[j] &gt; arr[j+<span class="number">1</span>] &#123;</span><br><span class="line">				arr[j], arr[j+<span class="number">1</span>] = arr[j+<span class="number">1</span>], arr[j]</span><br><span class="line">				swapped = <span class="literal">true</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> !swapped &#123;</span><br><span class="line">			<span class="comment">// 本次循环没有交换 此时切片已经有序</span></span><br><span class="line">			<span class="keyword">return</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">selectionSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> size = <span class="built_in">len</span>(arr)</span><br><span class="line">	<span class="keyword">var</span> minIndex <span class="keyword">int</span></span><br><span class="line">	<span class="comment">// 外层循环循环size-1次</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; size<span class="number">-1</span>; i++ &#123;</span><br><span class="line">		minIndex = i</span><br><span class="line">		<span class="comment">// 内层循环每次找出最小的元素</span></span><br><span class="line">		<span class="keyword">for</span> j := i + <span class="number">1</span>; j &lt; size; j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> arr[j] &lt; arr[minIndex] &#123;</span><br><span class="line">				minIndex = j</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> minIndex != i &#123;</span><br><span class="line">			<span class="comment">// 将本次找到的最小元素放入对应位置</span></span><br><span class="line">			arr[i], arr[minIndex] = arr[minIndex], arr[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">insertionSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> size = <span class="built_in">len</span>(arr)</span><br><span class="line">	<span class="comment">// 外层循环size-1次 从切片的第二个元素开始逐一为每个元素找到合适的插入位置</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; size; i++ &#123;</span><br><span class="line">		current := arr[i]</span><br><span class="line">		<span class="keyword">for</span> preIndex := i - <span class="number">1</span>; preIndex &gt;= <span class="number">0</span>; preIndex-- &#123;</span><br><span class="line">			<span class="keyword">if</span> arr[preIndex] &gt; current &#123;</span><br><span class="line">				<span class="comment">// 继续往前找 并挪动位置</span></span><br><span class="line">				arr[preIndex+<span class="number">1</span>] = arr[preIndex]</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// 找到合适的插入位置</span></span><br><span class="line">				arr[preIndex+<span class="number">1</span>] = current</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">shellSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> size = <span class="built_in">len</span>(arr)</span><br><span class="line">	<span class="comment">// 初始化间隙位size/2 逐步减少间隙 直至间隙为1</span></span><br><span class="line">	<span class="keyword">for</span> gap := size / <span class="number">2</span>; gap &gt;= <span class="number">1</span>; gap = gap / <span class="number">2</span> &#123;</span><br><span class="line">		<span class="comment">//将切片变为间隔h个元素有序</span></span><br><span class="line">		<span class="keyword">for</span> i := gap; i &lt; size; i++ &#123;</span><br><span class="line">			<span class="keyword">var</span> current = arr[i]</span><br><span class="line">			<span class="keyword">for</span> preIndex := i; preIndex-gap &gt;= <span class="number">0</span>; preIndex = preIndex - gap &#123;</span><br><span class="line">				<span class="keyword">if</span> current &lt; arr[preIndex-gap] &#123;</span><br><span class="line">					arr[preIndex] = arr[preIndex-gap]</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					arr[preIndex] = current</span><br><span class="line">					<span class="keyword">break</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">quickSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	_quickSort(arr, <span class="number">0</span>, <span class="built_in">len</span>(arr)<span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> _<span class="title">quickSort</span><span class="params">(arr []<span class="keyword">int</span>, left, right <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> left &lt; right &#123;</span><br><span class="line">		<span class="comment">// 将切片分为两个部分</span></span><br><span class="line">		<span class="comment">// 使得[left-&gt;pivot-1]的元素都小于等于arr[pivot], [pivot+1-&gt;right]的元素都大于arr[pivot]</span></span><br><span class="line">		pivot := partition(arr, left, right)</span><br><span class="line">		<span class="comment">// 对左右两个部分重复上述过程</span></span><br><span class="line">		_quickSort(arr, left, pivot<span class="number">-1</span>)</span><br><span class="line">		_quickSort(arr, pivot+<span class="number">1</span>, right)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">partition</span><span class="params">(arr []<span class="keyword">int</span>, left, right <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="comment">// 选取array[left]作为分割基准点</span></span><br><span class="line">	i, j, pivot := left, right, arr[left]</span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		<span class="comment">// 从右往左扫描 直到某个元素小于等于pivot</span></span><br><span class="line">		<span class="keyword">for</span> i &lt; j &amp;&amp; arr[j] &gt; pivot &#123;</span><br><span class="line">			j--</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 从左往右扫描 直到某个元素大于pivot</span></span><br><span class="line">		<span class="keyword">for</span> i &lt; j &amp;&amp; arr[i] &lt;= pivot &#123;</span><br><span class="line">			i++</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> i &lt; j &#123;</span><br><span class="line">			<span class="comment">// 此时可以肯定 arr[j] &lt;= pivot 同时 arr[i] &gt; pivot, 交换a[i], a[j]</span></span><br><span class="line">			arr[i], arr[j] = arr[j], arr[i]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// 扫描完毕</span></span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	arr[i], arr[left] = arr[left], arr[i]</span><br><span class="line">	<span class="keyword">return</span> i</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">mergeSort</span><span class="params">(arr []<span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> size = <span class="built_in">len</span>(arr)</span><br><span class="line">	<span class="keyword">if</span> size &lt;= <span class="number">1</span> &#123;</span><br><span class="line">		<span class="comment">// 只有一个值 无需排序</span></span><br><span class="line">		<span class="keyword">return</span> arr</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 分成左右两组 分别继续归并排序</span></span><br><span class="line">	<span class="keyword">var</span> mid = size / <span class="number">2</span></span><br><span class="line">	<span class="keyword">var</span> left = mergeSort(arr[:mid])</span><br><span class="line">	<span class="keyword">var</span> right = mergeSort(arr[mid:])</span><br><span class="line">	<span class="comment">// 合并左右两组排序结果</span></span><br><span class="line">	<span class="keyword">return</span> merge(left, right)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(left, right []<span class="keyword">int</span>)</span> <span class="params">(result []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	l, r := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> l &lt; <span class="built_in">len</span>(left) &amp;&amp; r &lt; <span class="built_in">len</span>(right) &#123;</span><br><span class="line">		<span class="keyword">if</span> left[l] &lt;= right[r] &#123;</span><br><span class="line">			result = <span class="built_in">append</span>(result, left[l])</span><br><span class="line">			l++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			result = <span class="built_in">append</span>(result, right[r])</span><br><span class="line">			r++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	result = <span class="built_in">append</span>(result, left[l:]...)</span><br><span class="line">	result = <span class="built_in">append</span>(result, right[r:]...)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">heapSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> size = <span class="built_in">len</span>(arr)</span><br><span class="line">	<span class="comment">// 构建大顶堆</span></span><br><span class="line">	<span class="keyword">for</span> i := size/<span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">		<span class="comment">// 从第一个非叶子节点从下至上, 从左到右调整结构</span></span><br><span class="line">		adjustHeap(arr, i, size)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 下沉堆定元素+重新调整堆结构</span></span><br><span class="line">	<span class="keyword">for</span> i := size - <span class="number">1</span>; i &gt; <span class="number">0</span>; i-- &#123;</span><br><span class="line">		arr[<span class="number">0</span>], arr[i] = arr[i], arr[<span class="number">0</span>]</span><br><span class="line">		adjustHeap(arr, <span class="number">0</span>, i)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">adjustHeap</span><span class="params">(arr []<span class="keyword">int</span>, i, size <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> tmp = arr[i]</span><br><span class="line">	<span class="keyword">for</span> k := i*<span class="number">2</span> + <span class="number">1</span>; k &lt; size; k = k*<span class="number">2</span> + <span class="number">1</span> &#123;</span><br><span class="line">		<span class="comment">//从i结点的左子结点开始，也就是2i+1处开始</span></span><br><span class="line">		<span class="keyword">if</span> k+<span class="number">1</span> &lt; size &amp;&amp; arr[k] &lt; arr[k+<span class="number">1</span>] &#123;</span><br><span class="line">			<span class="comment">//如果左子结点小于右子结点，k指向右子结点</span></span><br><span class="line">			k++</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> arr[k] &gt; tmp &#123;</span><br><span class="line">			<span class="comment">//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）</span></span><br><span class="line">			arr[i] = arr[k]</span><br><span class="line">			i = k</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//将temp值放到最终的位置</span></span><br><span class="line">	arr[i] = tmp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="非比较类型排序"><a href="#非比较类型排序" class="headerlink" title="非比较类型排序"></a>非比较类型排序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计数排序</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">countingSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> maxValue = maxValue(arr)</span><br><span class="line">	<span class="comment">// 分配一个能容纳0-maxValue整数的切片</span></span><br><span class="line">	<span class="keyword">var</span> bucket = <span class="built_in">make</span>([]<span class="keyword">int</span>, maxValue+<span class="number">1</span>)</span><br><span class="line">	<span class="comment">// 将每个元素直接存到对应位置</span></span><br><span class="line">	<span class="keyword">for</span> _, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">		bucket[value] += <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	sortedIndex := <span class="number">0</span></span><br><span class="line">	<span class="comment">// 存放元素位置的顺序就是元素排序后的顺序</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> bucket &#123;</span><br><span class="line">		<span class="keyword">for</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> bucket[i] &gt; <span class="number">0</span> &#123;</span><br><span class="line">				arr[sortedIndex] = i</span><br><span class="line">				bucket[i]--</span><br><span class="line">				sortedIndex++</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 桶排序 计数排序的升级版 利用函数映射</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">bucketSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="comment">//桶数</span></span><br><span class="line">	<span class="keyword">var</span> size = <span class="built_in">len</span>(arr)</span><br><span class="line">	<span class="keyword">var</span> maxValue = maxValue(arr)</span><br><span class="line">	<span class="comment">//二维切片</span></span><br><span class="line">	buckets := <span class="built_in">make</span>([][]<span class="keyword">int</span>, size)</span><br><span class="line">	<span class="comment">//分配入桶</span></span><br><span class="line">	index := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; size; i++ &#123;</span><br><span class="line">		index = arr[i] * (size - <span class="number">1</span>) / maxValue <span class="comment">//函数映射</span></span><br><span class="line">		buckets[index] = <span class="built_in">append</span>(buckets[index], arr[i])</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 按顺序遍历桶取出数据</span></span><br><span class="line">	tmpPos := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; size; i++ &#123;</span><br><span class="line">		bucketLen := <span class="built_in">len</span>(buckets[i])</span><br><span class="line">		<span class="keyword">if</span> bucketLen &gt; <span class="number">0</span> &#123;</span><br><span class="line">			<span class="comment">// 桶内排序</span></span><br><span class="line">			<span class="comment">// 此处实现插入排序方式，其实可以用任意其他排序方式</span></span><br><span class="line">			insertionSort(buckets[i])</span><br><span class="line">			<span class="built_in">copy</span>(arr[tmpPos:], buckets[i])</span><br><span class="line">			tmpPos += bucketLen</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取数组最大元素</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxValue</span><span class="params">(arr []<span class="keyword">int</span>)</span> <span class="params">(max <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(arr) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	max = arr[<span class="number">0</span>]</span><br><span class="line">	<span class="keyword">for</span> _, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">		<span class="keyword">if</span> value &gt; max &#123;</span><br><span class="line">			max = value</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 基数排序</span></span><br><span class="line"><span class="comment">// 将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零</span></span><br><span class="line"><span class="comment">// 然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后，数列就变成一个有序序列。</span></span><br><span class="line"><span class="comment">// 基数排序的方式可以采用LSD（Least significant digital）或MSD（Most significant digital）</span></span><br><span class="line"><span class="comment">// LSD的排序方式由键值的最右边开始，而MSD则相反，由键值的最左边开始。</span></span><br><span class="line"><span class="comment">// 下面是实现的LSD版本</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">radixSort</span><span class="params">(arr []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> (</span><br><span class="line">		size     = <span class="built_in">len</span>(arr)</span><br><span class="line">		tmp      = <span class="built_in">make</span>([]<span class="keyword">int</span>, size, size)</span><br><span class="line">		radix    = <span class="number">1</span></span><br><span class="line">		maxDigit = maxDigit(arr)</span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> i, j, k <span class="keyword">int</span></span><br><span class="line">	<span class="keyword">for</span> i = <span class="number">0</span>; i &lt; maxDigit; i++ &#123; <span class="comment">//进行maxDigit次排序</span></span><br><span class="line">		<span class="comment">// count index 0-&gt;9对应每个位上的数字</span></span><br><span class="line">		<span class="comment">// count value 对应每个位上数字出现次数</span></span><br><span class="line">		<span class="keyword">var</span> count = <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">10</span>)</span><br><span class="line">		<span class="keyword">for</span> j = <span class="number">0</span>; j &lt; size; j++ &#123;</span><br><span class="line">			k = (arr[j] / radix) % <span class="number">10</span></span><br><span class="line">			count[k]++</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> j = <span class="number">1</span>; j &lt; <span class="number">10</span>; j++ &#123;</span><br><span class="line">			count[j] = count[j<span class="number">-1</span>] + count[j]</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 逆序</span></span><br><span class="line">		<span class="keyword">for</span> j = size - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j-- &#123;</span><br><span class="line">			k = (arr[j] / radix) % <span class="number">10</span></span><br><span class="line">			tmp[count[k]<span class="number">-1</span>] = arr[j]</span><br><span class="line">			count[k]--</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> j = <span class="number">0</span>; j &lt; size; j++ &#123;</span><br><span class="line">			arr[j] = tmp[j]</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 十进制位数增加</span></span><br><span class="line">		radix = radix * <span class="number">10</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//求数组元素的十进制位数</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxDigit</span><span class="params">(arr []<span class="keyword">int</span>)</span> <span class="params">(ret <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(arr) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> radix = <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> _, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">		<span class="keyword">for</span> value &gt;= radix &#123;</span><br><span class="line">			radix = radix * <span class="number">10</span></span><br><span class="line">			ret++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2020/06/30/%E8%B5%B0%E8%BF%B7%E5%AE%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/06/30/%E8%B5%B0%E8%BF%B7%E5%AE%AB/" class="post-title-link" itemprop="url">走迷宫</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-06-30 16:22:52 / Modified: 16:26:36" itemprop="dateCreated datePublished" datetime="2020-06-30T16:22:52+08:00">2020-06-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">定义一个二维数组N*M（其中2&lt;=N&lt;=10;2&lt;=M&lt;=10），如5 × 5数组下所示：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int maze[5][5] = &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        0, 1, 0, 0, 0,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        0, 1, 0, 1, 0,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        0, 0, 0, 0, 0,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        0, 1, 1, 1, 0,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        0, 0, 0, 1, 0,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">它表示一个迷宫，其中的1表示墙壁，0表示可以走的路，只能横着走或竖着走，不能斜着走，要求编程序找出从左上角到右下角的最短路线。入口点为[0,0],既第一空格是可以走的路。</span><br><span class="line"></span><br><span class="line">Input</span><br><span class="line"></span><br><span class="line">一个N × M的二维数组，表示一个迷宫。数据保证有唯一解,不考虑有多解的情况，即迷宫只有一条通道。</span><br><span class="line"></span><br><span class="line">Output</span><br><span class="line"></span><br><span class="line">左上角到右下角的最短路径，格式如样例所示。</span><br><span class="line"></span><br><span class="line">Sample Input</span><br><span class="line"></span><br><span class="line">0 1 0 0 0</span><br><span class="line"></span><br><span class="line">0 1 0 1 0</span><br><span class="line"></span><br><span class="line">0 0 0 0 0</span><br><span class="line"></span><br><span class="line">0 1 1 1 0</span><br><span class="line"></span><br><span class="line">0 0 0 1 0</span><br><span class="line"></span><br><span class="line">Sample Output</span><br><span class="line"></span><br><span class="line">(0, 0)</span><br><span class="line"></span><br><span class="line">(1, 0)</span><br><span class="line"></span><br><span class="line">(2, 0)</span><br><span class="line"></span><br><span class="line">(2, 1)</span><br><span class="line"></span><br><span class="line">(2, 2)</span><br><span class="line"></span><br><span class="line">(2, 3)</span><br><span class="line"></span><br><span class="line">(2, 4)</span><br><span class="line"></span><br><span class="line">(3, 4)</span><br><span class="line"></span><br><span class="line">(4, 4)</span><br></pre></td></tr></table></figure>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入两个整数，分别表示二位数组的行数，列数。再输入相应的数组，其中的1表示墙壁，0表示可以走的路。数据保证有唯一解,不考虑有多解的情况，即迷宫只有一条通道。</span><br></pre></td></tr></table></figure>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">左上角到右下角的最短路径，格式如样例所示。</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5 5</span><br><span class="line">0 1 0 0 0</span><br><span class="line">0 1 0 1 0</span><br><span class="line">0 0 0 0 0</span><br><span class="line">0 1 1 1 0</span><br><span class="line">0 0 0 1 0</span><br></pre></td></tr></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(0,0)</span><br><span class="line">(1,0)</span><br><span class="line">(2,0)</span><br><span class="line">(2,1)</span><br><span class="line">(2,2)</span><br><span class="line">(2,3)</span><br><span class="line">(2,4)</span><br><span class="line">(3,4)</span><br><span class="line">(4,4)</span><br></pre></td></tr></table></figure>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> m, n <span class="keyword">int</span></span><br><span class="line">        _, err := fmt.Scan(&amp;m)</span><br><span class="line">        <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        fmt.Scan(&amp;n)</span><br><span class="line">        matrix := <span class="built_in">make</span>([][]<span class="keyword">int</span>, m)</span><br><span class="line">        <span class="keyword">for</span> i := <span class="keyword">range</span> matrix &#123;</span><br><span class="line">            matrix[i] = <span class="built_in">make</span>([]<span class="keyword">int</span>, n)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; m; i++ &#123;</span><br><span class="line">            <span class="keyword">for</span> j := <span class="number">0</span>; j &lt;n; j++ &#123;</span><br><span class="line">                fmt.Scan(&amp;matrix[i][j])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        bestPath = <span class="literal">nil</span></span><br><span class="line">        path = <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">        findPath(matrix, <span class="number">0</span>, <span class="number">0</span>, m, n)</span><br><span class="line">        <span class="keyword">for</span> _, p := <span class="keyword">range</span> bestPath &#123;</span><br><span class="line">            fmt.Printf(<span class="string">&quot;(%d,%d)\n&quot;</span>, p.row, p.col)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Position <span class="keyword">struct</span> &#123;</span><br><span class="line">    row <span class="keyword">int</span></span><br><span class="line">    col <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    path []*Position</span><br><span class="line">    bestPath []*Position</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findPath</span><span class="params">(matrix [][]<span class="keyword">int</span>, i, j,  m, n <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(bestPath) == m + n - <span class="number">2</span> &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    matrix[i][j] = <span class="number">1</span></span><br><span class="line">    path = <span class="built_in">append</span>(path, &amp;Position&#123;i, j&#125;)</span><br><span class="line">    <span class="keyword">if</span> i == m <span class="number">-1</span> &amp;&amp; j == n <span class="number">-1</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(bestPath) == <span class="number">0</span> || <span class="built_in">len</span>(bestPath) &gt; <span class="built_in">len</span>(path) &#123;</span><br><span class="line">            bestPath = path</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> i &gt; <span class="number">0</span> &amp;&amp; matrix[i<span class="number">-1</span>][j] == <span class="number">0</span>  &#123;</span><br><span class="line">        findPath(matrix, i<span class="number">-1</span>, j,  m, n)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> i &lt; m <span class="number">-1</span> &amp;&amp; matrix[i+<span class="number">1</span>][j] == <span class="number">0</span> &#123;</span><br><span class="line">         findPath(matrix, i+<span class="number">1</span>, j, m,  n)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> j &gt; <span class="number">0</span> &amp;&amp; matrix[i][j<span class="number">-1</span>] == <span class="number">0</span> &#123;</span><br><span class="line">         findPath(matrix, i, j<span class="number">-1</span>, m, n)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> j &lt; n <span class="number">-1</span> &amp;&amp; matrix[i][j+<span class="number">1</span>] == <span class="number">0</span> &#123;</span><br><span class="line">        findPath(matrix, i, j+<span class="number">1</span>,  m, n)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">        matrix[i][j] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    path = path[<span class="number">0</span>:<span class="built_in">len</span>(path)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2020/06/30/%E5%9F%83%E5%8F%8A%E5%88%86%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/06/30/%E5%9F%83%E5%8F%8A%E5%88%86%E6%95%B0/" class="post-title-link" itemprop="url">埃及分数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-06-30 11:56:28 / Modified: 12:06:57" itemprop="dateCreated datePublished" datetime="2020-06-30T11:56:28+08:00">2020-06-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分子为1的分数称为埃及分数。现输入一个真分数(分子比分母小的分数，叫做真分数)，请将该分数分解为埃及分数。如：8/11 = 1/2+1/5+1/55+1/110。</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入一个真分数，String型</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出分解后的string</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8/11</span><br></pre></td></tr></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1/2+1/5+1/55+1/110</span><br></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><img src="/images/equation.svg"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> a, b <span class="keyword">int</span></span><br><span class="line">        _, err := fmt.Scanf(<span class="string">&quot;%d/%d&quot;</span>, &amp;a, &amp;b)</span><br><span class="line">        <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> x = gcd(a, b)</span><br><span class="line">		a /= x</span><br><span class="line">		b /= x</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> try <span class="keyword">bool</span></span><br><span class="line">		<span class="keyword">var</span> result []<span class="keyword">int</span></span><br><span class="line">		<span class="keyword">for</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> b % a == <span class="number">0</span> &amp;&amp; try &#123;</span><br><span class="line">				result = <span class="built_in">append</span>(result, b / a)</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">var</span> p =  b/a + <span class="number">1</span></span><br><span class="line">			result = <span class="built_in">append</span>(result, p)</span><br><span class="line">			a = a * p - b</span><br><span class="line">			b *= p</span><br><span class="line">			try = <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i, v := <span class="keyword">range</span> result &#123;</span><br><span class="line">            fmt.Printf(<span class="string">&quot;1/%d&quot;</span>, v)</span><br><span class="line">            <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(result) - <span class="number">1</span> &#123;</span><br><span class="line">                fmt.Print(<span class="string">&quot;+&quot;</span>)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                fmt.Print(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">gcd</span><span class="params">(a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span> || b == <span class="number">1</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> min <span class="keyword">int</span></span><br><span class="line">    <span class="keyword">if</span> a &gt;= b &#123;</span><br><span class="line">        min = b</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        min = a</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt;= min; i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> a % i == <span class="number">0</span> &amp;&amp; b % i == <span class="number">0</span> &#123;</span><br><span class="line">            a /= i</span><br><span class="line">            b /= i</span><br><span class="line">            min /= i</span><br><span class="line">            result *= i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2020/06/30/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/06/30/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">最长公共字符串</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-06-30 09:28:47 / Modified: 09:32:56" itemprop="dateCreated datePublished" datetime="2020-06-30T09:28:47+08:00">2020-06-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算两个字符串的最大公共字串的长度，字符不区分大小写</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入两个字符串</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出一个整数</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asdfas</span><br><span class="line">werasdfaswer</span><br></pre></td></tr></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;strings&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> m, n <span class="keyword">string</span></span><br><span class="line">        <span class="keyword">if</span> _, err := fmt.Scan(&amp;m); err != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> _, err := fmt.Scan(&amp;n); err != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">       </span><br><span class="line">        m = strings.ToLower(m)</span><br><span class="line">        n = strings.ToLower(n)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> max <span class="keyword">int</span></span><br><span class="line">        <span class="keyword">var</span> dp [][]<span class="keyword">int</span> = <span class="built_in">make</span>([][]<span class="keyword">int</span>, <span class="built_in">len</span>(m)+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i := <span class="keyword">range</span> dp &#123;</span><br><span class="line">            dp[i] = <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="built_in">len</span>(n)+<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="built_in">len</span>(m); i++ &#123;</span><br><span class="line">            <span class="keyword">for</span> j := <span class="number">1</span>; j &lt;= <span class="built_in">len</span>(n); j++ &#123;</span><br><span class="line">                <span class="keyword">if</span> m[i<span class="number">-1</span>] == n[j<span class="number">-1</span>] &#123;</span><br><span class="line">                    dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>] + <span class="number">1</span></span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> dp[i][j] &gt; max &#123;</span><br><span class="line">                    max = dp[i][j]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        fmt.Println(max)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;strings&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> m, n <span class="keyword">string</span></span><br><span class="line">        <span class="keyword">if</span> _, err := fmt.Scan(&amp;m); err != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> _, err := fmt.Scan(&amp;n); err != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> longStr, shortStr <span class="keyword">string</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(m) &gt;= <span class="built_in">len</span>(n) &#123;</span><br><span class="line">            longStr = strings.ToLower(m)</span><br><span class="line">            shortStr = strings.ToLower(n)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            shortStr = strings.ToLower(m)</span><br><span class="line">            longStr = strings.ToLower(n)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> maxLen <span class="keyword">int</span></span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(shortStr); i++ &#123;</span><br><span class="line">            <span class="keyword">for</span> j := <span class="number">1</span>; j &lt;= <span class="built_in">len</span>(shortStr) - i; j++ &#123;</span><br><span class="line">                <span class="keyword">if</span> strings.Contains(longStr, shortStr[i:i+j]) &#123;</span><br><span class="line">                    <span class="keyword">if</span> maxLen &lt; j &#123;</span><br><span class="line">                        maxLen = j</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        fmt.Println(maxLen)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2020/06/29/%E7%81%AB%E8%BD%A6%E8%BF%9B%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/06/29/%E7%81%AB%E8%BD%A6%E8%BF%9B%E7%AB%99/" class="post-title-link" itemprop="url">火车进站</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2020-06-29 19:03:24 / Modified: 19:08:30" itemprop="dateCreated datePublished" datetime="2020-06-29T19:03:24+08:00">2020-06-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给定一个正整数N代表火车数量，0&lt;N&lt;10，接下来输入火车入站的序列，一共N辆火车，每辆火车以数字1-9编号，火车站只有一个方向进出，同时停靠在火车站的列车中，只有后进站的出站了，先进站的才能出站。要求以字典序排序输出火车出站的序列号。</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有多组测试用例，每一组第一行输入一个正整数N（0&lt;N&lt;10），第二行包括N个正整数，范围为1到9。</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出以字典序从小到大排序的火车出站序列号，每个编号以空格隔开，每个输出序列换行，具体见sample。</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 2 3</span><br></pre></td></tr></table></figure>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 2 3</span><br><span class="line">1 3 2</span><br><span class="line">2 1 3</span><br><span class="line">2 3 1</span><br><span class="line">3 2 1</span><br></pre></td></tr></table></figure>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sort&quot;</span></span><br><span class="line">	<span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> stack []<span class="keyword">string</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *stack)</span> <span class="title">push</span><span class="params">(v <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">	*s = <span class="built_in">append</span>(*s, v)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *stack)</span> <span class="title">pop</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	l := <span class="built_in">len</span>(*s)</span><br><span class="line">	result := (*s)[l<span class="number">-1</span>]</span><br><span class="line">	*s = (*s)[<span class="number">0</span> : l<span class="number">-1</span>]</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *stack)</span> <span class="title">unshift</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	result := (*s)[<span class="number">0</span>]</span><br><span class="line">	*s = (*s)[<span class="number">1</span>:]</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *stack)</span> <span class="title">empty</span><span class="params">()</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">len</span>(*s) == <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		<span class="keyword">var</span> N <span class="keyword">uint8</span></span><br><span class="line">		_, err := fmt.Scan(&amp;N)</span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> trainList = <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="number">0</span>, N)</span><br><span class="line">		<span class="keyword">for</span> i := <span class="keyword">uint8</span>(<span class="number">0</span>); i &lt; N; i++ &#123;</span><br><span class="line">			<span class="keyword">var</span> train <span class="keyword">string</span></span><br><span class="line">			fmt.Scan(&amp;train)</span><br><span class="line">			trainList = <span class="built_in">append</span>(trainList, train)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		pre := stack(trainList)</span><br><span class="line">		in := stack&#123;&#125;</span><br><span class="line">		out := stack&#123;&#125;</span><br><span class="line">		handle(pre, in, out)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	sort.Strings(results)</span><br><span class="line">	<span class="keyword">for</span> _, result := <span class="keyword">range</span> results &#123;</span><br><span class="line">		fmt.Println(result)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	results []<span class="keyword">string</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handle</span><span class="params">(pre, in, out stack)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> pre.empty() &amp;&amp; in.empty() &#123;</span><br><span class="line">		results = <span class="built_in">append</span>(results, strings.Join(out, <span class="string">&quot; &quot;</span>))</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> !pre.empty() &#123;</span><br><span class="line">		prec := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="built_in">len</span>(pre))</span><br><span class="line">		inc := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="built_in">len</span>(in))</span><br><span class="line">		outc := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="built_in">len</span>(out))</span><br><span class="line"></span><br><span class="line">		<span class="built_in">copy</span>(prec, pre)</span><br><span class="line">		<span class="built_in">copy</span>(inc, in)</span><br><span class="line">		<span class="built_in">copy</span>(outc, out)</span><br><span class="line"></span><br><span class="line">		pres := stack(prec)</span><br><span class="line">		ins := stack(inc)</span><br><span class="line">		outs := stack(outc)</span><br><span class="line"></span><br><span class="line">		ins.push(pres.unshift())</span><br><span class="line">		handle(pres, ins, outs)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> !in.empty() &#123;</span><br><span class="line">		prec := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="built_in">len</span>(pre))</span><br><span class="line">		inc := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="built_in">len</span>(in))</span><br><span class="line">		outc := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="built_in">len</span>(out))</span><br><span class="line"></span><br><span class="line">		<span class="built_in">copy</span>(prec, pre)</span><br><span class="line">		<span class="built_in">copy</span>(inc, in)</span><br><span class="line">		<span class="built_in">copy</span>(outc, out)</span><br><span class="line"></span><br><span class="line">		pres := stack(prec)</span><br><span class="line">		ins := stack(inc)</span><br><span class="line">		outs := stack(outc)</span><br><span class="line"></span><br><span class="line">		outs.push(ins.pop())</span><br><span class="line">		handle(pres, ins, outs)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2019/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Eipv4%E5%92%8Cipv6%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Eipv4%E5%92%8Cipv6%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">关于Ipv4和ipv6</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2019-03-07 16:09:05 / Modified: 16:21:27" itemprop="dateCreated datePublished" datetime="2019-03-07T16:09:05+08:00">2019-03-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">网络编程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>服务器监听10000端口, 客户端可以建立tcp连接但是服务端始终无法收到数据.</p>
+<h2 id="排查"><a href="#排查" class="headerlink" title="排查"></a>排查</h2><p>笔者首先排查了客户端程序, 发现整个过程没什么问题, 客户端成功的建立了tcp连接并且发送了数据. 随后笔者在服务端加日志发现服务器并没有accept任何连接. 猜测可能是端口占用问题，果然发现迅雷占用了10000端口.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>让笔者纳闷的是为什么端口被占用却没有报错.<br>原来迅雷占用了10000端口, 但是netstat显示迅雷占用的ipv4, 服务器监听端口的时候会监听ipv4/ipv6连接. 虽然ipv4被占用了但是还是成功的监听了ipv6端口. 当客户端建立连接时选择的是ipv4端口, 所以便出现了上述让笔者感觉怪异的现象。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">moses</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

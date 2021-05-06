@@ -1,38 +1,299 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
 
-{% block title %} {{ page.title }} | {{ config.title }} {% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;blog.lxmoses.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="自从从老汤那里辞职回学校以后，放松了一段时间，然后又开始投简历。经历了几次面试。由于快毕业了， 所以找工作的区域不再局限于成都，全国海投！第一次笔试是北京一家叫做光合起源的公司hr通过qq给笔者发了一份面试题，挺简单的，都是一些基础知识。hr反馈说看笔者测试题做得不错，问我什么时候有空去北京去面试，笔者暂时走不开，就此搁置。接下来是2016年12月一天之内的三次面试。上午电话面试。上海一家游戏公司">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近的几次面试">
+<meta property="og:url" content="http://blog.lxmoses.com/2017/01/03/%E9%9D%A2%E8%AF%95/index.html">
+<meta property="og:site_name" content="悟云">
+<meta property="og:description" content="自从从老汤那里辞职回学校以后，放松了一段时间，然后又开始投简历。经历了几次面试。由于快毕业了， 所以找工作的区域不再局限于成都，全国海投！第一次笔试是北京一家叫做光合起源的公司hr通过qq给笔者发了一份面试题，挺简单的，都是一些基础知识。hr反馈说看笔者测试题做得不错，问我什么时候有空去北京去面试，笔者暂时走不开，就此搁置。接下来是2016年12月一天之内的三次面试。上午电话面试。上海一家游戏公司">
+<meta property="og:locale">
+<meta property="og:image" content="http://blog.lxmoses.com/images/%E8%90%A4%E7%81%AB%E8%99%AB%E9%9D%A2%E8%AF%95%E9%A2%98.jpg">
+<meta property="article:published_time" content="2017-01-03T14:13:02.000Z">
+<meta property="article:modified_time" content="2017-01-03T12:33:02.000Z">
+<meta property="article:author" content="moses">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.lxmoses.com/images/%E8%90%A4%E7%81%AB%E8%99%AB%E9%9D%A2%E8%AF%95%E9%A2%98.jpg">
+
+
+<link rel="canonical" href="http://blog.lxmoses.com/2017/01/03/%E9%9D%A2%E8%AF%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-Hans&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;blog.lxmoses.com&#x2F;2017&#x2F;01&#x2F;03&#x2F;%E9%9D%A2%E8%AF%95&#x2F;&quot;,&quot;path&quot;:&quot;2017&#x2F;01&#x2F;03&#x2F;面试&#x2F;&quot;,&quot;title&quot;:&quot;最近的几次面试&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>最近的几次面试 | 悟云</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="悟云" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">悟云</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">let it be</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">moses</p>
+  <div class="site-description" itemprop="description">你我都是彼此的过客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/03/%E9%9D%A2%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          最近的几次面试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-01-03 22:13:02 / Modified: 20:33:02" itemprop="dateCreated datePublished" datetime="2017-01-03T22:13:02+08:00">2017-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>自从从老汤那里辞职回学校以后，放松了一段时间，然后又开始投简历。经历了几次面试。<br>由于快毕业了， 所以找工作的区域不再局限于成都，全国海投！<br>第一次笔试是北京一家叫做光合起源的公司hr通过qq给笔者发了一份面试题，挺简单的，都是一些基础知识。hr反馈说看笔者测试题做得不错，问我什么时候有空去北京去面试，笔者暂时走不开，就此搁置。<br>接下来是2016年12月一天之内的三次面试。<br>上午电话面试。上海一家游戏公司， 面试官主要问了一些算法的东西，无奈笔者对算法没有深入的探究，面试官简单地问了几句也觉得无趣，然后草草结束面试。<br>下午环球中心，启明星辰一面，首先让笔者做了一套面试题，内容大概是一些简单的编程知识以及linux常用命令。除了网络方面的东西都还应对的可以，第二天一面顺利通过。<br>然后匆匆赶去蜀都中心， 萤火虫游戏， 去这家公司的路途中感觉很熟悉，到了地方发现巧了， 大概半年前面过隔壁的游戏公司，当时拿到了offer但是hr说第一个月没工资，迫于生计，拒绝了。<br>言归正传， 到了公司以后还是做了一套面试题。 感觉这家公司面试题逼格比较高，笔者留下了一张照片。<br><img src="/images/%E8%90%A4%E7%81%AB%E8%99%AB%E9%9D%A2%E8%AF%95%E9%A2%98.jpg"><br>智力题除了第四题，其他简单地想了下还是答上来了。 编程题比较偏算法，关于最短路径以及求点到直线的距离的算法不是很熟悉，没能写出来，只是简单地表述了下我的思路。<br>关于面试题第四题，笔者简单搜索了下，发现是自己高估了这道题的难度，主要是前面的都是类似脑筋急转弯之内的东西，突然来了个正常不习惯！！！下面是答案:<br>一个罐子：1个红球。另一个罐子：49个红球，50个篮球<br>笔试完了之后由于面试官开会，等了半个小时， 果然不出所料， 面试官问我acm， 无奈笔者acm只是水水地参与了一下，实在难登大雅之堂。面试官转问我tcp的细节，笔者比较偏向实用主义，对于网络编程，也是停留在读完unp卷一的水准， 面试官鄙视地说：“我很好奇你这两年干的啥啊”。 笔者无言以对。只是下定决心回来好好学习下常用的算法并且立马买了tcp/ip详解。<br>今天早上清晨吸着霾挤着地铁公交去启明星辰二面。 由于面试官开会， 等了一个小时。 面试官是成都分部技术方面的老大，这次面试对我触动挺大的。<br>笔者也经历了七八次面试吧，之前的面试官主要问的都是一些基础知识，但这次面试官主要问我项目经历。 笔者面试时精神属于高度集中的那种，而且潜意识里认为面试内容应该不会详细到业务这种程度，一时没领会到他要我详细描述项目这个意思，导致面试官有些不耐烦， 交流不是很顺畅。（最怕空气突然安静） 由于我没有及时细谈项目，面试官一度怀疑我根本是在编造项目经验！！！ 后来我重新详细地描述了下之前的项目经历， 然后面试官叫我重新发份简历到他的邮箱然后结合一面的面试官再决定是否给我三面的机会。<br>其实这些面试对我来说倒是不那么在意结果，毕竟类似这样的公司遍地都是。然而在这个过程中暴露了很多笔者自身的问题。<br>第一，笔者面试时心态不够平和，精神过度集中，导致表现出的思维不够灵活，表达能力偏弱。 以后的每一次面试都要以一副云淡风轻的态度淡然面对，虽然我是打工的，但人格层面并不比谁第一等，也没必要表现地那么卑微。<br>第二，现在的面试官经常会问一些常用的算法，这是笔者的短板，其实说来这些算法也不是多难，简单地准备一周应该能应对大部分面试官。 虽然在下认为其实工作中这些并没有什么卵用，但是这个社会就是这样，求职的人多了，面试官就会通过这些光环来刷人，笔者无力改变，只能接受。<br>第三，笔者为人处世的态度比较随意，与面试时高度紧张的态度相反，面试之前通常是毫无准备，简历也是比较随意， 以后需要多加注意。应该以一个成年人的态度来面对社会了。<br>谈不上优秀,也算不上渣。 人潮中，我是那么的普通。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2016/12/29/c++%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F/" rel="prev" title="C++的四种类型转换方式">
+                  <i class="fa fa-chevron-left"></i> C++的四种类型转换方式
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/01/04/TCP-IP%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/" rel="next" title="TCP/IP四层协议系统概述">
+                  TCP/IP四层协议系统概述 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">moses</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

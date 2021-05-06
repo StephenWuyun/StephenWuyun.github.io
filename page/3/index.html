@@ -1,23 +1,748 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block title %} {{ config.title }} {% endblock %}
 
-{% block page_class %}
-  {% if is_home() %} page-home {% endif %}
-{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/css/main.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;blog.lxmoses.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="你我都是彼此的过客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="悟云">
+<meta property="og:url" content="http://blog.lxmoses.com/page/3/index.html">
+<meta property="og:site_name" content="悟云">
+<meta property="og:description" content="你我都是彼此的过客">
+<meta property="og:locale">
+<meta property="article:author" content="moses">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://blog.lxmoses.com/page/3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:true,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;zh-Hans&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;page&#x2F;3&#x2F;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>悟云</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="悟云" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">悟云</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">let it be</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">moses</p>
+  <div class="site-description" itemprop="description">你我都是彼此的过客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/11/go-Timer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/04/11/go-Timer/" class="post-title-link" itemprop="url">Go-Timer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-04-11 11:00:05 / Modified: 13:36:01" itemprop="dateCreated datePublished" datetime="2017-04-11T11:00:05+08:00">2017-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Time"><a href="#Time" class="headerlink" title="Time"></a>Time</h2><p>首先有必要了解下go中Time的定义:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Time <span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="comment">// sec gives the number of seconds elapsed since</span></span><br><span class="line">	<span class="comment">// January 1, year 1 00:00:00 UTC.</span></span><br><span class="line">	sec <span class="keyword">int64</span></span><br><span class="line">	<span class="comment">// nsec specifies a non-negative nanosecond</span></span><br><span class="line">	<span class="comment">// offset within the second named by Seconds.</span></span><br><span class="line">	<span class="comment">// It must be in the range [0, 999999999].</span></span><br><span class="line">	nsec <span class="keyword">int32</span></span><br><span class="line">	<span class="comment">// loc specifies the Location that should be used to</span></span><br><span class="line">	<span class="comment">// determine the minute, hour, month, day, and year</span></span><br><span class="line">	<span class="comment">// that correspond to this Time.</span></span><br><span class="line">	<span class="comment">// The nil location means UTC.</span></span><br><span class="line">	<span class="comment">// All UTC times are represented with loc==nil, never loc==&amp;utcLoc.</span></span><br><span class="line">	loc *Location</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到go语言中对于时间的定义：基于元年一月一日零点零分开始计算，精确到纳秒级别，至于底层是否能真正精确到这个级别就不得而知了。<br>还有一个重要的概念是Location,我在本地测试时区是CST，即大中华标准时间.<br>同时，go还提供了很多方便的辅助函数。<br>比较函数:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// After reports whether the time instant t is after u.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">After</span><span class="params">(u Time)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> t.sec &gt; u.sec || t.sec == u.sec &amp;&amp; t.nsec &gt; u.nsec</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Before reports whether the time instant t is before u.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Before</span><span class="params">(u Time)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> t.sec &lt; u.sec || t.sec == u.sec &amp;&amp; t.nsec &lt; u.nsec</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Equal reports whether t and u represent the same time instant.</span></span><br><span class="line"><span class="comment">// Two times can be equal even if they are in different locations.</span></span><br><span class="line"><span class="comment">// For example, 6:00 +0200 CEST and 4:00 UTC are Equal.</span></span><br><span class="line"><span class="comment">// Do not use == with Time values.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Equal</span><span class="params">(u Time)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> t.sec == u.sec &amp;&amp; t.nsec == u.nsec</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>加减运算：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Add</span><span class="params">(d Duration)</span> <span class="title">Time</span></span> &#123;</span><br><span class="line">	t.sec += <span class="keyword">int64</span>(d / <span class="number">1e9</span>)</span><br><span class="line">	nsec := t.nsec + <span class="keyword">int32</span>(d%<span class="number">1e9</span>)</span><br><span class="line">	<span class="keyword">if</span> nsec &gt;= <span class="number">1e9</span> &#123;</span><br><span class="line">		t.sec++</span><br><span class="line">		nsec -= <span class="number">1e9</span></span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> nsec &lt; <span class="number">0</span> &#123;</span><br><span class="line">		t.sec--</span><br><span class="line">		nsec += <span class="number">1e9</span></span><br><span class="line">	&#125;</span><br><span class="line">	t.nsec = nsec</span><br><span class="line">	<span class="keyword">return</span> t</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">Sub</span><span class="params">(u Time)</span> <span class="title">Duration</span></span> &#123;</span><br><span class="line">	d := Duration(t.sec-u.sec)*Second + Duration(t.nsec-u.nsec)</span><br><span class="line">	<span class="comment">// Check for overflow or underflow.</span></span><br><span class="line">	<span class="keyword">switch</span> &#123;</span><br><span class="line">	<span class="keyword">case</span> u.Add(d).Equal(t):</span><br><span class="line">		<span class="keyword">return</span> d <span class="comment">// d is correct</span></span><br><span class="line">	<span class="keyword">case</span> t.Before(u):</span><br><span class="line">		<span class="keyword">return</span> minDuration <span class="comment">// t - u is negative out of range</span></span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="keyword">return</span> maxDuration <span class="comment">// t - u is positive out of range</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t Time)</span> <span class="title">AddDate</span><span class="params">(years <span class="keyword">int</span>, months <span class="keyword">int</span>, days <span class="keyword">int</span>)</span> <span class="title">Time</span></span> &#123;</span><br><span class="line">	year, month, day := t.Date()</span><br><span class="line">	hour, min, sec := t.Clock()</span><br><span class="line">	<span class="keyword">return</span> Date(year+years, month+Month(months), day+days, hour, min, sec, <span class="keyword">int</span>(t.nsec), t.Location())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h2><p>看下定时器的定义:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The Timer type represents a single event.</span></span><br><span class="line"><span class="comment">// When the Timer expires, the current time will be sent on C,</span></span><br><span class="line"><span class="comment">// unless the Timer was created by AfterFunc.</span></span><br><span class="line"><span class="comment">// A Timer must be created with NewTimer or AfterFunc.</span></span><br><span class="line"><span class="keyword">type</span> Timer <span class="keyword">struct</span> &#123;</span><br><span class="line">	C &lt;-<span class="keyword">chan</span> Time</span><br><span class="line">	r runtimeTimer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据文档内容，定时器是一个单独的事件，除非调用AfterFunc，当超时时，C会接收到当前时间。定时器只能通过NewTimer或者AfterFunc创建。<br>启动定时器，和停止定时器:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">startTimer</span><span class="params">( * runtimeTimer)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">stopTimer</span><span class="params">( * runtimeTimer)</span> <span class="title">bool</span></span></span><br></pre></td></tr></table></figure>
+
+<p>NewTimer 和 AfterFunc</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// NewTimer creates a new Timer that will send</span></span><br><span class="line"><span class="comment">// the current time on its channel after at least duration d.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewTimer</span><span class="params">(d Duration)</span> * <span class="title">Timer</span></span> &#123;</span><br><span class="line">	c := <span class="built_in">make</span>(<span class="keyword">chan</span> Time, <span class="number">1</span>)</span><br><span class="line">	t := &amp;Timer&#123;</span><br><span class="line">		C: c,</span><br><span class="line">		r: runtimeTimer&#123;</span><br><span class="line">			when: when(d),</span><br><span class="line">			f:  sendTime,</span><br><span class="line">			arg:  c,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	startTimer(&amp;t.r)</span><br><span class="line">	<span class="keyword">return</span> t</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">AfterFunc</span><span class="params">(d Duration, f <span class="keyword">func</span>()</span>) * <span class="title">Timer</span></span> &#123;</span><br><span class="line">	t := &amp;Timer&#123;</span><br><span class="line">		r: runtimeTimer&#123;</span><br><span class="line">			when: when(d),</span><br><span class="line">			f:    goFunc,</span><br><span class="line">			arg:  f,</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	startTimer(&amp;t.r)</span><br><span class="line">	<span class="keyword">return</span> t</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>NewTimer初始化一个定时器,当超时之后会调用sendTime函数发送当前时间;AfterFunc接受一个func作为参数,当时间到了之后,执行func。</p>
+<p>重设定时器</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t * Timer)</span> <span class="title">Reset</span><span class="params">(d Duration)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> t.r.f == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(<span class="string">&quot;time: Reset called on uninitialized Timer&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	w := when(d)</span><br><span class="line">	active := stopTimer(&amp;t.r)</span><br><span class="line">	t.r.when = w</span><br><span class="line">	startTimer(&amp;t.r)</span><br><span class="line">	<span class="keyword">return</span> active</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>After函数</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// After waits for the duration to elapse and then sends the current time</span></span><br><span class="line"><span class="comment">// on the returned channel.</span></span><br><span class="line"><span class="comment">// It is equivalent to NewTimer(d).C.</span></span><br><span class="line"><span class="comment">// The underlying Timer is not recovered by the garbage collector</span></span><br><span class="line"><span class="comment">// until the timer fires. If efficiency is a concern, use NewTimer</span></span><br><span class="line"><span class="comment">// instead and call Timer.Stop if the timer is no longer needed.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">After</span><span class="params">(d Duration)</span> &lt;-<span class="title">chan</span> <span class="title">Time</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> NewTimer(d).C</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>释放定时器资源</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Stop prevents the Timer from firing.</span></span><br><span class="line"><span class="comment">// It returns true if the call stops the timer, false if the timer has already</span></span><br><span class="line"><span class="comment">// expired or been stopped.</span></span><br><span class="line"><span class="comment">// Stop does not close the channel, to prevent a read from the channel succeeding</span></span><br><span class="line"><span class="comment">// incorrectly.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// To prevent a timer created with NewTimer from firing after a call to Stop,</span></span><br><span class="line"><span class="comment">// check the return value and drain the channel.</span></span><br><span class="line"><span class="comment">// For example, assuming the program has not received from t.C already:</span></span><br><span class="line"><span class="comment">//	if !t.Stop() &#123;</span></span><br><span class="line"><span class="comment">//		&lt;-t.C</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"><span class="comment">// This cannot be done concurrent to other receives from the Timer&#x27;s</span></span><br><span class="line"><span class="comment">// channel.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// For a timer created with AfterFunc(d, f), if t.Stop returns false, then the timer</span></span><br><span class="line"><span class="comment">// has already expired and the function f has been started in its own goroutine;</span></span><br><span class="line"><span class="comment">// Stop does not wait for f to complete before returning.</span></span><br><span class="line"><span class="comment">// If the caller needs to know whether f is completed, it must coordinate</span></span><br><span class="line"><span class="comment">// with f explicitly.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t * Timer)</span> <span class="title">Stop</span><span class="params">()</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> t.r.f == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(<span class="string">&quot;time: Stop called on uninitialized Timer&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> stopTimer(&amp;t.r)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/07/%E6%94%AF%E4%BB%98%E5%8F%8D%E9%A6%88%E5%8F%AF%E9%87%8D%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/04/07/%E6%94%AF%E4%BB%98%E5%8F%8D%E9%A6%88%E5%8F%AF%E9%87%8D%E5%85%A5/" class="post-title-link" itemprop="url">支付反馈可重入</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-04-07 16:04:17 / Modified: 16:48:50" itemprop="dateCreated datePublished" datetime="2017-04-07T16:04:17+08:00">2017-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近在做支付,支付平台通知支付结果时，可能会重复通知。<br>为了解决这一问题，有三种思路。 锁，事务，缓存队列。<br>这里选择用缓存队列结合chan实现支付重复反馈可重入</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inputTradeno = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">string</span>)</span><br><span class="line"><span class="keyword">var</span> outputStatus = <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">chanLoop</span><span class="params">()</span></span>&#123;</span><br><span class="line">	 hashmap := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, <span class="number">10000</span>)</span><br><span class="line">	 <span class="keyword">var</span> queue common.StringFIFO</span><br><span class="line">	 queue.Init(<span class="number">10000</span>)</span><br><span class="line">	 <span class="keyword">for</span> &#123;</span><br><span class="line">		tradeno := &lt;- inputTradeno</span><br><span class="line">		<span class="keyword">if</span> _, ok := hashmap[tradeno]; ok&#123;</span><br><span class="line">			outputStatus &lt;- <span class="literal">true</span></span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> queue.Full()&#123;</span><br><span class="line">				oldestTradeno, _ := queue.Pop()</span><br><span class="line">				<span class="built_in">delete</span>(hashmap, oldestTradeno)</span><br><span class="line">			&#125;</span><br><span class="line">			queue.Push(tradeno)</span><br><span class="line">			hashmap[tradeno] = <span class="keyword">struct</span> &#123;&#125;&#123;&#125;</span><br><span class="line">			outputStatus &lt;- <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">look</span><span class="params">(tradeno <span class="keyword">string</span>)</span> <span class="title">bool</span></span>&#123;</span><br><span class="line">	inputTradeno &lt;- tradeno</span><br><span class="line">	ret := &lt;- outputStatus</span><br><span class="line">	<span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">go</span> chanLoop()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">wftNotify</span><span class="params">(c * gin.Context)</span></span>&#123;</span><br><span class="line">	<span class="comment">//检验威富通是否重复通知</span></span><br><span class="line">	<span class="keyword">if</span> look(notifyReq.Out_trade_no)&#123;</span><br><span class="line">	<span class="comment">//已经缓存当前订单，说明威富通重复通知</span></span><br><span class="line">		common.LogError(<span class="string">&quot;该订单已经处理&quot;</span>)</span><br><span class="line">		c.Writer.WriteString(wxpay.WFT_RETURN_MSG_SUCCESS)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/31/c-%E9%97%AD%E5%8C%85%E6%8E%A2%E7%B4%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/31/c-%E9%97%AD%E5%8C%85%E6%8E%A2%E7%B4%A2/" class="post-title-link" itemprop="url">C++闭包探索</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-31 16:09:18 / Modified: 16:18:57" itemprop="dateCreated datePublished" datetime="2017-03-31T16:09:18+08:00">2017-03-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 利用c++类嵌套内部类实现闭包</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ITest</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span> <span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">process</span>();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">virtual</span> ~<span class="built_in">ITest</span>()&#123;&#125;</span><br><span class="line">	<span class="keyword">protected</span>:</span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">ITest * <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span> <span class="keyword">public</span> ITest</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">public</span>:</span><br><span class="line">			<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">()</span></span></span><br><span class="line"><span class="function">			</span>&#123;</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;嵌套内部类:&quot;</span> &lt;&lt; <span class="string">&quot; Count is &quot;</span> &lt;&lt; count++ &lt;&lt;endl;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Test</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *  利用函数内部类实现闭包</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*Func)</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">Func <span class="title">testFunc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">public</span>:</span><br><span class="line">			<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">process</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * pName = <span class="literal">NULL</span>)</span></span></span><br><span class="line"><span class="function">			</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(pName == <span class="literal">NULL</span>)&#123;</span><br><span class="line">					pName = <span class="string">&quot;moses&quot;</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;函数内部类:&quot;</span>&lt;&lt; pName &lt;&lt; <span class="string">&quot; Count is &quot;</span>&lt;&lt; count-- &lt;&lt; endl;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> Test::process;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * c++新特性lambda表达式实现闭包</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">std::function&lt;<span class="title">void</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *)</span>&gt; <span class="title">lambdaTest</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">auto</span> func = [count] (<span class="keyword">const</span> <span class="keyword">char</span> * pName = <span class="literal">NULL</span>) <span class="keyword">mutable</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(pName == <span class="literal">NULL</span>)&#123;</span><br><span class="line">			pName = <span class="string">&quot;moses&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;lambda : &quot;</span> &lt;&lt; pName &lt;&lt; <span class="string">&quot; Count is &quot;</span> &lt;&lt; count-- &lt;&lt; endl;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> func;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/31/reflection-go/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/31/reflection-go/" class="post-title-link" itemprop="url">Reflection-Go</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-31 11:15:35 / Modified: 13:33:38" itemprop="dateCreated datePublished" datetime="2017-03-31T11:15:35+08:00">2017-03-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="反射简介"><a href="#反射简介" class="headerlink" title="反射简介"></a>反射简介</h2><p>Reflection(反射)在计算机中表示 程序能够检查自身结构的能力，尤其是类型。 它是元编程的一种形式。<br>本文中，我们主要理解Go语言中的的反射运作机制。每个编程语言的反射模型不大相同，很多语言根本不支持反射(C、C++)。笔者在学校主要就是学的C/C++,因此对于反射这个概念不是很清晰，最近接触Go语言，所以从go的角度探索下反射, 下文中谈到“反射”时，默认为时Go语言中的反射。</p>
+<h2 id="类型和接口"><a href="#类型和接口" class="headerlink" title="类型和接口"></a>类型和接口</h2><p>反射建立在类型系统之上，因此我们从类型基础知识说起。<br>Go是静态语言。每个变量都有且只有一个静态类型，在编译时就已经确定。<br>关于类型，一个重要的分类是接口类型（interface），每个接口类型都代表固定的方法集合。一个接口变量可以指向（接口变量类似于C中的指针）任何类型的具体值，只要这个值实现了该接口类型的所有方法。<br>一个非常非常重要的接口类型是空接口，即:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span>&#123;&#125;	</span><br></pre></td></tr></table></figure>
+<p>它代表一个空集，没有任何方法。由于任何具体的值都有零个或更多个方法，因此类型为interface{}的变量能够存储任何值。<br>有人说，Go的接口是动态类型的。这个说法是错误的！接口变量也是静态类型的，它永远只有一个相同的静态类型。如果在运行时它存储的值发生了变化，这个必须满足接口类型的方法集合。这是Go的特性。</p>
+<h2 id="接口变量的表示"><a href="#接口变量的表示" class="headerlink" title="接口变量的表示"></a>接口变量的表示</h2><p>interface变量存储一对值:赋给改变量的具体的值、值类型的描述符。更确切的说，值就是实现该接口的底层数据，类型就是底层数据类型的描述。举个例子:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r io.Reader</span><br><span class="line">tyy, err := os.OpenFile(<span class="string">&quot;/dev/tty&quot;</span>, os.O_RDWR, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">&#125;</span><br><span class="line">r = tty</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，变量r在结构上包含一个(key, value)对:(tty, * os.File)。注意：类型os.File不仅仅实现了Read方法。虽然接口变量只提供Read函数的调用权，但是底层的值包含了关于这个值的所有类型消息。所以我们能够做这样的类型转换:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> w io.Writer</span><br><span class="line">w = r.(io.Writer)</span><br></pre></td></tr></table></figure>
+<p>上面的第二行代码是一个类型断言，它判定变量r内部的实际值也继承了io.Writer接口，所以才能被赋值给w。赋值之后，w就指向了(tty, * os.File）对，和变量r指向的是同一个(value, type)对。<br>不管底层具体值的方法集有多大，由于接口的静态类型限制，接口变量只能调用特定的一些方法。<br>继续看下面的代码:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> empty <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">empty = w</span><br></pre></td></tr></table></figure>
+<p>这里的空接口变量也包含(tty, * os.File)对。这一点很容易理解:空接口变量可以存储任何具体值以及该值的所有描述信息。<br>这里没有使用类型断言,因为w满足空接口的所有方法。另外需要注意的一点是，(value, type)对中的type必须是具体的类型(struct 或 基本类型),不能是接口类型。</p>
+<h2 id="反射可以将“接口类型变量”转换为“反射类型”对象"><a href="#反射可以将“接口类型变量”转换为“反射类型”对象" class="headerlink" title="反射可以将“接口类型变量”转换为“反射类型”对象"></a>反射可以将“接口类型变量”转换为“反射类型”对象</h2><p>这里反射类型指reflect.Type和reflect.Value。<br>首先了解下reflect包的两种类型Type和Value。这两种类型使访问接口内的数据成为可能。它们对应两个简单的方法，分别是reflect.TypeOf和reflect.ValueOf,分别是用来读取接口变量的reflect.Type和reflect.Value部分。<br>首先，我们看下reflect.TypeOf:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> x <span class="keyword">float64</span> = <span class="number">3.4</span></span><br><span class="line">	fmt.Println(<span class="string">&quot;type:&quot;</span>, reflect.TypeOf(x))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这行代码会打印出:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span>: <span class="keyword">float64</span></span><br></pre></td></tr></table></figure>
+<p>为什么没看到接口？ 这段代码看起来只是把一个float64类型的变量x传递给reflect.TypeOf,事实上查阅一下TypeOf的文档:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TypeOf</span><span class="params">(i <span class="keyword">interface</span>&#123;&#125;)</span> <span class="title">Type</span></span></span><br></pre></td></tr></table></figure>
+<p>我们调用reflect.TypeOf(x)时，x被存储在一个空接口变量中被传递过去，然后reflect.TypeOf对空接口变量进行拆解，恢复其类型信息。<br>函数reflect.ValueOf也会对底层的值进行恢复:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">float64</span> = <span class="number">3.4</span></span><br><span class="line">fmt.Println(<span class="string">&quot;value:&quot;</span>, reflect.ValueOf(x))</span><br></pre></td></tr></table></figure>
+<p>上面这段代码会打印出:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value: &lt;<span class="keyword">float64</span> Value&gt;</span><br></pre></td></tr></table></figure>
+<p>类型 reflect.Type 和 reflect.Value 都有很多方法，我们可以检查和使用它们。这里我们举几个例子。类型 reflect.Value 有一个方法 Type()，它会返回一个 reflect.Type 类型的对象。Type和 Value都有一个名为 Kind 的方法，它会返回一个常量，表示底层数据的类型，常见值有：Uint、Float64、Slice等。Value类型也有一些类似于Int、Float的方法，用来提取底层的数据。Int方法用来提取 int64, Float方法用来提取 float64，参考下面的代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">float64</span> = <span class="number">3.4</span></span><br><span class="line">v := reflect.ValueOf(x)</span><br><span class="line">fmt.Println(<span class="string">&quot;type:&quot;</span>, v.Type())</span><br><span class="line">fmt.Println(<span class="string">&quot;kind is float64:&quot;</span>, v.Kind() == reflect.Float64)</span><br><span class="line">fmt.Println(<span class="string">&quot;value:&quot;</span>, v.Float())</span><br></pre></td></tr></table></figure>
+<p>上面这段代码会打印出:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span>: <span class="keyword">float64</span></span><br><span class="line">kind is <span class="keyword">float64</span>: <span class="literal">true</span></span><br><span class="line">value: <span class="number">3.4</span></span><br></pre></td></tr></table></figure>
+<p>反射库提供了很多值得列出来单独讨论的属性。首先是介绍下Value 的 getter 和 setter 方法。为了保证API 的精简，这两个方法操作的是某一组类型范围最大的那个。比如，处理任何含符号整型数，都使用 int64。也就是说 Value 类型的Int 方法返回值为 int64类型，SetInt 方法接收的参数类型也是 int64 类型。实际使用时，可能需要转化为实际的类型。<br>第二个属性是反射类型变量（reflection object）的 Kind 方法 会返回底层数据的类型，而不是静态类型。如果一个反射类型对象包含一个用户定义的整型数,看代码:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> MyInt <span class="keyword">int</span></span><br><span class="line"><span class="keyword">var</span> x MyInt = <span class="number">7</span></span><br><span class="line">v := relect.ValueOf(x)</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，虽然变量 v 的静态类型是MyInt，不是 int，Kind 方法仍然返回 reflect.Int。换句话说， Kind 方法不会像 Type 方法一样区分 MyInt 和 int。</p>
+<h2 id="反射可以将“反射类型对象”转换为“接口类型变量”"><a href="#反射可以将“反射类型对象”转换为“接口类型变量”" class="headerlink" title="反射可以将“反射类型对象”转换为“接口类型变量”"></a>反射可以将“反射类型对象”转换为“接口类型变量”</h2><p>根据一个 reflect.Value 类型的变量，我们可以使用 Interface 方法恢复其接口类型的值。事实上，这个方法会把 type 和 value 信息打包并填充到一个接口变量中，然后返回。其函数声明如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Interface returns v&#x27;s value as an interface&#123;&#125;.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Interface</span><span class="params">()</span> <span class="title">interface</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们可以通过断言，恢复底层的具体值:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y := v.Interface().(<span class="keyword">float64</span>)</span><br><span class="line">fmt.Println(y)</span><br></pre></td></tr></table></figure>
+<p>事实上，我们可以更好地利用这一特性。标准库中的 fmt.Println 和 fmt.Printf 等函数都接收空接口变量作为参数，fmt 包内部会对接口变量进行拆包（前面的例子中，我们也做过类似的操作）。因此，fmt 包的打印函数在打印 reflect.Value 类型变量的数据时，只需要把 Interface 方法的结果传给 格式化打印程序:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(v.Interface())</span><br></pre></td></tr></table></figure>
+<h2 id="如果要修改“反射类型对象”，其值必须是“可写的”-settable"><a href="#如果要修改“反射类型对象”，其值必须是“可写的”-settable" class="headerlink" title="如果要修改“反射类型对象”，其值必须是“可写的”(settable)"></a>如果要修改“反射类型对象”，其值必须是“可写的”(settable)</h2><p>“可写性”有些类似于寻址能力，但是更严格。它是反射类型变量的一种属性，赋予该变量修改底层存储数据的能力。“可写性”最终是由一个事实决定的：反射对象是否存储了原始值。举个代码例子：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">float64</span> = <span class="number">3.4</span></span><br><span class="line">v := reflect.ValueOf(x)</span><br><span class="line">v.SetFLoat(<span class="number">7.1</span>)</span><br></pre></td></tr></table></figure>
+<p>如果这行代码能够成功执行，它不会更新 x ，虽然看起来变量 v 是根据 x 创建的。相反，它会更新 x 存在于 反射对象 v 内部的一个拷贝，而变量 x 本身完全不受影响。这会造成迷惑，并且没有任何意义，所以是不合法的。“可写性”就是为了避免这个问题而设计的。<br>上面的代码中，我们把变量 x 的一个拷贝传递给函数，因此不期望它会改变 x 的值。如果期望函数 f 能够修改变量 x，我们必须传递 x 的地址（即指向 x 的指针）给函数 f，如下:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(&amp;x)</span><br></pre></td></tr></table></figure>
+<p>反射的工作机制是一样的。如果你想通过反射修改变量x，就要把想要修改的变量的指针传递给反射库。<br>首先，像通常一样初始化变量x，然后创建一个指向它的反射对象，名字为p:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">float64</span> = <span class="number">3.4</span></span><br><span class="line">p := reflect.ValueOf(&amp;x)</span><br><span class="line">fmt.Println(<span class="string">&quot;type of p:&quot;</span>, p.Type())</span><br><span class="line">fmt.Println(<span class="string">&quot;settability of p:&quot;</span>, p.CanSet())</span><br></pre></td></tr></table></figure>
+<p>这段代码的输出是:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> of p: * <span class="keyword">float64</span></span><br><span class="line">settability of p: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>反射对象p是不可写的，但是我们也无意修改p，事实上我们要修改的是 * p。为了得到p指向的数据，可以调用Value类型的Elem方法。Elem方法能够对指针进行“解引用”,然后将结果存储到Value类型对象v中:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v := p.Elem()</span><br><span class="line">fmt.Printlen(<span class="string">&quot;settability of v:&quot;</span>, v.CanSet())</span><br></pre></td></tr></table></figure>
+<p>上面这段代码的输出:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">settability of v: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>由于变量v代表x，因此我们可以使用v.SetFloat修改x的值:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v.SetFloat(<span class="number">7.1</span>)</span><br><span class="line">fmt.Println(v.Interface())</span><br><span class="line">fmt.Println(x)</span><br></pre></td></tr></table></figure>
+<p>上面的代码输出如下:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7.1</span></span><br><span class="line"><span class="number">7.1</span></span><br></pre></td></tr></table></figure>
+<p>反射不太容易理解，reflect.Type 和 reflect.Value 会混淆正在执行的程序，但是它做的事情正是编程语言做的事情。记住：只要反射对象要修改它们表示的对象，就必须获取它们表示的对象的地址。</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>把反射应用到结构体时，常用的方式是 使用反射修改一个结构体的某些字段。只要拥有结构体的地址，我们就可以修改它的字段。<br>下面是一个简单的例子:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> T <span class="keyword">struct</span> &#123;</span><br><span class="line">	A <span class="keyword">int</span></span><br><span class="line">	B <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line">t := T&#123;<span class="number">23</span>, <span class="string">&quot;skidoo&quot;</span>&#125;</span><br><span class="line">s := reflect.ValueOf(&amp;t).Elem()</span><br><span class="line">	typeOfT := s.Type()</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; s.NumField(); i++ &#123;</span><br><span class="line">		f := s.Field(i)</span><br><span class="line">		fmt.Printf(<span class="string">&quot;%d: %s %s = %v\n&quot;</span>, i,</span><br><span class="line">			typeOfT.Field(i).Name, f.Type(), f.Interface())</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码的输出如下:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>: A <span class="keyword">int</span> = <span class="number">23</span></span><br><span class="line"><span class="number">1</span>: B <span class="keyword">string</span> = skidoo</span><br></pre></td></tr></table></figure>
+<p>这里有一点需要指出:变量 T 的字段都是首字母大写的（暴露到外部），因为struct中只有暴露到外部的字段才是“可写的”。<br>由于变量 s 包含一个“可写的”反射对象，我们可以修改结构体的字段:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.Field(<span class="number">0</span>).SetInt(<span class="number">77</span>)</span><br><span class="line">s.Field(<span class="number">1</span>).SetString(<span class="string">&quot;Sunset Strip&quot;</span>)</span><br><span class="line">fmt.Println(<span class="string">&quot;t is now&quot;</span>, t)</span><br></pre></td></tr></table></figure>
+<p>上面的代码输出如下:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t is now &#123;<span class="number">77</span> Sunset Strip&#125;</span><br></pre></td></tr></table></figure>
+<p>如果变量s是通过t，而不是&amp;t创建的，调用SetInt和SetString将会失败，因为t的字段是不可写的。<br>顺便一提，struct中的tag可以通过反射获得:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tag := s.Field(<span class="number">0</span>).Tag.Get(<span class="string">&quot;testtag&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/22/goroutine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/22/goroutine/" class="post-title-link" itemprop="url">Goroutine & Channel</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-22 18:03:39 / Modified: 18:27:57" itemprop="dateCreated datePublished" datetime="2017-03-22T18:03:39+08:00">2017-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近在学习go语言，go语言一大特性就是并发。 参见<a target="_blank" rel="noopener" href="http://hustcat.github.io/channel/">这篇博客</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/15/do-while%E5%A6%99%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/15/do-while%E5%A6%99%E7%94%A8/" class="post-title-link" itemprop="url">Do-While妙用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-15 11:07:05 / Modified: 11:31:59" itemprop="dateCreated datePublished" datetime="2017-03-15T11:07:05+08:00">2017-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">编程技巧</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>关于do-while，笔者之前一直停留在学习c++基础语法时的理解，然而后面读框架代码时经常看到do…while(0)这样的用法，当时不理解这样用的用意。<br>纸上得来终觉浅，绝知此事要躬行。 当我们看技术书籍或者看一些优秀的项目源码时，对于很多小地方可能也就是一目置之，自己亲身经历一次才会深刻的明白，这里也提醒自己以后多多注意细节。<br>最近在实现一个类的初始化函数如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">MapFactory::init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> ret = <span class="literal">false</span>;</span><br><span class="line">	ret = <span class="built_in">initSimple</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ret = <span class="built_in">initMiddle</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ret = <span class="built_in">initHard</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ret = <span class="built_in">initSpecial</span>();</span><br><span class="line">	<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当时笔者在写上面这段代码时就感觉好麻烦，好多的return语句。<br>然而，我们可以巧妙地借用下循环里break的思路，优化如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">MapFactory::init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> ret = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		ret = <span class="built_in">initSimple</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		ret = <span class="built_in">initMiddle</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		ret = <span class="built_in">initHard</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		ret = <span class="built_in">initSpecial</span>();</span><br><span class="line">		<span class="keyword">if</span>(!ret)&#123;</span><br><span class="line">			<span class="comment">//return false;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">while</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然上面的例子并没有恰当地表现出这个技巧的实用之处，因为上面的代码在每一次调用之时无外乎失败就直接返回，但是假如子初始化函数失败还需要释放资源，比如指针之类的。嗯，自行体会。</p>
+<p>之前在阅读的代码中看到的do…while(0)代码更为常见的是红定义中，参加下面代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SAFE_DELETE(p) do&#123; delete p; p = NULL;&#125; while(0)</span></span><br></pre></td></tr></table></figure>
+<p>假设这里去掉do…while(0),</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SAFE_DELETE(p) delete p; p = NULL;</span></span><br></pre></td></tr></table></figure>
+<p>注意下面宏调用：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">NULL</span> != p) <span class="built_in">SAFE_DELETE</span>(p)</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">do</span> something</span><br></pre></td></tr></table></figure>
+<p>这里如果是下面的定义方式，程序编译会报错，这里的do-while相当于提供了一种健壮的宏定义方式，至于个中细节，自行体会。<br>最后我想说的是，程序就像是一件艺术品，没有最好的代码实现， 只有更好，更优雅的代码。只有在一次又一次的实战中不断总结，才能不断提升自己。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">moses</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,23 +1,665 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block title %} {{ config.title }} {% endblock %}
 
-{% block page_class %}
-  {% if is_home() %} page-home {% endif %}
-{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/css/main.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;blog.lxmoses.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="你我都是彼此的过客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="悟云">
+<meta property="og:url" content="http://blog.lxmoses.com/page/2/index.html">
+<meta property="og:site_name" content="悟云">
+<meta property="og:description" content="你我都是彼此的过客">
+<meta property="og:locale">
+<meta property="article:author" content="moses">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://blog.lxmoses.com/page/2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:true,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;zh-Hans&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;page&#x2F;2&#x2F;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>悟云</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="悟云" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">悟云</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">let it be</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">moses</p>
+  <div class="site-description" itemprop="description">你我都是彼此的过客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2018/05/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/05/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-title-link" itemprop="url">动态规划</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2018-05-21 20:02:18 / Modified: 21:51:38" itemprop="dateCreated datePublished" datetime="2018-05-21T20:02:18+08:00">2018-05-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>Those who cannot remember the past are condemned to repeat it.<br>动态规划算法的核心是记住已经求过的解，记住求解的方式有两种：自顶向下的备忘录法和自底向上。</p>
+<h2 id="小试牛刀-杠条切割问题"><a href="#小试牛刀-杠条切割问题" class="headerlink" title="小试牛刀-杠条切割问题"></a>小试牛刀-杠条切割问题</h2><p><img src="/images/%E6%9D%A0%E6%9D%A1%E5%88%87%E5%89%B2.png"><br>上图节选自算法导论。</p>
+<h3 id="经典朴素递归"><a href="#经典朴素递归" class="headerlink" title="经典朴素递归"></a>经典朴素递归</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">CutRod</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *rodLen2Price, <span class="keyword">int</span> curRodLen)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (curRodLen == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=curRodLen; ++curRodLen) &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = rodLen2Price[i] + <span class="built_in">CutRod</span>(rodLen2Price, curRodLen-i);</span><br><span class="line">        q = q &lt; tmp ? tmp : q;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自顶向下递归实现的CutRod效率很差，原因在于CutRod反复地用相同的参数值对自身进行递归调用，即它反复求解相同的子问题。而且由于递归调用次数太多会栈溢出。</p>
+<h3 id="动态规划-自顶向下"><a href="#动态规划-自顶向下" class="headerlink" title="动态规划-自顶向下"></a>动态规划-自顶向下</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MemorizedCutRodAux</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *rodLen2Price, <span class="keyword">int</span> curRodLen, <span class="keyword">int</span> *optimalRodTotalMoney)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;调用MemorizedCutRodAux&quot;</span>&lt;&lt; endl;</span><br><span class="line">    <span class="keyword">if</span> (optimalRodTotalMoney[curRodLen] &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> optimalRodTotalMoney[curRodLen];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span> (curRodLen == <span class="number">0</span>) &#123;</span><br><span class="line">        q = <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=curRodLen ; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = rodLen2Price[i] + <span class="built_in">MemorizedCutRodAux</span>(rodLen2Price, curRodLen-i, optimalRodTotalMoney);</span><br><span class="line">            q = (q &lt; tmp ? tmp : q);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    optimalRodTotalMoney[curRodLen] = q;</span><br><span class="line">    <span class="keyword">return</span> q;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MemorizedCutRod</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *rodLen2Price, <span class="keyword">int</span> curRodLen)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> * optimalRodTotalMoney = <span class="keyword">new</span> <span class="keyword">int</span>[curRodLen + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= curRodLen; ++i) &#123;</span><br><span class="line">        optimalRodTotalMoney[i] = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">MemorizedCutRodAux</span>(rodLen2Price, curRodLen, optimalRodTotalMoney);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此方法仍按自然的递归形式编写过程，但过程会保存每个子问题的解。当需要一个子问题的解时，过程首先检查是否已经保存过此解。如果是，则直接返回保存的值，从而节省了计算时间；否则，按通常方式计算这个子问题。</p>
+<h3 id="动态规划-自底向上"><a href="#动态规划-自底向上" class="headerlink" title="动态规划-自底向上"></a>动态规划-自底向上</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BUCutRod</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *rodLen2Price, <span class="keyword">int</span> curRodLen, <span class="keyword">int</span> * optimalRodTotalMoney, <span class="keyword">int</span> *optimalSolution)</span> </span>&#123;</span><br><span class="line">    optimalRodTotalMoney[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=curRodLen; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> q = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = rodLen2Price[j] + optimalRodTotalMoney[i-j];</span><br><span class="line">            <span class="keyword">if</span> (q &lt; tmp) &#123;</span><br><span class="line">                q = tmp;</span><br><span class="line">                optimalSolution[i] = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        optimalRodTotalMoney[i] = q;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintBUCutRod</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *rodLen2Price, <span class="keyword">int</span> curRodLen, <span class="keyword">int</span> * optimalRodTotalMoney, <span class="keyword">int</span> *optimalSolution)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">BUCutRod</span>(rodLen2Price, curRodLen, optimalRodTotalMoney, optimalSolution);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;长度为&quot;</span> &lt;&lt; curRodLen &lt;&lt; <span class="string">&quot;的杠条最大收益为:&quot;</span> &lt;&lt; optimalRodTotalMoney[curRodLen] &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;最优方案的杠条长度分别为:&quot;</span>;</span><br><span class="line">    <span class="keyword">while</span> (curRodLen != <span class="number">0</span>) &#123;</span><br><span class="line">        cout &lt;&lt; optimalSolution[curRodLen] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        curRodLen -= optimalSolution[curRodLen];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>恰当定义子问题“规模”的概念，使得任何子问题的求解都只依赖于“更小的”子问题的求解。因此，我们可以将子问题按照规模顺序，由小至大顺序进行求解。当求解某个子问题时，它所依赖的那些更小的子问题都已求解完毕，结果已经保存。每个子问题只需求解一次，当我们求解它时，它的所有前提子问题都已求解完成。<br>由于没有频繁的递归函数调用的开销，自底向上方法的时间复杂度函数通常具有更小的系数。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/06/07/golang%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/06/07/golang%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" class="post-title-link" itemprop="url">Golang代码规范</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-06-07 16:57:02 / Modified: 16:58:20" itemprop="dateCreated datePublished" datetime="2017-06-07T16:57:02+08:00">2017-06-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>转自<a target="_blank" rel="noopener" href="http://studygolang.com/articles/4346">这里</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/05/15/session%E4%B8%8Ecookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/05/15/session%E4%B8%8Ecookie/" class="post-title-link" itemprop="url">Session与cookie</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-05-15 16:06:10 / Modified: 16:06:54" itemprop="dateCreated datePublished" datetime="2017-05-15T16:06:10+08:00">2017-05-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>转自<a target="_blank" rel="noopener" href="http://harttle.com/2015/08/10/cookie-session.html">这里</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/13/Linux%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E4%B8%8E%E9%94%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/04/13/Linux%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E4%B8%8E%E9%94%81/" class="post-title-link" itemprop="url">Linux原子操作与锁</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-04-13 12:11:59 / Modified: 14:14:04" itemprop="dateCreated datePublished" datetime="2017-04-13T12:11:59+08:00">2017-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%90%8C%E6%AD%A5/" itemprop="url" rel="index"><span itemprop="name">同步</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h2><p>Linux 中最简单的同步方法就是原子操作。原子 意味着临界段被包含在 API 函数中。不需要额外的锁定，因为 API 函数已经包含了锁定。由于 C 不能实现原子操作，因此 Linux 依靠底层架构来提供这项功能。各种底层架构存在很大差异，因此原子函数的实现方法也各不相同。一些方法完全通过汇编语言来实现，而另一些方法依靠 c 语言并且使用 local_irq_save 和 local_irq_restore 禁用中断。<br>当需要保护的数据非常简单时，例如一个计数器，原子运算符是种理想的方法。尽管原理简单，原子 API 提供了许多针对不同情形的运算符。</p>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>信号量的本质也是一个计数器，用来记录对某个资源（如共享内存）的存取状况。用来协调不同进程间的数据对象，最主要的应用是共享内存方式的进程间通信。<br>Linux2.6.26下定义的信号量结构体：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">semaphore</span> &#123;</span></span><br><span class="line">	<span class="keyword">spinlock_t</span>                lock;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span>             count;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>        <span class="title">wait_list</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>从以上信号量的定义中，可以看到信号量底层使用到了spinlock的锁定机制，这个spinlock主要用来确保对count成员的原子性的操作(count–)和测试(count &gt; 0)。</p>
+<h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>两种形式的制约关系</p>
+<h4 id="间接相互制约关系（互斥）"><a href="#间接相互制约关系（互斥）" class="headerlink" title="间接相互制约关系（互斥）"></a>间接相互制约关系（互斥）</h4><p>若某一进程要求使用某种资源，而该资源正好被另一进程使用，并且该资源不允许两个进程同时使用，那么该进程只好等待已占有的资源的进程释放资源后再使用。这种制约关系可以用“进程-资源-进程”的形式表示。例如，打印机资源，进程互斥经典问题中生产者-生产者问题。</p>
+<h4 id="直接相互制约关系（同步）"><a href="#直接相互制约关系（同步）" class="headerlink" title="直接相互制约关系（同步）"></a>直接相互制约关系（同步）</h4><p>某一进程若收不到另一进程提供的必要信息就不能继续运行下去，表明了两个进程之间在某些点上要交换信息，相互交流运行情况。这种制约关系的进本形式是“进程-进程”。例如生产者与消费者问题，生产者生产产品并放入缓冲池，消费者从缓冲池取走产品进行消费。这两者就是同步关系。</p>
+<p>区分互斥和同步只需记住，同类进程即为互斥关系，不同类进程即为同步关系。<br>临界资源：同时只允许一个进程使用的资源。<br>临界区：进程中用于访问临界资源的代码段，又称临界段。<br>每个进程的临界区代码可以不同，临界区代码由于要访问临界资源，因此要在进入临界区之前进行检查，至于每个进程对临界资源进行怎样的操作，这和临界资源及互斥同步管理是无关的。<br>Linux 2.6.26中mutex的定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mutex</span> &#123;</span></span><br><span class="line">	<span class="comment">/* 1: unlocked, 0: locked, negative: locked, possible waiters */</span></span><br><span class="line">	<span class="keyword">atomic_t</span>                  count;<span class="comment">//原子操作类型变量</span></span><br><span class="line">	<span class="keyword">spinlock_t</span>                wait_lock;<span class="comment">//自旋锁类型变量</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span>          <span class="title">wait_list</span>;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> CONFIG_DEBUG_MUTEXES</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">thread_info</span>        *<span class="title">owner</span>;</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span>                *name;</span><br><span class="line">	<span class="keyword">void</span>                      *magic;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> CONFIG_DEBUG_LOCK_ALLOC</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">lockdep_map</span>         <span class="title">dep_map</span>;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>对比前面的struct semaphore，struct mutex除了增加了几个作为debug用途的成员变量外，和semaphore几乎长得一样。但是mutex的引入主要是为了提供互斥机制，以避免多个进程同时在一个临界区中运行。<br>可以把互斥锁看成二值信号量。</p>
+<h3 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h3><p>自旋锁也是实现保护共享资源的一种锁机制，与互斥锁比较类似，都是为了解决对某资源的互斥使用。无论是互斥锁还是自旋锁，在任何时刻最多只有一个保持者。也就是说，任何时刻最多只有一个执行单元获得锁。两者的不同之处是，对于互斥锁而言，如果资源已经被占用，其它的资源申请进程只能进入sleep状态。但是自旋锁不会引起调用者sleep，如果自旋锁已经被别的执行单元保持，调用者就一直循环在等待该自旋锁的保持者是否释放该锁。</p>
+<h4 id="自旋锁一般原理"><a href="#自旋锁一般原理" class="headerlink" title="自旋锁一般原理"></a>自旋锁一般原理</h4><p>跟互斥锁一样，一个执行单元要想访问被自旋锁保护的共享资源，必须先得到锁，在访问完共享资源后，必须释放锁。如果在获取自旋锁时，没有任何执行单元保持该锁，那么将立即得到锁；如果在获取自旋锁时锁已经有保持者，那么获取锁操作将自旋在那里，直到该自旋锁的保持者释放了锁。由此我们可以看出，自旋锁是一种比较低级的保护数据结构或代码片段的原始方式，这种锁可能存在两个问题：死锁和过多占用cpu资源。</p>
+<h4 id="自旋锁适用情况"><a href="#自旋锁适用情况" class="headerlink" title="自旋锁适用情况"></a>自旋锁适用情况</h4><p>自旋锁比较适用于锁使用者保持锁时间比较短的情况，正是由于自旋锁使用者一般保持较短的锁时间，因此选择自选而不是睡眠是非常必要的，因为自旋锁的效率远高于互斥锁。信号量和读写信号量适用于保持时间较长的情况，它们会导致调用者sleep，因此只能在进程上下文使用。而自旋锁适合于保持时间非常短的情况，它可以再任何上下文使用。如果被保护的共享资源只在进程上下文访问，使用信号量保护该共享资源非常合适，如果对共享资源的访问时间非常短，自旋锁也可以。但是如果被保护的共享资源需要在中断上下文访问（包括底半部即中断处理句柄和顶半部即软中断），就必须使用自旋锁。自旋锁保持期间是抢占失效的，而信号量和读写信号量保持期间是可以被抢占的。自旋锁只有在内核可抢占或SMP（多处理器）的情况下才真正需要，在单CPU且不可抢占的内核下，自旋锁的所有操作都是空操作。另外格外注意一点：自旋锁不能递归使用。</p>
+<h3 id="互斥锁和信号量与自旋锁的区别"><a href="#互斥锁和信号量与自旋锁的区别" class="headerlink" title="互斥锁和信号量与自旋锁的区别"></a>互斥锁和信号量与自旋锁的区别</h3><p>信号量。互斥锁允许进程sleep属于睡眠锁，自旋锁不允许调用者sleep，而是让其循环等待</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在硬件层面，CPU提供了原子操作、关中断、锁内存总线的机制；OS基于这几个CPU硬件机制，就能够实现锁；再基于锁，就能够实现各种各样的同步机制（信号量等等）。<br>原子锁不仅提供了一种锁定机制，同时也提供了算术或 bitwise 操作。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/11/linux%E5%BB%B6%E6%97%B6%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/04/11/linux%E5%BB%B6%E6%97%B6%E5%AE%9E%E7%8E%B0/" class="post-title-link" itemprop="url">Linux延时实现</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-04-11 17:10:38 / Modified: 17:15:07" itemprop="dateCreated datePublished" datetime="2017-04-11T17:10:38+08:00">2017-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux-kernel/" itemprop="url" rel="index"><span itemprop="name">linux-kernel</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>转自<a target="_blank" rel="noopener" href="https://toutiao.io/posts/354999/app_preview">这里</a><br>有时候有些纠结啊。觉得底层的东西太多，太麻烦，想专注上层开发;偏偏又对底层实现好奇而且有时候不知道底层实现又一头雾水。<br>嗯，顺其自然吧。。。。。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/04/11/go-%E5%8C%BF%E5%90%8D%E5%AD%97%E6%AE%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/04/11/go-%E5%8C%BF%E5%90%8D%E5%AD%97%E6%AE%B5/" class="post-title-link" itemprop="url">Go-匿名字段</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-04-11 14:12:20 / Modified: 14:17:12" itemprop="dateCreated datePublished" datetime="2017-04-11T14:12:20+08:00">2017-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/go/" itemprop="url" rel="index"><span itemprop="name">go</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>package main</p>
+<p>import “fmt”</p>
+<p>type Base struct {<br>    Name string<br>    Age  int<br>}</p>
+<p>func (b * Base) Test() {<br>    fmt.Println(“test successfully”)<br>}</p>
+<p>type Child struct {<br>    Base // 匿名字段， 默认把Base的所有字段都继承过来了。 这样看起来才像真正的继承<br>    Age  int<br>}</p>
+<p>func main() {<br>    c := new(Child)<br>    c.Name = “hello” // 可以直接使用Base中的字段<br>    c.Age = 20       // 如果有重复的， 则最外的优先</p>
+<pre><code>fmt.Println(c.Name)     // hello
+fmt.Println(c.Age)      // 20
+fmt.Println(c.Base.Age) // 要访问Base中的，可以这样写 0
+c.Test()
+</code></pre>
+<p>}<br>go语言中的”继承“并不是真正的意义上的继承，确切地说是组合。匿名字段让习惯了C++/java之类的程序员用go更加得心应手。<br>作为一门年轻的语言，不得不说go语言对程序员还是非常友好的.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">moses</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

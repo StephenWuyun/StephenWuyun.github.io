@@ -1,23 +1,674 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block title %} {{ config.title }} {% endblock %}
 
-{% block page_class %}
-  {% if is_home() %} page-home {% endif %}
-{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/css/main.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;blog.lxmoses.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="你我都是彼此的过客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="悟云">
+<meta property="og:url" content="http://blog.lxmoses.com/page/6/index.html">
+<meta property="og:site_name" content="悟云">
+<meta property="og:description" content="你我都是彼此的过客">
+<meta property="og:locale">
+<meta property="article:author" content="moses">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://blog.lxmoses.com/page/6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:true,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;zh-Hans&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;page&#x2F;6&#x2F;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>悟云</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="悟云" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">悟云</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">let it be</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">moses</p>
+  <div class="site-description" itemprop="description">你我都是彼此的过客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/04/IP-%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/04/IP-%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE/" class="post-title-link" itemprop="url">IP:网际协议</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-01-04 22:26:36" itemprop="dateCreated datePublished" datetime="2017-01-04T22:26:36+08:00">2017-01-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2017-01-06 19:45:12" itemprop="dateModified" datetime="2017-01-06T19:45:12+08:00">2017-01-06</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TCP-IP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">TCP/IP协议详解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP、及IGMP数据都以IP数据报格式传输。<br>IP提供不可靠、无连接的数据报传送服务。<br>不可靠的意思是它不能保证IP数据报能成功到达目的地。任何要求的可靠性必须由上层来提供（如TCP）。<br>无连接这个术语的意思是IP并不维护任何关于后续数据报的状态信息。如果一信源向相同的信宿发送两个连续的数据报（先是A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A之前先到达。</p>
+<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>互联网上的每个接口必须有一个唯一的Internet地址（IP地址）。IP地址具有一定的结构，五类不同的IP地址格式如下图所示。<br><img src="/images/%E4%BA%94%E7%A7%8D%E4%B8%8D%E5%90%8C%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E5%9C%B0%E5%9D%80.png"><br>有三类IP地址：单播地址（目的端为单个主机）、广播地址（目的端为给定网络上的所有主机）以及多播地址（目的端为同一组内的所有主机）</p>
+<h2 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h2><p><img src="/images/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F%E5%8F%8A%E9%A6%96%E9%83%A8%E4%B8%AD%E7%9A%84%E5%90%84%E5%AD%97%E6%AE%B5.jpg"><br>IP数据包的格式如上图所示, 普通的IP首部长为20个字节，除非含有选项字段。分析上图的首部，最高位在左边，记为0bit，最低位在右边，记为31bit。这种传输次序称作big endian字节序，由于TCP、IP首部中的所有二进制整数在网络中传输时都要求以这种次序，因此又称为网络字节序。以其他形式存储二进制整数的机器，例如little endian格式，则必须在传输数据之前把首部转换成网络字节序。<br>目前最常用的协议版本号是4，因此IP有时也称作IPV4.<br>首部长度指的是首部占32bit字的数目，包括任何选项。<br>服务类型（TOS)字段包括一个3bit的优先权字段（现在已被忽略），4bit的TOS字段和1bit未用但必须置为0.4bit的TOS分别代表：最小时延、最大吞吐量、最高可靠性和最小费用。<br>总长度字段是指整个IP数据报的长度，以字节为单位。由于该字段长16比特，所以IP数据报最长可达65535字节。<br>标识字段唯一地标识主机发送的每一份数据报。<br>TTL（time to live）生存时间字段设置了数据报可以经过的最多路由数器数。它指定了数据报的生存时间。TTL的初始值由源主机设置（通常为32或64），一旦经过一个处理它的路由器，它的值就减1。当该字段的值为0时，数据包就被丢弃，并发送ICMP报文通知源主机。<br>协议字段是一个长度为8bit的数值。1表示ICMP协议，2表示IGMP协议，6表示TCP协议，17表示UDP协议。<br>首部检验和字段是根据IP首部计算的校验码。具体可参见<a href="https://blog.lxmoses.com/2017/01/04/ip首部检验和/">这里</a><br>每一份IP数据报都包含源IP地址和目的IP地址。<br>最后一个是任选项，是数据报中的一个可变长的可选信息。</p>
+<h2 id="IP路由选择"><a href="#IP路由选择" class="headerlink" title="IP路由选择"></a>IP路由选择</h2><p>此部分比较复杂，在以后的博文中会进行详细研究。</p>
+<h2 id="子网寻址"><a href="#子网寻址" class="headerlink" title="子网寻址"></a>子网寻址</h2><p>现在所有的主机都要求支持子网编址。不是把IP地址看成单纯由单纯的一个网络号和一个主机号组成，而是把主机号再分成一个子网号和一个主机号。<br>这么做的原因是因为A类和B类地址为主机号分配了太多的空间，可分别容纳的主机数量为2的24次方-2和2的2的16次方-2（由于全0或全1的主机号是无效的，因此我们把总数-2）.事实上，在一个网络中人们并不安排这么多的主机。<br>从InterNIC获得某类IP网络号后，就由当地的系统管理员来进行分配，有他决定来决定是否建立子网，以及分配多少比特给子网号和主机号。<br>子网对外部路由器来说隐藏了内部网络阻止（一个校园或公司内部）的细节。<br>与30个C类地址，用一个包含30个子网的B类地址的好处是，它可以缩小Internet路由表的规模。</p>
+<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>子网掩码是一个32bit的值，其中值为1的比特留个网络号和子网号，为0的比特留给主机号。<br>尽管IP地址一般以点分十进制表示，但是子网掩码却经常用十六进制来表示。<br>给定子网掩码后，主机就可以确定IP数据报的目的是：<br>（1）本子网上的主机<br>（2）本网络中的其他主机<br>（3）其他网络上的主机</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/04/ip%E9%A6%96%E9%83%A8%E6%A3%80%E9%AA%8C%E5%92%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/04/ip%E9%A6%96%E9%83%A8%E6%A3%80%E9%AA%8C%E5%92%8C/" class="post-title-link" itemprop="url">IP首部检验和</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-01-04 21:40:48" itemprop="dateCreated datePublished" datetime="2017-01-04T21:40:48+08:00">2017-01-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2017-01-06 19:45:56" itemprop="dateModified" datetime="2017-01-06T19:45:56+08:00">2017-01-06</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TCP-IP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">TCP/IP协议详解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在发送数据时，为了计算数IP据报的校验和。应该按如下步骤：<br>（1）把IP数据报的校验和都置为0。<br>（2）把首部看成以16位为单位的数字组成，依次进行二进制反码求和。<br>（3）把得到的结果存入校验和字段中。<br>在接收数据时，计算数据报的校验和相对简单，按如下步骤：<br>（1）把首部看成以16位为单位的数字组成，依次进行二进制反码求和，包括校验和字段。<br>（2）检查计算出的校验和的结果是否等于零。<br>（3）如果等于零，说明被整除，校验是和正确。否则，校验和就是错误的，协议栈要抛弃这个数据包。<br>下面是校验代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="title">checksum</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">short</span> *buf,<span class="keyword">int</span> nword)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> sum;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(sum=<span class="number">0</span>;nword&gt;<span class="number">0</span>;nword--)&#123;</span><br><span class="line">		sum += *buf++;</span><br><span class="line">		sum = (sum&gt;&gt;<span class="number">16</span>) + (sum&amp;<span class="number">0xffff</span>);<span class="comment">//相加后最高位如果有进位，加到低位。</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ~sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> iph[]=&#123;<span class="number">0x4500</span>,<span class="number">0x00ad</span>,<span class="number">0x7755</span>,<span class="number">0x4000</span>,<span class="number">0x8006</span>,</span><br><span class="line">		<span class="number">0x0000</span>,<span class="number">0x0a97</span>,<span class="number">0x7819</span>,<span class="number">0x0a97</span>,<span class="number">0x781d</span>&#125;;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">short</span> cksum;</span><br><span class="line"></span><br><span class="line">	cksum=checksum(iph,<span class="number">20</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%X\n&quot;</span>,cksum);</span><br><span class="line">	iph[<span class="number">5</span>]=cksum;</span><br><span class="line">	cksum=checksum(iph,<span class="number">20</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%X\n&quot;</span>,cksum);</span><br><span class="line">	<span class="keyword">if</span>(cksum)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Checksum is incorrect!\n&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Checksum is correct!\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的算法应该包含一些数理规律，对此笔者懒得追究了。。。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8/" class="post-title-link" itemprop="url">计算机数的表示和存储</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-01-04 20:33:30 / Modified: 20:42:37" itemprop="dateCreated datePublished" datetime="2017-01-04T20:33:30+08:00">2017-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>转自<a target="_blank" rel="noopener" href="http://www.cnblogs.com/lyfruit/archive/2013/04/07/3003376.html">这里</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/04/TCP-IP%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/04/TCP-IP%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">TCP/IP四层协议系统概述</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-01-04 10:10:50 / Modified: 21:43:51" itemprop="dateCreated datePublished" datetime="2017-01-04T10:10:50+08:00">2017-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TCP-IP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">TCP/IP协议详解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="/images/tcp-ip%E5%8D%8F%E8%AE%AE%E6%97%8F%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%B1%82%E6%AC%A1.jpg"><br>链路层，有时称为数据链路层或网络接口层，通常包括操作系统中的设备驱动程序和计算机中对应的网络接口卡。它们一起处理与电缆（或其他任何传输媒介）的物理接口细节。<br>网络层，有时也称为互联网层，处理分组在网络中的活动，例如分组的选路。在tcp/ip协议族中，网络层协议包括ip协议（网际协议），icmp协议（internet互联网控制报文协议）以及IGMP协议（internet组管理协议）。<br>运输层，主要为两台主机上的应用程序提供端到端的通信。<br>应用层，负责处理特定的应用程序细节。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/01/03/%E9%9D%A2%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/03/%E9%9D%A2%E8%AF%95/" class="post-title-link" itemprop="url">最近的几次面试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-01-03 22:13:02 / Modified: 20:33:02" itemprop="dateCreated datePublished" datetime="2017-01-03T22:13:02+08:00">2017-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>自从从老汤那里辞职回学校以后，放松了一段时间，然后又开始投简历。经历了几次面试。<br>由于快毕业了， 所以找工作的区域不再局限于成都，全国海投！<br>第一次笔试是北京一家叫做光合起源的公司hr通过qq给笔者发了一份面试题，挺简单的，都是一些基础知识。hr反馈说看笔者测试题做得不错，问我什么时候有空去北京去面试，笔者暂时走不开，就此搁置。<br>接下来是2016年12月一天之内的三次面试。<br>上午电话面试。上海一家游戏公司， 面试官主要问了一些算法的东西，无奈笔者对算法没有深入的探究，面试官简单地问了几句也觉得无趣，然后草草结束面试。<br>下午环球中心，启明星辰一面，首先让笔者做了一套面试题，内容大概是一些简单的编程知识以及linux常用命令。除了网络方面的东西都还应对的可以，第二天一面顺利通过。<br>然后匆匆赶去蜀都中心， 萤火虫游戏， 去这家公司的路途中感觉很熟悉，到了地方发现巧了， 大概半年前面过隔壁的游戏公司，当时拿到了offer但是hr说第一个月没工资，迫于生计，拒绝了。<br>言归正传， 到了公司以后还是做了一套面试题。 感觉这家公司面试题逼格比较高，笔者留下了一张照片。<br><img src="/images/%E8%90%A4%E7%81%AB%E8%99%AB%E9%9D%A2%E8%AF%95%E9%A2%98.jpg"><br>智力题除了第四题，其他简单地想了下还是答上来了。 编程题比较偏算法，关于最短路径以及求点到直线的距离的算法不是很熟悉，没能写出来，只是简单地表述了下我的思路。<br>关于面试题第四题，笔者简单搜索了下，发现是自己高估了这道题的难度，主要是前面的都是类似脑筋急转弯之内的东西，突然来了个正常不习惯！！！下面是答案:<br>一个罐子：1个红球。另一个罐子：49个红球，50个篮球<br>笔试完了之后由于面试官开会，等了半个小时， 果然不出所料， 面试官问我acm， 无奈笔者acm只是水水地参与了一下，实在难登大雅之堂。面试官转问我tcp的细节，笔者比较偏向实用主义，对于网络编程，也是停留在读完unp卷一的水准， 面试官鄙视地说：“我很好奇你这两年干的啥啊”。 笔者无言以对。只是下定决心回来好好学习下常用的算法并且立马买了tcp/ip详解。<br>今天早上清晨吸着霾挤着地铁公交去启明星辰二面。 由于面试官开会， 等了一个小时。 面试官是成都分部技术方面的老大，这次面试对我触动挺大的。<br>笔者也经历了七八次面试吧，之前的面试官主要问的都是一些基础知识，但这次面试官主要问我项目经历。 笔者面试时精神属于高度集中的那种，而且潜意识里认为面试内容应该不会详细到业务这种程度，一时没领会到他要我详细描述项目这个意思，导致面试官有些不耐烦， 交流不是很顺畅。（最怕空气突然安静） 由于我没有及时细谈项目，面试官一度怀疑我根本是在编造项目经验！！！ 后来我重新详细地描述了下之前的项目经历， 然后面试官叫我重新发份简历到他的邮箱然后结合一面的面试官再决定是否给我三面的机会。<br>其实这些面试对我来说倒是不那么在意结果，毕竟类似这样的公司遍地都是。然而在这个过程中暴露了很多笔者自身的问题。<br>第一，笔者面试时心态不够平和，精神过度集中，导致表现出的思维不够灵活，表达能力偏弱。 以后的每一次面试都要以一副云淡风轻的态度淡然面对，虽然我是打工的，但人格层面并不比谁第一等，也没必要表现地那么卑微。<br>第二，现在的面试官经常会问一些常用的算法，这是笔者的短板，其实说来这些算法也不是多难，简单地准备一周应该能应对大部分面试官。 虽然在下认为其实工作中这些并没有什么卵用，但是这个社会就是这样，求职的人多了，面试官就会通过这些光环来刷人，笔者无力改变，只能接受。<br>第三，笔者为人处世的态度比较随意，与面试时高度紧张的态度相反，面试之前通常是毫无准备，简历也是比较随意， 以后需要多加注意。应该以一个成年人的态度来面对社会了。<br>谈不上优秀,也算不上渣。 人潮中，我是那么的普通。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2016/12/29/c++%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/12/29/c++%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">C++的四种类型转换方式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2016-12-29 06:40:23 / Modified: 07:02:47" itemprop="dateCreated datePublished" datetime="2016-12-29T06:40:23+08:00">2016-12-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>c++的四种强制类型转换，所以c++不是类型安全的。分别为：static_cast , dynamic_cast , const_cast , reinterpret_cast<br>使用C风格的强制转换可以把想要的任何东西转换成合乎心意的类型，那为什么还需要一个新的C++类型的强制转换呢？<br>新类型的强制转换可以提供更好的控制强制转换过程，允许控制各种不同种类的强制转换。C++中风格是static_cast<type>(content)。C++风格的强制转换其他的好处是，它们能更清晰的表明它们要干什么。程序员只要扫一眼这样的代码，就能立即知道一个强制转换的目的。</p>
+<h2 id="四种类型转换的区别"><a href="#四种类型转换的区别" class="headerlink" title="四种类型转换的区别"></a>四种类型转换的区别</h2><h3 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h3><p>实现C++中内置基本数据类型之间的相互转换</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> c=<span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">7.987</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SA</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> SA ra;</span><br><span class="line"><span class="comment">//ra.i = 10; //直接修改const类型，编译错误</span></span><br><span class="line">SA &amp;rb = <span class="keyword">const_cast</span>&lt;SA&amp;&gt;(ra);</span><br><span class="line">rb.i =<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="dynamic-cast"><a href="#dynamic-cast" class="headerlink" title="dynamic_cast"></a>dynamic_cast</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">（1）其他三种都是编译时完成的，dynamic_cast是运行时处理的，运行时要进行类型检查。</span><br><span class="line">（2）不能用于内置的基本数据类型的强制转换。</span><br><span class="line">（3）dynamic_cast转换如果成功的话返回的是指向类的指针或引用，转换失败的话则会返回NULL。</span><br><span class="line">（4）使用dynamic_cast进行转换的，基类中一定要有虚函数，否则编译不通过。</span><br><span class="line">（5）在类的转换时，在类层次间进行上行转换时，dynamic_cast和static_cast的效果是一样的。在进行下行转换时，dynamic_cast具有类型检查的功能，比static_cast更安全。向上转换即为指向子类对象的转化为指向父类对象。向下转换，即将父类指针转化子类指针。向下转换的成功与否还与将要转换的类型有关，即要转换的指针指向的对象的实际类型与转换以后的对象类型一定要相同，否则转换失败。</span><br></pre></td></tr></table></figure>
+<h3 id="reinterpret-cast"><a href="#reinterpret-cast" class="headerlink" title="reinterpret_cast"></a>reinterpret_cast</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有着和C风格的强制转换同样的能力。它可以转化任何内置的数据类型为其他任何的数据类型，也可以转化任何指针类型为其他的类型。它甚至可以转化内置的数据类型为指针，无须考虑类型安全或者常量的情形。不到万不得已绝对不用。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">moses</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,23 +1,673 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block title %} {{ config.title }} {% endblock %}
 
-{% block page_class %}
-  {% if is_home() %} page-home {% endif %}
-{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/css/main.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;blog.lxmoses.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="你我都是彼此的过客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="悟云">
+<meta property="og:url" content="http://blog.lxmoses.com/page/4/index.html">
+<meta property="og:site_name" content="悟云">
+<meta property="og:description" content="你我都是彼此的过客">
+<meta property="og:locale">
+<meta property="article:author" content="moses">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://blog.lxmoses.com/page/4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:true,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;zh-Hans&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;page&#x2F;4&#x2F;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>悟云</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="悟云" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">悟云</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">let it be</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">moses</p>
+  <div class="site-description" itemprop="description">你我都是彼此的过客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/14/%E5%85%B3%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/14/%E5%85%B3%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%95%B0/" class="post-title-link" itemprop="url">关于随机数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-14 16:14:40 / Modified: 16:29:42" itemprop="dateCreated datePublished" datetime="2017-03-14T16:14:40+08:00">2017-03-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天在设计一个随机数时遇到了一些问题：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">array</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="keyword">int</span> index = <span class="built_in">floor</span>(<span class="built_in">CCRANDOM_0_1</span>() * array.size)</span><br></pre></td></tr></table></figure>
+<p>就是xcode里上面简单的几行代码，让我纠结很久。经过测试，主要原因是，xcode里float或者double转换成int时不能正确转换，至于原因，在下搜索很久都没找到答案， 暂时就这样不了了之吧。<br>嗯，于是发现了c++ 11关于随机数的新特性，上述代码改为如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">std::default_random_engine e;</span><br><span class="line"><span class="function">std::uniform_int_distribution&lt;<span class="keyword">unsigned</span>&gt; <span class="title">u</span><span class="params">(<span class="number">0</span>, array.size())</span></span>;</span><br><span class="line"><span class="keyword">auto</span> index = <span class="built_in">u</span>(e);</span><br></pre></td></tr></table></figure>
+<p>路漫漫其修远兮。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/13/javascript%E7%BB%A7%E6%89%BF%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/13/javascript%E7%BB%A7%E6%89%BF%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">Javascript继承详解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-13 11:42:40 / Modified: 11:48:58" itemprop="dateCreated datePublished" datetime="2017-03-13T11:42:40+08:00">2017-03-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>由于最近要用cocos2d-js开发游戏，所以有必要学习下js，在此mark下js的继承。<br>参见三生石上的系列博客：<br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/sanshi/archive/2009/07/08/1519036.html">javascript继承详解(一)</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/sanshi/archive/2009/07/08/1519251.html">javascript继承详解(二)</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/sanshi/archive/2009/07/09/1519890.html">javascript继承详解(三)</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/sanshi/archive/2009/07/13/1522647.html">javascript继承详解(四)</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/sanshi/archive/2009/07/14/1523523.html">javascript继承详解(五)</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/sanshi/archive/2009/07/15/1524263.html">javascript继承详解(六)</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/10/cocos2d-js%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E5%9C%A8%E5%90%84%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%A1%8C%E6%A6%82%E8%A6%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/10/cocos2d-js%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E5%9C%A8%E5%90%84%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%A1%8C%E6%A6%82%E8%A6%81/" class="post-title-link" itemprop="url">Cocos2d-Js游戏引擎在各平台运行概要</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-10 10:49:24 / Modified: 10:51:06" itemprop="dateCreated datePublished" datetime="2017-03-10T10:49:24+08:00">2017-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/cocos2dx/" itemprop="url" rel="index"><span itemprop="name">cocos2dx</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="http://forum.cocos.com/t/cocos2d-js/23080">转自这里 </a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/09/cocos2dx%E6%89%93%E5%8C%85apk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/09/cocos2dx%E6%89%93%E5%8C%85apk/" class="post-title-link" itemprop="url">Cocos2dx打包apk</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-09 11:54:18 / Modified: 14:02:35" itemprop="dateCreated datePublished" datetime="2017-03-09T11:54:18+08:00">2017-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/cocos2dx/" itemprop="url" rel="index"><span itemprop="name">cocos2dx</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>昨天晚上第一次开始着手将cocos2dx project打包apk，在此记录下。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h4><p>下载jdk，并安装</p>
+<h4 id="ndk"><a href="#ndk" class="headerlink" title="ndk"></a>ndk</h4><p>下载ndk，并解压</p>
+<h3 id="android-sdk"><a href="#android-sdk" class="headerlink" title="android sdk"></a>android sdk</h3><p>下载android, sdk并解压</p>
+<h4 id="ant"><a href="#ant" class="headerlink" title="ant"></a>ant</h4><p>下载ant, 并解压</p>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>进入cocos目录，运行setup.py,按提示操作即可。</p>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>进入cocos工程主目录，利用cocos工具编译如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cocos compile -p android --ap android-25<span class="comment">#--ap代表sdk版本</span></span><br></pre></td></tr></table></figure>
+<p>上面的步骤会在cocos工程文件里生成一个apk文件，大功告成。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/06/cocos2dx%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/06/cocos2dx%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="post-title-link" itemprop="url">Cocos2dx内存管理机制</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-03-06 17:28:26" itemprop="dateCreated datePublished" datetime="2017-03-06T17:28:26+08:00">2017-03-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2017-03-07 10:08:21" itemprop="dateModified" datetime="2017-03-07T10:08:21+08:00">2017-03-07</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/cocos2dx/" itemprop="url" rel="index"><span itemprop="name">cocos2dx</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>cocos2dx里的所有节点对象都继承自Ref<br>下面是Ref的源代码核心部分摘录</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ref</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">retain</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">release</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function">Ref * <span class="title">autorelease</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">getReferenceCount</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="built_in">Ref</span>();</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">virtual</span> ~<span class="built_in">Ref</span>();</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> _referenceCount;</span><br><span class="line">	<span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoreleasePool</span>;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Ref::<span class="built_in">Ref</span>(): _referenceCount(<span class="number">1</span>)&#123;&#125;</span><br><span class="line">Ref::~<span class="built_in">Ref</span>() &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Ref::retain</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">assert</span>(_referenceCount &gt; <span class="number">0</span>, <span class="string">&quot;reference count should be greater than 0&quot;</span>);</span><br><span class="line">	++_referenceCount;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Ref::release</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">assert</span>(_referenceCount &gt; <span class="number">0</span>, <span class="string">&quot;reference count should be greater than 0&quot;</span>);</span><br><span class="line">	--_referenceCount;</span><br><span class="line">	<span class="keyword">if</span>(_referenceCount == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">delete</span> <span class="keyword">this</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Ref * <span class="title">Ref::autorelease</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	PoolManager::<span class="built_in">getInstance</span>()-&gt;<span class="built_in">getCurrentPool</span>()-&gt;<span class="built_in">addObject</span>(<span class="keyword">this</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">Ref::getReferenceCount</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> _referenceCount;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到Ref主要就是运用了引用计数，在一个节点的create函数中通常都会都会调用autorelease,在这个函数中调用的是AutoreleasePool的addObject方法。<br>下面是AutoreleasePool以及PoolManager的源代码实现核心部分摘录</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutoreleasePool</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">AutoreleasePool</span>();<span class="comment">//warning Don&#x27;t create an autorelease pool in heap, create it in stack.</span></span><br><span class="line">	<span class="built_in">AutoreleasePool</span>(<span class="keyword">const</span> std::string &amp;name);</span><br><span class="line">	~<span class="built_in">AutoreleasePool</span>();</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">addObject</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	std::vector&lt;Ref *&gt; _managedObjectArray;</span><br><span class="line">	std::string _name;</span><br><span class="line">&#125;</span><br><span class="line">AutoreleasePool::<span class="built_in">AutoreleasePool</span>() : _name(<span class="string">&quot;&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">	_managedObjectArray.<span class="built_in">reserve</span>(<span class="number">150</span>);</span><br><span class="line">	PoolManager::<span class="built_in">getInstance</span>()-&gt;<span class="built_in">push</span>(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">AutoreleasePool::<span class="built_in">AutoreleasePool</span>(<span class="keyword">const</span> std::string &amp;name):_name(name)</span><br><span class="line">&#123;</span><br><span class="line">	_managedObjectArray.<span class="built_in">reserve</span>(<span class="number">150</span>);</span><br><span class="line">	PoolManager::<span class="built_in">getInstance</span>()-&gt;<span class="built_in">push</span>(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">AutoreleasePool::~<span class="built_in">AutoreleasePool</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">clear</span>();</span><br><span class="line">	PoolManager::<span class="built_in">getInstance</span>()-&gt;<span class="built_in">pop</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AutoreleasePool::addObject</span><span class="params">(Ref * object)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	_managedObjectArray.<span class="built_in">push_back</span>(object);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AutoreleasePool::clear</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	std::vector&lt;Ref*&gt; releasings;</span><br><span class="line">	releasings.<span class="built_in">swap</span>(_managedObjectArray);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;obj : releasings)</span><br><span class="line">	&#123;</span><br><span class="line">		obj-&gt;<span class="built_in">release</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PoolManager</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">static</span> PoolManager * <span class="title">getInstance</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function">AutoreleasePool * <span class="title">getCurrentPool</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoreleasePool</span>;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">PoolManager</span>();</span><br><span class="line">	~<span class="built_in">PoolManager</span>();</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(AutoreleasePool * pool)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="keyword">static</span> PoolManager * s_singleInstance;</span><br><span class="line">	std::vector&lt;AutoreleasePool *&gt; _releasePoolStack;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">PoolManager * <span class="title">PoolManager::getInstance</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s_singleInstance == <span class="literal">nullptr</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		s_singleInstance = <span class="built_in"><span class="keyword">new</span></span> (std::nothrow) <span class="built_in">PoolManager</span>();</span><br><span class="line">		<span class="comment">// Add the first auto release pool</span></span><br><span class="line">		<span class="keyword">new</span> <span class="built_in">AutoreleasePool</span>(<span class="string">&quot;cocos2d autorelease pool&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> s_singleInstance;</span><br><span class="line">&#125;</span><br><span class="line">PoolManager::<span class="built_in">PoolManager</span>()</span><br><span class="line">&#123;</span><br><span class="line">	_releasePoolStack.<span class="built_in">reserve</span>(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line">PoolManager::~<span class="built_in">PoolManager</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span>(!_releasePoolStack.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		AutoreleasePool * pool = _releasePoolStack.<span class="built_in">back</span>();</span><br><span class="line">		<span class="keyword">delete</span> pool;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">PoolManager::<span class="built_in">getCurrentPool</span>() <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> _releasePoolStack.<span class="built_in">back</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PoolManager::push</span><span class="params">(AutoreleasePool * pool)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	    _releasePoolStack.<span class="built_in">push_back</span>(pool);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PoolManager::pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">assert</span>(!_releasePoolStack.<span class="built_in">empty</span>());</span><br><span class="line">	_releasePoolStack.<span class="built_in">pop_back</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结：<br>1.autorelease()的实质是将对象加入自动释放池，对象的引用计数不会立刻减1，在自动释放池被回收时对象执行release()。<br>2.autorelease()只有在自动释放池被释放时才会进行一次释放操作，如果对象释放的次数超过了应有的次数，则这个错误在调用autorelease()时并不会被发现，只有当自动释放池被释放时（通常也就是游戏的每一帧结束时），游戏才会崩溃。在这种情况下，定位错误就变得十分困难了。例如，在游戏中，一个对象含有1个引用计数，但是却被调用了两次autorelease()。在第二次调用autorelease()时，游戏会继续执行这一帧，结束游戏时才会崩溃，很难及时找到出错的地点。因此，我们建议在开发过程中应该避免滥用autorelease()，只在工厂方法等不得不用的情况下使用，尽量以release()来释放对象引用。<br>3.autorelease()并不是毫无代价的，其背后的释放池机制同样需要占用内存和CPU资源。过多的使用autorelease()会增加自动释放池的管理和释放池维护对象存取释放的支出。在内存和CPU资源本就不足的程序中使得系统资源更加紧张。此时就需要我们合理创建自动释放池管理对象autorelease。<br>不用的对象推荐使用release()来释放对象引用，立即回收。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://blog.lxmoses.com/2017/03/02/lambda-c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="moses">
+      <meta itemprop="description" content="你我都是彼此的过客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悟云">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/03/02/lambda-c/" class="post-title-link" itemprop="url">Lambda--C++</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-03-02 22:33:08 / Modified: 22:38:10" itemprop="dateCreated datePublished" datetime="2017-03-02T22:33:08+08:00">2017-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>参见<a target="_blank" rel="noopener" href="https://www.devbean.net/2012/05/cpp11-lambda/">这里</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">moses</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
